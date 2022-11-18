@@ -11,9 +11,11 @@ export default function Layout({
   children: React.ReactNode
   home?: boolean
 }) {
+  
   return (
     <div>
       <Head>
+        
         <link rel="icon" href="/faviconltdf.ico" />
         <meta
           name="description"
