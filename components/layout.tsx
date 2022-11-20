@@ -1,21 +1,33 @@
 import Head from 'next/head'
-import { IconButton, Image, Container, Box, Heading, Stack, Center, HStack } from '@chakra-ui/react'
+import { IconButton, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import Link from 'next/link'
+import { ReactNode } from 'react';
+import { CloseIcon, HamburgerIcon, AddIcon } from '@chakra-ui/icons';
+import { useTranslation } from 'next-i18next'
 
-export const name = 'Le temps d\'un fût'
+const NavLink = ({ children }: { children: ReactNode }) => (
+  <Link px={2} py={1} rounded={'md'}
+    _hover={{
+      textDecoration: 'none',
+      bg: useColorModeValue('gray.200', 'gray.700'),
+    }}
+    href={'#'}>
+    {children}
+  </Link>
+);
+
 
 export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
-  
+  children }: {
+    children: React.ReactNode
+  }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { t } = useTranslation('common')
+  const Links = [t('product'), t('rental'), t('about_us')];
+
   return (
     <div>
       <Head>
-        
         <link rel="icon" href="/faviconltdf.ico" />
         <meta
           name="description"
@@ -25,80 +37,80 @@ export default function Layout({
           property="og:image"
           content="https://deft-moxie-184876.netlify.app/images/logoLtdf.svg"
         />
-        <meta name="og:title" content={name} />
+        <meta name="og:title" content={t('title')} />
       </Head>
-      <Container maxW={'3xl'}>
-        <Stack
-          as={Box}
-          box={'center'}
-          spacing={{ base: 4, md: 8 }}
-          py={{ base: 5, md: 10 }}>
-
-          {home ? (
-            <>
-              <Center>
-                <Image
-                  //priority
-                  src="/images/logoLtdf.svg"
-                  boxSize='300px'
-                  alt={name}
+      <>
+        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} position={'fixed'} width={'100%'}>
+          <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+            <IconButton
+              size={'md'}
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              aria-label={'Open Menu'}
+              display={{ md: 'none' }}
+              onClick={isOpen ? onClose : onOpen}
+            />
+            <HStack spacing={8} alignItems={'center'}>
+              <Box>
+                <Avatar
+                  size={'sm'}
+                  src={'/images/logoLtdf.svg'}
                 />
-              </Center>
-              <Heading
-                fontWeight={600}
-                fontSize={{ base: '4xl', sm: '3xl', md: '4xl' }}
-                lineHeight={'110%'}
-                textAlign='center'>
-                {name}
-              </Heading>
-            </>
-          ) : (
-            <>
-              <Center>
-                <Link href="/">
-                  <Image
-                    //priority
-                    src="/images/logoLtdf.svg"
-                    boxSize='300px'
-                    alt={name}
-                  />
-                </Link>
-              </Center>
-              <Heading
-                fontWeight={600}
-                fontSize={{ base: '3xl', sm: '5xl', md: '7xl' }}
-                lineHeight={'110%'}>
-                <Link href="/">
-                  {name}
-                </Link>
-              </Heading>
-            </>
-          )}
-
-          <div>
-            <Center>
-              <HStack spacing={8}>
-                <IconButton aria-label='go to Facebook' backgroundColor='white'
-                  icon={<Image borderRadius='full' src="/images/Facebook_f_logo_(2021).svg" alt='Facebook logo' />}
-                  onClick={() => { window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/') }} />
-
-
-                <IconButton aria-label='go to Instagram' backgroundColor='white'
-                  icon={<Image boxSize="40px" src="/images/Instagram_logo_2016.svg" alt='Instagram logo' />}
-                  onClick={() => { window.open('https://www.instagram.com/ltdf_qc/') }} />
+              </Box>
+              <HStack
+                as={'nav'}
+                spacing={4}
+                display={{ base: 'none', md: 'flex' }}>
+                {Links.map((link) => (
+                  <NavLink key={link}>{link}</NavLink>
+                ))}
               </HStack>
-            </Center>
-          </div>
+            </HStack>
+            <Flex alignItems={'center'}>
+              <Button
+                variant={'solid'}
+                colorScheme={'teal'}
+                size={'sm'}
+                mr={4}
+                leftIcon={<AddIcon />}>
+                Action
+              </Button>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={'full'}
+                  variant={'link'}
+                  cursor={'pointer'}
+                  minW={0}>
+                  <Avatar
+                    size={'sm'}
+                    src={
+                      'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+                    }
+                  />
+                </MenuButton>
+                <MenuList>
+                  <MenuItem>{t('logout')}</MenuItem>
+                </MenuList>
+              </Menu>
+            </Flex>
+          </Flex>
 
-          <main>{children}</main>
-          {!home && (
-            <div>
-              <Link href="/">← Back to home</Link>
-            </div>
-          )}
+          {isOpen ? (
+            <Box pb={4} display={{ md: 'none' }}>
+              <Stack as={'nav'} spacing={4}>
+                {Links.map((link) => (
+                  <NavLink key={link}>{link}</NavLink>
+                ))}
+              </Stack>
+            </Box>
+          ) : null}
+        </Box>
 
-        </Stack>
-      </Container>
+        <Box p={1}>
+            <main >{children}</main>
+        </Box>
+      </>
+
     </div >
   )
 }
