@@ -1,7 +1,9 @@
 {
     "title": "Le temps d'un fût",
-    "logout": "déconnection",
+    "logout": "Déconnexion",
+    "login": "connection",
     "product": "Produits",
     "rental": "Location",
-    "about_us": "Notre histoire"
+    "about_us": "Notre histoire",
+    "rent": "Reserver"
 }
