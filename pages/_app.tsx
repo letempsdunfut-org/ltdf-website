@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme, StyleFunctionProps } from '@chakra-ui/react'
 
 import { Montserrat } from '@next/font/google'
 import { GoogleAnalytics } from "nextjs-google-analytics";
@@ -17,7 +17,15 @@ const appCore = ({ Component, pageProps }: AppProps) => (
       fonts: {
         heading: montserrat.style.fontFamily,
         body: montserrat.style.fontFamily,
-      }
+      },
+      styles: {
+        global: (props: StyleFunctionProps) => ({
+          body: {
+            fontFamily: 'body',
+            color: '#292929',
+          },
+        })
+      },
     })}>
       {process.env.NODE_ENV !== "development" &&
         <GoogleAnalytics strategy="lazyOnload" gaMeasurementId='G-HSVTTS26JN' />

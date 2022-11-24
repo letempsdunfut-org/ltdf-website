@@ -1,4 +1,5 @@
 {
     "title": "Le temps d'un fût - Déconnexion",
-    "logout": "Déconnexion"
+    "logout": "Déconnexion",
+    "confirmation": "Vous etez sur de vouloir vous deconnectez ?"
 }

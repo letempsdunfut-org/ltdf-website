@@ -1,0 +1,16 @@
+{
+    "pageTitle": "Le temps d'un fût - Booking",
+    "infoTitle": "Info",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui mi. Vestibulum ut consectetur nisl. Nullam auctor risus eu convallis malesuada. Sed a iaculis metus. Sed iaculis malesuada suscipit. Morbi at quam quis dui elementum suscipit quis vel diam. Pellentesque quam odio, bibendum id lacinia ut, sagittis sed tellus. Etiam at nisl at mi egestas rutrum vel ac tortor. Nulla tellus mi, placerat vel aliquet malesuada, finibus a dui. Nullam accumsan nisi justo, at tempor nisi condimentum id. Vivamus ut tellus eget ex blandit blandit. Nullam ex elit, dictum in felis quis, tincidunt fermentum ipsum. Fusce porttitor auctor tempus. Sed at nunc non nisl euismod gravida at sed elit. Vivamus faucibus porta ligula, eget venenatis velit convallis vel. In finibus, lorem ac vestibulum eleifend, nibh libero interdum augue, eu sollicitudin justo nulla id lorem.",
+    "bookingTitle": "Form",
+    "firstname": "first-name",
+    "lastname": "last-name",
+    "email": "E-mail adresse",
+    "emailInfo": "We'll never share your email.",
+    "startDate": "Start date",
+    "datePlaceholder": "Select a date and an houre",
+    "endDate": "End date",
+    "qty": "Quantity of draft",
+    "options": "Options",
+    "submit": "Submit the reservation"
+}

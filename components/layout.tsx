@@ -1,40 +1,41 @@
 import Head from 'next/head'
-import { IconButton, Image, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import { IconButton, Text, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList, keyframes } from '@chakra-ui/react'
 import { ReactNode } from 'react';
 import { CloseIcon, HamburgerIcon, AddIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'next-i18next'
 import { useSession } from "next-auth/react"
 import { Link } from '@chakra-ui/react'
-
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link px={2} py={1} rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}>
-    {children}
-  </Link>
-);
+import Image from 'next/image'
+import LinkComponent from './LinkComponent ';
+import LanguageSwitchLink from './LanguageSwitchLink ';
+import i18nextConfig from '../next-i18next.config'
+import { useRouter } from 'next/router';
 
 
 export default function Layout({
   children }: {
     children: React.ReactNode
   }) {
+  const router = useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { t } = useTranslation('common')
-  const Links = [t('product'), t('rental'), t('about_us')];
+  const Links = [
+    { name: t('rental'), path: '/rental' },
+    { name: t('product'), path: '/product' },
+    { name: t('about_us'), path: '/history' }
+  ];
   const { data: session } = useSession()
   const profileImg = session && session.user ? session?.user.image! : "/images/notLoggedUser.svg"
-  const loginLogout = session && session.user ? <Link href='/api/auth/signout'>{t('logout')}</Link> : <Link href='/api/auth/signin'>{t('login')}</Link>
+  const loginLogout = session && session.user ? <LinkComponent href='/auth/logout' _hover={{ textDecoration: 'none' }}><MenuItem>{t('logout')}</MenuItem></LinkComponent> : <LinkComponent href='/auth/login' _hover={{ textDecoration: 'none' }}><MenuItem>{t('login')}</MenuItem></LinkComponent>
+  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
+
   return (
     <div>
       <Head>
-        <link rel="icon" href="/faviconltdf.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Location de tireuse à bière et/ou kombucha pour entreprises et particuliers sur l’île de Montréal."
+          content={t('description')}
         />
         <meta
           property="og:image"
@@ -54,40 +55,83 @@ export default function Layout({
             />
             <HStack spacing={8} alignItems={'center'}>
               <Box>
-                <Avatar
-                  size={'sm'}
-                  src={'/images/logoLtdf.svg'}
-                />
+                <LinkComponent href='/'>
+                  <Avatar
+                    size={'sm'}
+                    src={'/images/logoLtdf.svg'}
+                    name={t('logoSite')}
+                  />
+                </LinkComponent>
               </Box>
               <HStack
                 as={'nav'}
                 spacing={4}
                 display={{ base: 'none', md: 'flex' }}>
                 {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
-                ))}
+                  <LinkComponent px={2} py={1} rounded={'md'}
+                    _hover={{
+                      textDecoration: 'none',
+                      bg: 'gray.200',
+                    }}
+                    href={link.path}
+                    key={link.name} >
+                    {link.name}
+                  </LinkComponent>))}
                 <HStack spacing={8}>
-                  <IconButton aria-label='go to Facebook' backgroundColor='gray.100'
-                    icon={<Image borderRadius='full' src="/images/Facebook_f_logo_(2021).svg" alt='Facebook logo' />}
+                  <IconButton aria-label={t('facebookLogoLabel')} backgroundColor='gray.100'
+                    icon={<Image fill={true} sizes={'40px'} src="/images/Facebook_f_logo_(2021).svg" alt={t('facebookLogoAlt')} />}
                     onClick={() => { window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/') }} />
 
 
-                  <IconButton aria-label='go to Instagram' backgroundColor='gray.100'
-                    icon={<Image boxSize="40px" src="/images/Instagram_logo_2016.svg" alt='Instagram logo' />}
+                  <IconButton aria-label={t('instagramLogoLabel')} backgroundColor='gray.100'
+                    icon={<Image fill={true} sizes={'40px'} src="/images/Instagram_logo_2016.svg" alt={t('instagramLogoAlt')} />}
                     onClick={() => { window.open('https://www.instagram.com/ltdf_qc/') }} />
                 </HStack>
               </HStack>
             </HStack>
             <Flex alignItems={'center'}>
-              <Button
-                variant={'solid'}
-                backgroundColor={'#095d78'}
-                color={'white'}
-                size={'sm'}
-                mr={4}
-                leftIcon={<AddIcon />}>
-                {t('rent')}
-              </Button>
+              <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}>
+                <Button
+                  variant={'solid'}
+                  backgroundColor={'#095d78'}
+                  color={'white'}
+                  size={'sm'}
+                  mr={4}
+                  leftIcon={<AddIcon />}>
+                  {t('booking')}
+                </Button>
+              </LinkComponent>
+
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={'full'}
+                  variant={'link'}
+                  cursor={'pointer'}
+                  minW={0} mr={4}>
+                  <Text>{t('changeLang')}</Text>
+                </MenuButton>
+                <MenuList>
+                  {i18nextConfig.i18n.locales.map((locale) => {
+                    if (locale === currentLocale) return null
+                    return (
+
+
+                      <LanguageSwitchLink
+                        locale={locale}
+                        key={locale}
+                      >
+                        <MenuItem key={locale}  >
+                          {locale}
+                        </MenuItem>
+                      </LanguageSwitchLink>
+
+                    )
+                  })}
+
+                </MenuList>
+              </Menu>
+
               <Menu>
                 <MenuButton
                   as={Button}
@@ -100,12 +144,11 @@ export default function Layout({
                     src={
                       profileImg
                     }
+                    name={t('logoProfile')}
                   />
                 </MenuButton>
                 <MenuList>
-                  <MenuItem>
-                    {loginLogout}
-                  </MenuItem>
+                  {loginLogout}
                 </MenuList>
               </Menu>
             </Flex>
@@ -115,8 +158,15 @@ export default function Layout({
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as={'nav'} spacing={4}>
                 {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
-                ))}
+                  <Link px={2} py={1} rounded={'md'}
+                    _hover={{
+                      textDecoration: 'none',
+                      bg: 'gray.200',
+                    }}
+                    href={link.path}
+                    key={link.name} >
+                    {link.name}
+                  </Link>))}
               </Stack>
             </Box>
           ) : null}
@@ -124,6 +174,9 @@ export default function Layout({
 
         <Box p={1}>
           <main >{children}</main>
+          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'white'} color={'#095d78'}>
+
+          </Container>
         </Box>
       </>
 

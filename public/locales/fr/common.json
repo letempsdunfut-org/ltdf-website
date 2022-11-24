@@ -1,9 +1,17 @@
 {
     "title": "Le temps d'un fût",
+    "description": "Location de tireuse à bière et/ou kombucha pour entreprises et particuliers sur l’île de Montréal.",
+    "logoSite": "'Le Temps d'un fût logo",
+    "logoProfile": "Logo de profile",
+    "facebookLogoLabel": "ce rendre sur Facebook",
+    "facebookLogoAlt": "Logo de Facebook",
+    "instagramLogoLabel": "ce rendre sur instagram",
+    "instagramLogoAlt": "Logo d'instagram",
     "logout": "Déconnexion",
     "login": "connection",
-    "product": "Produits",
-    "rental": "Location",
+    "product": "Nos Produits",
+    "rental": "La Location",
     "about_us": "Notre histoire",
-    "rent": "Reserver"
+    "booking": "Réservation",
+    "changeLang": "Language"
 }
