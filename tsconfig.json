@@ -16,5 +16,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/redirect.js", "lib/redirect.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/redirect.ts", "lib/redirect.ts"]
 }

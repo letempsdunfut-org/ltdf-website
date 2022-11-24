@@ -2,8 +2,8 @@
     "title": "Le temps d'un fût",
     "logout": "logout",
     "login": "login",
-    "product": "Product",
-    "rental": "Rental",
+    "product": "Our Product",
+    "rental": "The Rental",
     "about_us": "About us",
-    "rent": "Book"
+    "booking": "Booking"
 }

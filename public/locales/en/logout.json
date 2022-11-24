@@ -1,4 +1,5 @@
 {
     "title": "Le temps d'un fût - logout",
-    "logout": "logout"
+    "logout": "logout",
+    "confirmation": "Are you sur you want to logout ?"
 }

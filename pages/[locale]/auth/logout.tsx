@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { Box, Center, Heading, Image, Container, Stack, Button } from '@chakra-ui/react'
+import { Box, Center, Heading, Image, Container, Stack, Button, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 import { getCsrfToken } from "next-auth/react"
-import i18nextConfig from '../../next-i18next.config'
+import i18nextConfig from '../../../next-i18next.config'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
@@ -38,6 +38,12 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
                             textAlign='center' >
                             {t('common:title')}
                         </Heading>
+
+                    </Box>
+                    <Box p='4'>
+                        <Center>
+                            <Text> {t('logout:confirmation')}</Text>
+                        </Center>
                     </Box>
                     <Box p='4'>
                         <Center>
@@ -58,11 +64,11 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
 export const getServerSideProps = async (ctx: any) => {
     const locale = ctx?.params?.locale
     const i18n = await serverSideTranslations(locale, ['common', 'logout'], i18nextConfig);
-    const csrfToken  = await getCsrfToken(ctx);
+    const csrfToken = await getCsrfToken(ctx);
     return ({
         props: {
             ...i18n,
-            csrfToken 
+            csrfToken
         },
     })
 };

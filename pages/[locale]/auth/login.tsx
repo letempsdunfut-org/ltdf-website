@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Box, Center, Heading, Image, Container, Stack, Button, Avatar, Flex, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 import { getCsrfToken } from "next-auth/react"
-import i18nextConfig from '../../next-i18next.config'
+import i18nextConfig from '../../../next-i18next.config'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
