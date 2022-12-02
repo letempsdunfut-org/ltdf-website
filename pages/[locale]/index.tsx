@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
-import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, VStack, AspectRatio } from '@chakra-ui/react'
-import { EmailIcon } from '@chakra-ui/icons'
+import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Container, Stack, Button, ListIcon, ButtonGroup, Wrap, WrapItem, VStack, AspectRatio, ListItem, List } from '@chakra-ui/react'
+import { AddIcon, CheckIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
 import { Trans, useTranslation } from 'next-i18next'
 import LinkComponent from '../../components/LinkComponent '
@@ -32,7 +32,7 @@ export default function Home() {
               <Heading as='h1' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
                 {name}
               </Heading>
-              <Center>
+              <Center mt={'5'}>
                 <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'50%'} maxHeight='max'>
                   <Wrap spacing={4}>
                     {Links.map((link) => (
@@ -82,9 +82,32 @@ export default function Home() {
                   <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
                     {t('common:rental')}
                   </Heading>
-                  <Center>
-                    <Text>{t('locationInfo')}</Text>
-                  </Center>
+                  <VStack w='100%' h='100%'>
+                    <Heading as='h3' fontWeight={600} fontSize={{ base: '2xl', sm: '1xl', md: '2xl' }} lineHeight={'110%'} >
+                      {t('rentalSubTitle')}
+                    </Heading>
+
+                    <List spacing={3} w='100%' h='100%'>
+                      <ListItem>
+                        <ListIcon as={AddIcon} color='#FF893B' />
+                        <Trans i18nKey='rentalDraft' t={t}
+                          components={{ cite: <Text as={'cite'}/>, bold: <strong /> }}>
+                        </Trans>
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={AddIcon} color='#FF893B' />
+                        <Trans i18nKey='rentalGlass' t={t}
+                          components={{ cite: <Text as={'cite'}/>, bold: <strong /> }}>
+                        </Trans>
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={AddIcon} color='#FF893B' />
+                        <Trans i18nKey='rentalLicence' t={t}
+                          components={{ cite: <Text as={'cite'}/>, bold: <strong /> }}>
+                        </Trans>
+                      </ListItem>
+                    </List>
+                  </VStack>
                   <Center>
                     <LinkComponent href='/rental' _hover={{ textDecoration: 'none' }}><Button backgroundColor={'white'} color='#095d78' >{t('moreinfo')}</Button></LinkComponent>
                   </Center>
@@ -95,18 +118,27 @@ export default function Home() {
         </Container>
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} >
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
-            <Box w='50%' h='100%'>
-              <Center>
+            <Box w='50%' h='100%' ml={20}>
+              <Center >
                 <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
                   <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
                     {t('common:product')}
                   </Heading>
                   <Center>
-                    <VStack>
-                      <Text>
-                        {t('productsInfo')}
-                      </Text>
-                    </VStack>
+                    <List spacing={3} w='100%' h='100%'>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color='#FF893B' />
+                        <Trans i18nKey='productDraft' t={t}
+                          components={{ text: <Text />, bold: <strong /> }}>
+                        </Trans>
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={CheckIcon} color='#FF893B' />
+                        <Trans i18nKey='productGlass' t={t}
+                          components={{ text: <Text />, bold: <strong /> }}>
+                        </Trans>
+                      </ListItem>
+                    </List>
                   </Center>
                   <Center>
                     <LinkComponent href='/product' _hover={{ textDecoration: 'none' }}><Button backgroundColor={'#095d78'} color='white'  >{t('moreinfo')}</Button></LinkComponent>
@@ -116,22 +148,22 @@ export default function Home() {
             </Box>
             <Box w='50%' h='100%'>
               <Center>
-                <Stack direction={['column', 'row']} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
-                  <AspectRatio ratio={1 / 1} boxSize='25vh'>
+                <Stack direction={['column', 'row']} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} w='100%' h='100%'>
+                  <AspectRatio ratio={1 / 1} boxSize='50vh'>
                     <Image
                       src="/images/tireurse.png"
                       alt={name}
                       fill={true}
-                      sizes={'25vh'}
+                      sizes={'50vh'}
                       loading="lazy"
                     />
                   </AspectRatio>
-                  <AspectRatio ratio={1 / 1} boxSize='20vh'>
+                  <AspectRatio ratio={1 / 1} boxSize='50vh'>
                     <Image
-                      src="/images/ecoCup.png"
+                      src="/images/ecoCupDef.png"
                       alt={name}
                       fill={true}
-                      sizes={'20vh'}
+                      sizes={'50h'}
                       loading="lazy"
                     />
                   </AspectRatio>

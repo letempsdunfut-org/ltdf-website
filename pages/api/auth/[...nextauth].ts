@@ -3,7 +3,7 @@ import FacebookProvider from "next-auth/providers/facebook"
 import GoogleProvider from "next-auth/providers/google"
 import InstagramProvider from "next-auth/providers/instagram"
 //import EmailProvider from "next-auth/providers/email"
-//import AppleProvider from "next-auth/providers/apple"
+import AppleProvider from "next-auth/providers/apple"
 //import Auth0Provider from "next-auth/providers/auth0"
 //import TwitterProvider from "next-auth/providers/twitter"
 //import GithubProvider from "next-auth/providers/github"
@@ -20,6 +20,10 @@ export default NextAuth({
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_SECRET,
+        }),
+        AppleProvider({
+            clientId: process.env.APPLE_ID,
+            clientSecret: process.env.APPLE_SECRET,
         }),
         /*
         InstagramProvider({
