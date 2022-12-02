@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import { Box, Center, Heading, Image, Container, Stack, Button, Avatar, Flex, Text } from '@chakra-ui/react'
+import { Box, Center, Heading, Container, Stack, Button, Avatar, Flex, Text, AspectRatio } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 import { getCsrfToken } from "next-auth/react"
 import i18nextConfig from '../../../next-i18next.config'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Image from 'next/image'
 
 
 
@@ -21,12 +22,16 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
                 <Stack as={Box} box={'center'} spacing={{ base: 1, md: 2 }} py={{ base: 5, md: 10 }} >
                     <Box p='4' >
                         <Center>
-                            <Image
-                                //priority
-                                src="/images/logoLtdf.svg"
-                                boxSize='30vh'
-                                alt={name}
-                            />
+                            <AspectRatio ratio={1 / 1} boxSize='30vh'>
+                                <Image
+                                    //priority
+                                    src="/images/logoLtdf.svg"
+                                    fill={true}
+                                    sizes='30vh'
+                                    alt={name}
+                                />
+                            </AspectRatio>
+
                         </Center>
 
                     </Box>
@@ -87,9 +92,11 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
                                             w={'full'}
                                             maxW={'md'}
                                             variant={'outline'}
-                                            leftIcon={<Avatar
-                                                size={'sm'}
+                                            leftIcon={<Image
+                                                width={'20'}
+                                                height={'20'}
                                                 src={'/images/Apple_logo_black.svg'}
+                                                alt='apple logo'
                                             />}>
                                             <Center>
                                                 <Text>{t('login:apple')}</Text>
