@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Layout from '../../../components/layout'
-import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Image, Container, Stack, Button, ButtonGroup, Wrap, WrapItem } from '@chakra-ui/react'
-import { EmailIcon } from '@chakra-ui/icons'
+import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Image, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, VStack, List, ListIcon, ListItem } from '@chakra-ui/react'
+import { AddIcon, EmailIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
+import LinkComponent from '../../../components/LinkComponent '
 
 const getStaticProps = makeStaticProps(['rental', 'common']);
 export { getStaticPaths, getStaticProps };
@@ -28,118 +29,97 @@ export default function Rental() {
             </Box>
           </Stack>
         </Container>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'blue.100'}>
+        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
-            <Box w='49%' h='100%'>
-              <Center>
-                <Stack direction={['column', 'row']} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
-                  <Image
-                    //pr iority
-                    src="/images/tireurse.png"
-                    boxSize='25vh'
-                    alt={name}
-                  />
-                  <Image
-                    //priority
-                    src="/images/ecoCup.png"
-                    boxSize='20vh'
-                    alt={name}
-                  />
-                </Stack>
-              </Center>
-            </Box>
-            <Box w='49%' h='100%'>
-              <Center>
+            <Center>
+              <Box w='60%' h='100%'>
                 <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
                   <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                    {t('common:product')}
+                    {t('retntalDraftTitle')}
                   </Heading>
                   <Center>
-                    <Text>
-                      {t('productsInfo')}
-                    </Text>
+                    <VStack>
+                      <Trans i18nKey='retntalDraftText' t={t}
+                        components={{ text: <Text />, bold: <strong /> }}>
+                      </Trans>
+                      <Box paddingLeft={30} >
+                        <List spacing={3} w='100%' h='100%' >
+                          <Trans i18nKey='rentalDraftList' t={t}
+                            components={{ text: <Text />, bold: <strong />, listItem: <ListItem />, listIcon: <ListIcon as={AddIcon} color='#FF893B' /> }}>
+                          </Trans>
+                        </List>
+                      </Box>
+                      <Text>
+                        <Trans i18nKey='rentalDraftConclusion' t={t}
+                          components={{ bold: <strong /> }}>
+                        </Trans>
+                      </Text>
+                    </VStack>
                   </Center>
                   <Center>
-                    <Button backgroundColor={'#095d78'} color='white' >{t('moreinfo')}</Button>
+                    <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}><Button backgroundColor={'white'} color='#095d78'>{t('book')}</Button> </LinkComponent>
                   </Center>
                 </Stack>
-              </Center>
-            </Box>
+              </Box>
+            </Center>
           </Stack>
         </Container>
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
-            <Box w='49%' h='100%'>
-              <Center>
-                <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
-                  <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                    {t('common:rental')}
-                  </Heading>
-                  <Center>
-                    <Text>{t('locationInfo')}</Text>
-                  </Center>
-                  <Center>
-                    <Button backgroundColor={'#095d78'} color='white' >{t('moreinfo')}</Button>
-                  </Center>
-                </Stack>
-              </Center>
-            </Box>
-            <Box w='49%' h='100%'>
-              <Center>
-                <Image
-                  //priority
-                  src="/images/logoLtdf.svg"
-                  boxSize='50vh'
-                  alt={name}
-                />
-              </Center>
-            </Box>
+            <Center>
+
+              <Box w='60%' h='100%'>
+                <Center>
+                  <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
+                    <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
+                      {t('rentalGlassTitle')}
+                    </Heading>
+                    <Center>
+                      <VStack>
+                        <Text>
+                          {t('rentalGlassText')}
+                        </Text>
+                        <Text>
+                          TODO : RAJOUTER LES ENJEUX ECOLOGIQUE
+                        </Text>
+                      </VStack>
+                    </Center>
+                    <Center>
+                      <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}> <Button backgroundColor={'#095d78'} color='white' >{t('book')}</Button></LinkComponent>
+                    </Center>
+                  </Stack>
+                </Center>
+
+              </Box>
+            </Center>
+
           </Stack>
         </Container>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'blue.100'}>
+        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
-            <Box w='49%' h='100%'>
-              <Center>
-                <Stack direction={['column', 'row']} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
-                  <Image
-                    //priority
-                    src="/images/coco.png"
-                    boxSize='25vh'
-                    alt={name}
-                  />
-                  <Image
-                    //priority
-                    src="/images/coco.png"
-                    boxSize='25vh'
-                    alt={name}
-                  />
-                  <Image
-                    //priority
-                    src="/images/coco.png"
-                    boxSize='25vh'
-                    alt={name}
-                  />
-                </Stack>
-              </Center>
+            <Center w='100%' h='100%'>
+              <Box w='60%' h='100%'>
 
-            </Box>
-            <Box w='49%' h='100%'>
-              <Center>
-                <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
+                <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} w='100%' h='100%'>
                   <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                    {t('common:about_us')}
+                    {t('rentalEventTitle')}
+
                   </Heading>
-                  <Center>
-                    <Text>
-                      {t('productsInfo')}
-                    </Text>
+                  <Center w='100%' h='100%'>
+                    <VStack w='100%' h='100%'>
+                      <Trans i18nKey='rentalEventText' t={t}
+                        components={{ text: <Text />, bold: <strong /> }}>
+                      </Trans>
+                    </VStack>
+
                   </Center>
                   <Center>
-                    <Button backgroundColor={'#095d78'} color='white' >{t('moreinfo')}</Button>
+                    <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}> <Button backgroundColor={'white'} color='#095d78'>{t('book')}</Button> </LinkComponent>
                   </Center>
                 </Stack>
-              </Center>
-            </Box>
+              </Box>
+            </Center>
+
           </Stack>
         </Container>
       </Layout>
