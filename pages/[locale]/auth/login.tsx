@@ -80,6 +80,24 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
                                         </Button>
                                     </Center>
                                 </form>
+                                <form action='/api/auth/signin/apple' method='POST' >
+                                    <Center p={2}>
+                                        <Button
+                                            type='submit'
+                                            w={'full'}
+                                            maxW={'md'}
+                                            variant={'outline'}
+                                            leftIcon={<Avatar
+                                                size={'sm'}
+                                                src={'/images/Apple_logo_black.svg'}
+                                            />}>
+                                            <Center>
+                                                <Text>{t('login:apple')}</Text>
+                                            </Center>
+                                        </Button>
+                                    </Center>
+                                    <input type='hidden' name='csrfToken' value={csrfToken} />
+                                </form>
                             </Stack >
                         </Center>
                     </Box>

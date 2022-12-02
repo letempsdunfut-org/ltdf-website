@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { IconButton, Text, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList, keyframes } from '@chakra-ui/react'
+import { IconButton, Text, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList, keyframes, Center, VStack, Spacer, Heading } from '@chakra-ui/react'
 import { ReactNode } from 'react';
 import { CloseIcon, HamburgerIcon, AddIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'next-i18next'
@@ -77,16 +77,6 @@ export default function Layout({
                     key={link.name} >
                     {link.name}
                   </LinkComponent>))}
-                <HStack spacing={8}>
-                  <IconButton aria-label={t('facebookLogoLabel')} backgroundColor='gray.100'
-                    icon={<Image fill={true} sizes={'40px'} src="/images/Facebook_f_logo_(2021).svg" alt={t('facebookLogoAlt')} />}
-                    onClick={() => { window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/') }} />
-
-
-                  <IconButton aria-label={t('instagramLogoLabel')} backgroundColor='gray.100'
-                    icon={<Image fill={true} sizes={'40px'} src="/images/Instagram_logo_2016.svg" alt={t('instagramLogoAlt')} />}
-                    onClick={() => { window.open('https://www.instagram.com/ltdf_qc/') }} />
-                </HStack>
               </HStack>
             </HStack>
             <Flex alignItems={'center'}>
@@ -174,7 +164,49 @@ export default function Layout({
 
         <Box p={1}>
           <main >{children}</main>
-          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'white'} color={'#095d78'}>
+          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'} backgroundColor={'white'} color={'#095d78'}>
+            <Flex h='calc(29vh)'>
+              <Box w='33%' h='100%'>
+                <Center h='100%'  >
+                  <VStack>
+                    <Heading as='h3' fontWeight={600} fontSize={{ base: '2xl', sm: '1xl', md: '2xl' }} lineHeight={'110%'} >
+                      {t('contactUs')}
+                    </Heading>
+                    <Text> <a href='mailto:contact@letempsdunfut.ca'> contact@letempsdunfut.ca</a>  </Text>
+                  </VStack>
+                </Center>
+
+              </Box>
+              <Spacer />
+              <Box w='33%' h='100%'>
+                <Center h='100%' alignItems={'flex-end'} >
+                  <Text> {t('copyright')}</Text>
+                </Center>
+              </Box>
+              <Spacer />
+              <Box w='33% ' h='100%'>
+                <Center h='100%'>
+                  <VStack>
+                    <Heading as='h3' fontWeight={600} fontSize={{ base: '2xl', sm: '1xl', md: '2xl' }} lineHeight={'110%'} >
+                      {t('folowUs')}
+                    </Heading>
+                    <HStack spacing={8}>
+                      <IconButton aria-label={t('facebookLogoLabel')} backgroundColor='white'
+                        icon={<Image fill={true} sizes={'40px'} src="/images/Facebook_f_logo_(2021).svg" alt={t('facebookLogoAlt')} />}
+                        onClick={() => { window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/') }} />
+
+
+                      <IconButton aria-label={t('instagramLogoLabel')} backgroundColor='white'
+                        icon={<Image fill={true} sizes={'40px'} src="/images/Instagram_logo_2016.svg" alt={t('instagramLogoAlt')} />}
+                        onClick={() => { window.open('https://www.instagram.com/ltdf_qc/') }} />
+                    </HStack>
+                  </VStack>
+                </Center>
+              </Box>
+            </Flex>
+
+
+
 
           </Container>
         </Box>

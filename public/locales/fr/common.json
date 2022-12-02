@@ -9,9 +9,12 @@
     "instagramLogoAlt": "Logo d'instagram",
     "logout": "Déconnexion",
     "login": "connection",
-    "product": "Nos Produits",
+    "product": "Notre Materiel",
     "rental": "La Location",
     "about_us": "Notre histoire",
     "booking": "Réservation",
-    "changeLang": "Language"
+    "changeLang": "Language",
+    "copyright": "copyright©2022 Le temps d'un fût",
+    "contactUs": "Nous contacter :",
+    "folowUs": "Suivez Nous :"
 }
