@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '../../../components/layout'
-import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Image, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, VStack, List, ListIcon, ListItem } from '@chakra-ui/react'
-import { AddIcon, EmailIcon } from '@chakra-ui/icons'
+import { Box, Center, Heading, Text, Container, Stack, Button, VStack, List, ListIcon, ListItem } from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 import { Trans, useTranslation } from 'next-i18next'
 import LinkComponent from '../../../components/LinkComponent '
@@ -22,9 +22,19 @@ export default function Rental() {
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
             <Box w='100%' h='100%'>
-              <Heading as='h1' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                {t("common:rental")}
-              </Heading>
+              <Center>
+                <VStack>
+                  <Heading as='h1' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
+                    {t("common:rental")}
+                  </Heading>
+                  <Text w='50%' textAlign={"justify"}>
+                    La livraison est disponible exclusivement sur l’Île de Montréal. Toutefois, n’hésitez pas à nous contacter afin de voir si une dérogation est faisable en fonction de votre commande.
+                  </Text>
+                  <Text w='50%' textAlign={"justify"} as={'cite'}>
+                    <strong>La livraison de votre tireuse à bière et kombucha est offerte pour toutes locations de 48h.</strong>
+                  </Text>
+                </VStack>
+              </Center>
 
             </Box>
           </Stack>
@@ -38,7 +48,7 @@ export default function Rental() {
                     {t('retntalDraftTitle')}
                   </Heading>
                   <Center>
-                    <VStack>
+                    <VStack textAlign={'justify'}>
                       <Trans i18nKey='retntalDraftText' t={t}
                         components={{ text: <Text />, bold: <strong /> }}>
                       </Trans>
@@ -67,8 +77,7 @@ export default function Rental() {
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
             <Center>
-
-              <Box w='60%' h='100%'>
+              <Box w='60%' h='100%' textAlign={'justify'}>
                 <Center>
                   <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
                     <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
@@ -89,21 +98,17 @@ export default function Rental() {
                     </Center>
                   </Stack>
                 </Center>
-
               </Box>
             </Center>
-
           </Stack>
         </Container>
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
             <Center w='100%' h='100%'>
               <Box w='60%' h='100%'>
-
                 <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} w='100%' h='100%'>
                   <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
                     {t('rentalEventTitle')}
-
                   </Heading>
                   <Center w='100%' h='100%'>
                     <VStack w='100%' h='100%'>
@@ -111,7 +116,6 @@ export default function Rental() {
                         components={{ text: <Text />, bold: <strong /> }}>
                       </Trans>
                     </VStack>
-
                   </Center>
                   <Center>
                     <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}> <Button backgroundColor={'white'} color='#095d78'>{t('book')}</Button> </LinkComponent>

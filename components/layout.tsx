@@ -161,10 +161,9 @@ export default function Layout({
             </Box>
           ) : null}
         </Box>
-
         <Box p={1}>
           <main >{children}</main>
-          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'} backgroundColor={'white'} color={'#095d78'}>
+          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'} backgroundColor={'white'} color={'#095d78'} borderTop={2} borderColor={'solid black'}>
             <Flex h='calc(29vh)'>
               <Box w='33%' h='100%'>
                 <Center h='100%'  >
@@ -175,7 +174,6 @@ export default function Layout({
                     <Text> <a href='mailto:contact@letempsdunfut.ca'> contact@letempsdunfut.ca</a>  </Text>
                   </VStack>
                 </Center>
-
               </Box>
               <Spacer />
               <Box w='33%' h='100%'>
