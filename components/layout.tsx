@@ -97,7 +97,6 @@ export default function Layout({
                 <MenuButton
                   as={Button}
                   rounded={'full'}
-                  variant={'link'}
                   cursor={'pointer'}
                   minW={0} mr={4}>
                   <Text>{t('changeLang')}</Text>
