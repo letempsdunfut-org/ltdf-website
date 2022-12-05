@@ -1,12 +1,17 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
-import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Container, Stack, Button, ListIcon, ButtonGroup, Wrap, WrapItem, VStack, AspectRatio, ListItem, List } from '@chakra-ui/react'
+import { Box, Center, Heading, HStack, Text, Container, Stack, Button, ListIcon, Wrap, WrapItem, VStack, AspectRatio, ListItem, List } from '@chakra-ui/react'
 import { AddIcon, CheckIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
 import { Trans, useTranslation } from 'next-i18next'
 import LinkComponent from '../../components/LinkComponent '
 import Image from 'next/image'
-import { truncate } from 'fs'
+import logoLtdf from '../../public/images/logoLtdf.svg'
+import imgLocation from '../../public/images/imgLocation.png'
+import tireurse from '../../public/images/tireurse.png'
+import ecoCupDef from '../../public/images/ecoCupDef.png'
+import coco from '../../public/images/coco.png'
+
 
 const getStaticProps = makeStaticProps(['home', 'common']);
 export { getStaticPaths, getStaticProps };
@@ -45,17 +50,15 @@ export default function Home() {
               </Center>
             </Box>
             <Box w='49%' h='100%'>
-              <Center>
-                <AspectRatio ratio={1 / 1} boxSize='50vh'>
+              <Center >
+                <Box boxSize={'50vh'}>
                   <Image
-                    //priority
-                    src="/images/logoLtdf.svg"
+                    src={logoLtdf}
                     alt={name}
-                    fill={true}
-                    sizes={'50vh'}
                     loading="lazy"
                   />
-                </AspectRatio>
+                </Box>
+
               </Center>
             </Box>
           </Stack>
@@ -64,16 +67,14 @@ export default function Home() {
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
             <Box w='50%' h='100%'>
               <Center>
-                <AspectRatio ratio={1 / 1} boxSize='50vh'>
+                <Box boxSize={'60vh'}>
                   <Image
-                    //priority
-                    src="/images/imgLocation.png"
+                    src={imgLocation}
                     alt={name}
-                    fill={true}
-                    sizes={'50vh'}
                     loading="lazy"
+                    sizes='(max-width: 50vh)'
                   />
-                </AspectRatio>
+                </Box>
               </Center>
             </Box>
             <Box w='50%' h='100%'>
@@ -91,19 +92,19 @@ export default function Home() {
                       <ListItem>
                         <ListIcon as={AddIcon} color='#FF893B' />
                         <Trans i18nKey='rentalDraft' t={t}
-                          components={{ cite: <Text as={'cite'}/>, bold: <strong /> }}>
+                          components={{ cite: <Text as={'cite'} />, bold: <strong /> }}>
                         </Trans>
                       </ListItem>
                       <ListItem>
                         <ListIcon as={AddIcon} color='#FF893B' />
                         <Trans i18nKey='rentalGlass' t={t}
-                          components={{ cite: <Text as={'cite'}/>, bold: <strong /> }}>
+                          components={{ cite: <Text as={'cite'} />, bold: <strong /> }}>
                         </Trans>
                       </ListItem>
                       <ListItem>
                         <ListIcon as={AddIcon} color='#FF893B' />
                         <Trans i18nKey='rentalLicence' t={t}
-                          components={{ cite: <Text as={'cite'}/>, bold: <strong /> }}>
+                          components={{ cite: <Text as={'cite'} />, bold: <strong /> }}>
                         </Trans>
                       </ListItem>
                     </List>
@@ -149,24 +150,20 @@ export default function Home() {
             <Box w='50%' h='100%'>
               <Center>
                 <Stack direction={['column', 'row']} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} w='100%' h='100%'>
-                  <AspectRatio ratio={1 / 1} boxSize='50vh'>
+                  <Box boxSize={'50vh'}>
                     <Image
-                      src="/images/tireurse.png"
+                      src={tireurse}
                       alt={name}
-                      fill={true}
-                      sizes={'50vh'}
                       loading="lazy"
                     />
-                  </AspectRatio>
-                  <AspectRatio ratio={1 / 1} boxSize='50vh'>
+                  </Box>
+                  <Box boxSize={'50vh'}>
                     <Image
-                      src="/images/ecoCupDef.png"
+                      src={ecoCupDef}
                       alt={name}
-                      fill={true}
-                      sizes={'50h'}
                       loading="lazy"
                     />
-                  </AspectRatio>
+                  </Box>
                 </Stack>
               </Center>
             </Box>
@@ -178,35 +175,29 @@ export default function Home() {
               <Center>
                 <VStack spacing={{ base: 4, md: 8 }}>
                   <HStack spacing={{ base: 4, md: 8 }}>
-                    <AspectRatio ratio={1 / 1} boxSize='25vh'>
+                    <Box boxSize={'25vh'}>
                       <Image
-                        src="/images/coco.png"
+                        src={coco}
                         alt={name}
-                        fill={true}
-                        sizes={'25vh'}
                         loading="lazy"
                       />
-                    </AspectRatio>
-                    <AspectRatio ratio={1 / 1} boxSize='25vh'>
-                      <Image
-                        src="/images/coco.png"
-                        alt={name}
-                        fill={true}
-                        sizes={'25vh'}
-                        loading="lazy"
-                      />
-                    </AspectRatio>
-                  </HStack>
+                    </Box>
+                    <Box boxSize={'25vh'}>
 
-                  <AspectRatio ratio={1 / 1} boxSize='25vh' maxH={'25vh'}>
+                      <Image
+                        src={coco}
+                        alt={name}
+                        loading="lazy"
+                      />
+                    </Box>
+                  </HStack>
+                  <Box boxSize={'25vh'}>
                     <Image
-                      src="/images/coco.png"
+                      src={coco}
                       alt={name}
-                      fill={true}
-                      sizes={'25vh'}
                       loading="lazy"
                     />
-                  </AspectRatio>
+                  </Box>
                 </VStack>
               </Center>
 

@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import { IconButton, Text, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList, keyframes, Center, VStack, Spacer, Heading } from '@chakra-ui/react'
-import { ReactNode } from 'react';
+import { IconButton, Text, Container, Box, Stack, HStack, Flex, useColorModeValue, useDisclosure, Avatar, Button, Menu, MenuButton, MenuItem, MenuList, Center, VStack, Spacer, Heading } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon, AddIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'next-i18next'
 import { useSession } from "next-auth/react"
@@ -10,6 +9,8 @@ import LinkComponent from './LinkComponent ';
 import LanguageSwitchLink from './LanguageSwitchLink ';
 import i18nextConfig from '../next-i18next.config'
 import { useRouter } from 'next/router';
+import facebookLogo from '../public/images/facebookLogo.svg'
+import instagramLogo from '../public/images/Instagram_logo_2016.svg'
 
 
 export default function Layout({
@@ -190,12 +191,12 @@ export default function Layout({
                     </Heading>
                     <HStack spacing={8}>
                       <IconButton aria-label={t('facebookLogoLabel')} backgroundColor='white'
-                        icon={<Image fill={true} sizes={'40px'} src="/images/Facebook_f_logo_(2021).svg" alt={t('facebookLogoAlt')} />}
+                        icon={<Image src={facebookLogo} height={40} width={40} alt={t('facebookLogoAlt')} />}
                         onClick={() => { window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/') }} />
 
 
                       <IconButton aria-label={t('instagramLogoLabel')} backgroundColor='white'
-                        icon={<Image fill={true} sizes={'40px'} src="/images/Instagram_logo_2016.svg" alt={t('instagramLogoAlt')} />}
+                        icon={<Image src={instagramLogo} height={40} width={40} alt={t('instagramLogoAlt')} />}
                         onClick={() => { window.open('https://www.instagram.com/ltdf_qc/') }} />
                     </HStack>
                   </VStack>
