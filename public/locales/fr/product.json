@@ -1,3 +1,22 @@
 {
-    "pageTitle": "Le temps d'un fût - Produits"
+    "pageTitle": "Le temps d'un fût - Materiel",
+    "book": "Réservez",
+    "draftTechnicalTilte": "Caractéristiques technique",
+    "draftTechnicalList": "<listItem> <listIcon/> Capacité de refroidissement continu de 13 gallons/h. </listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Deux lignes </listItem><listItem> <listIcon />  Possibilité de réfrigérer deux fûts de capacités différentes simultanément</listItem><listItem> <listIcon/>  Peu encombrante, elle tient dans le coffre d’une petite automobile. </listItem> <listItem> <listIcon/> Votre pression, garantie fraîche en moins de 10 minutes.</listItem>",
+    "draftMaintainTitle": "Entretien des tireuses",
+    "draftMaintainInfo": "L’hygiène étant notre priorité, toutes nos tireuses sont rigoureusement contrôlées, inspectées est désinfectées entre chaque location.",
+    "draftDelivryTitle": "Livraison",
+    "draftDelivryInfo": "La livraison est disponible exclusivement sur l’Île de Montréal. Toutefois, n’hésitez pas à nous contacter afin de voir si une dérogation est faisable en fonction de votre commande.",
+    "draftServiceTitle": "Mise en service",
+    "draftServiceInfo": "Chaque location de tireuse est accompagnée d’un briefing d’installation et d’utilisation dans le cas où vous ne vous feriez pas livrer votre tireuse.",
+    "draftPriceTitle": "Tarification",
+    "draftPricePanel": "<list> <listItem> <listIcon /> 24 h = a partire de 90$ + taxes </listItem> <listItem> <listIcon /> 48 h = a partire de 130$ + taxes </listItem></list><box ><text > * Livraison =  a patrire de 20$ + taxes</text><cr /><text> * Plus de 48H sur devis</text></box>",
+    "glassTechnicalTilte": "Caractéristiques technique",
+    "glassTechnicalList": "<listItem><listIcon /> Verre réutilisable 40 cl (12 oz)</listItem><listItem><listIcon />Sans BPA</listItem>",
+    "glassCoverTilte": "Personnalisation et achat",
+    "glassCoverInfo": "Nous proposons également la vente et la personnalisation de gobelets réutilisables pour vos évènements. Nous contacter pour toutes questions",
+    "glassHygenTilte": "Hygiène",
+    "glassHygenInfo": "Le lavage et contrôle des verres est effectué par nos soins et ne sera jamais à votre charge.La garantie de toujours avoir dans vos evenements des verre propre et réutilisables.",
+    "glassPriceTilte": "Tarification",
+    "glassPricePanel": "<list> <listItem><listIcon />Location verre a l'uniter = A partir de 1$ + taxes </listItem><listItem><listIcon />Location par pack de 300 = A partir 100 $ + taxes </listItem></list><box><text> * 1,5$ (+ taxes) / verre manquant</text><cr /> <text > * 5 jours maximum ( +80 $ la semaine supplémentaire de location)</text></box>"
 }
