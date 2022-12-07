@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Layout from '../../../components/layout'
-import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Container, Stack, Button, ButtonGroup, Wrap, WrapItem } from '@chakra-ui/react'
-import { EmailIcon } from '@chakra-ui/icons'
+import { Box, Center, Flex, Heading, HStack, IconButton, Link, Spacer, Text, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, List, ListItem, VStack, ListIcon } from '@chakra-ui/react'
+import { AddIcon, ArrowForwardIcon, EmailIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import draftPics from '../../../public/images/tireurse.png'
 import ecoCup from '../../../public/images/ecoCupDef.png'
+import LinkComponent from '../../../components/LinkComponent '
 
 const getStaticProps = makeStaticProps(['product', 'common']);
 export { getStaticPaths, getStaticProps };
@@ -32,8 +33,8 @@ export default function Product() {
         </Container>
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'} >
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
-            <Box w='49%' h='100%'>
-              <Center>
+            <Box w='50%' h='100%'>
+              <Center w='100%' h='100%'>
                 <Image
                   src={draftPics}
                   alt={name}
@@ -42,43 +43,198 @@ export default function Product() {
 
               </Center>
             </Box>
-            <Box w='49%' h='100%'>
-              <Center>
-                <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
-                  <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                    {t('common:product')}
-                  </Heading>
-                  <Center>
-                    <Text>
-                      {t('productsInfo')}
-                    </Text>
-                  </Center>
-                  <Center>
-                    <Button backgroundColor={'#095d78'} color='white' >{t('moreinfo')}</Button>
-                  </Center>
-                </Stack>
+            <Box w='50%' h='100%'>
+              <Center w={'100%'} h={'100%'}>
+                <VStack w={'100%'} h={'100%'}>
+                  <Box w='90%' h='100%'>
+                    <Accordion defaultIndex={[0]}>
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('draftTechnicalTilte')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+                        <AccordionPanel pb={4}>
+                          <List w={'100%'} h={'100%'} spacing={3}>
+                            <Trans i18nKey='draftTechnicalList' t={t}
+                              components={{ listItem: <ListItem />, listIcon: <ListIcon as={ArrowForwardIcon} color='#FF893B' /> }}>
+                            </Trans>
+                          </List>
+                        </AccordionPanel>
+                      </AccordionItem>
+
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('draftMaintainTitle')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+                        <AccordionPanel pb={4}>
+                          {t('draftMaintainInfo')}
+                        </AccordionPanel>
+                      </AccordionItem>
+
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('draftDelivryTitle')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+
+                        <AccordionPanel pb={4}>
+                          {t('draftDelivryInfo')}
+                        </AccordionPanel>
+                      </AccordionItem>
+
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('draftServiceTitle')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+
+                        <AccordionPanel pb={4}>
+                          {t('draftServiceInfo')}
+                        </AccordionPanel>
+                      </AccordionItem>
+
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('draftPriceTitle')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+                        <AccordionPanel pb={4}>
+                          <Trans i18nKey='draftPricePanel' t={t}
+                            components={{ cr: <br />, text: <Text as={'cite'} />, box: <Box fontSize={'xs'} />, list: <List w={'100%'} h={'100%'} spacing={3} mb={5} />, listItem: <ListItem />, listIcon: <ListIcon as={ArrowForwardIcon} color='#FF893B' /> }}>
+                          </Trans>
+                        </AccordionPanel>
+                      </AccordionItem>
+                    </Accordion>
+                  </Box>
+                  <Box w='100%' h='100%'>
+                    <Center>
+                      <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}> <Button backgroundColor={'white'} color='#095d78'>{t('book')}</Button> </LinkComponent>
+                    </Center>
+                  </Box>
+                </VStack>
               </Center>
             </Box>
           </Stack>
         </Container>
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
-            <Box w='49%' h='100%'>
-              <Center>
-                <Stack as={Box} box={'center'} spacing={{ base: 4, md: 8 }} py={{ base: 5, md: 10 }} >
-                  <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                    {t('common:rental')}
-                  </Heading>
-                  <Center>
-                    <Text>{t('locationInfo')}</Text>
-                  </Center>
-                  <Center>
-                    <Button backgroundColor={'#095d78'} color='white' >{t('moreinfo')}</Button>
-                  </Center>
-                </Stack>
+            <Box w='50%' h='100%'>
+              <Center w={'100%'} h={'100%'}>
+                <VStack w={'100%'} h={'100%'}>
+                  <Box w='90%' h='100%'>
+                    <Accordion defaultIndex={[0]}>
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('glassTechnicalTilte')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+                        <AccordionPanel pb={4}>
+                          <List w={'100%'} h={'100%'} spacing={3}>
+                            <Trans i18nKey='draftTechnicalList' t={t}
+                              components={{ listItem: <ListItem />, listIcon: <ListIcon as={ArrowForwardIcon} color='#FF893B' /> }}>
+                            </Trans>
+                          </List>
+                        </AccordionPanel>
+                      </AccordionItem>
+
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('glassCoverTilte')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+                        <AccordionPanel pb={4}>
+                          {t('glassCoverInfo')}
+                        </AccordionPanel>
+                      </AccordionItem>
+
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('glassHygenTilte')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+
+                        <AccordionPanel pb={4}>
+                          {t('glassHygenInfo')}
+                        </AccordionPanel>
+                      </AccordionItem>
+                      <AccordionItem>
+                        <Heading as='h2' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} >
+                          <AccordionButton >
+                            <Box flex='1' textAlign='left'>
+                              <strong>
+                                {t('glassPriceTilte')}
+                              </strong>
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                        </Heading>
+                        <AccordionPanel pb={4}>
+                          <Trans i18nKey='glassPricePanel' t={t}
+                            components={{ cr: <br />, text: <Text as={'cite'} />, box: <Box fontSize={'xs'} />, list: <List w={'100%'} h={'100%'} spacing={3} mb={5} />, listItem: <ListItem />, listIcon: <ListIcon as={ArrowForwardIcon} color='#FF893B' /> }}>
+                          </Trans>
+                        </AccordionPanel>
+                      </AccordionItem>
+                    </Accordion>
+                  </Box>
+                  <Box w='100%' h='100%'>
+                    <Center>
+                      <LinkComponent href='/booking' _hover={{ textDecoration: 'none' }}> <Button backgroundColor={'#095d78'} color='white' >{t('book')}</Button></LinkComponent>
+                    </Center>
+                  </Box>
+                </VStack>
               </Center>
             </Box>
-            <Box w='49%' h='100%'>
+
+            <Box w='50%' h='100%'>
               <Center>
                 <Image
                   src={ecoCup}

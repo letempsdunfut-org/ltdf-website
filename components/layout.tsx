@@ -163,7 +163,7 @@ export default function Layout({
         </Box>
         <Box p={1}>
           <main >{children}</main>
-          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'} backgroundColor={'white'} color={'#095d78'} borderTop={2} borderColor={'solid black'}>
+          <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'} backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'} >
             <Flex h='calc(29vh)'>
               <Box w='33%' h='100%'>
                 <Center h='100%'  >

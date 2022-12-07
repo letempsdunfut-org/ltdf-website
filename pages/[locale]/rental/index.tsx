@@ -28,10 +28,10 @@ export default function Rental() {
                     {t("common:rental")}
                   </Heading>
                   <Text w='50%' textAlign={"justify"}>
-                    La livraison est disponible exclusivement sur l’Île de Montréal. Toutefois, n’hésitez pas à nous contacter afin de voir si une dérogation est faisable en fonction de votre commande.
+                    {t('subTitle')}
                   </Text>
                   <Text w='50%' textAlign={"justify"} as={'cite'}>
-                    <strong>La livraison de votre tireuse à bière et kombucha est offerte pour toutes locations de 48h.</strong>
+                    <strong>{t('subSubTitle')}</strong>
                   </Text>
                 </VStack>
               </Center>
