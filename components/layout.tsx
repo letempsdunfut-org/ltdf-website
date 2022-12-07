@@ -31,7 +31,7 @@ export default function Layout({
   const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
 
   return (
-    <div>
+    <div style={{width: '100%'}}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -161,7 +161,7 @@ export default function Layout({
             </Box>
           ) : null}
         </Box>
-        <Box p={1}>
+        <Box p={1}  width={'fit-content'} >
           <main >{children}</main>
           <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'} backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'} >
             <Flex h='calc(29vh)'>
