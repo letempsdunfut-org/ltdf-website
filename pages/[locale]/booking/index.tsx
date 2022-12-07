@@ -11,7 +11,6 @@ export { getStaticPaths, getStaticProps };
 export default function Booking() {
   const { t } = useTranslation(['booking', 'common']);
   const name = t('common:title');
-
   return (
     <>
       <Layout >

@@ -15,6 +15,7 @@
     "@netlify/plugin-nextjs": "^4.29.2",
     "@next/font": "^13.0.3",
     "date-fns": "^2.29.3",
+    "firebase": "^9.14.0",
     "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "next": "^13.0.2",
