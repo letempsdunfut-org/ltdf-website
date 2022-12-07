@@ -22,6 +22,7 @@ import Image from "next/image";
 import imgCouverture from "../../../public/images/couverture/private-party-cover.jpg";
 import iconPromo from '../../../public/images/icons/promotions-transp.png'
 
+
 const getStaticProps = makeStaticProps(['rental', 'common']);
 export { getStaticPaths, getStaticProps };
 
