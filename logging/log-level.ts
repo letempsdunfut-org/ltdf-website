@@ -1,6 +1,6 @@
 const logLevelData = {
     "*": "info",
-    "api": "info",
+    "api": "debug",
     "pages": "warn"
   }
   
