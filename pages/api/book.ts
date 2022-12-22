@@ -18,7 +18,7 @@ interface MachineBooking {
     days: Array<AvailabilityEntity>
 }
 
-interface BookingRequest {
+export interface BookingRequest {
     firstName: string,
     lastName: string,
     email: string,

@@ -1,7 +1,7 @@
 const logLevelData = {
     "*": "info",
     "api": "debug",
-    "pages": "warn"
+    "pages": "info"
   }
   
   export default logLevelData
