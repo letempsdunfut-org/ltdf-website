@@ -6,6 +6,7 @@ import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 import { Trans, useTranslation } from 'next-i18next'
 import LinkComponent from '../../../components/LinkComponent '
 
+
 const getStaticProps = makeStaticProps(['rental', 'common']);
 export { getStaticPaths, getStaticProps };
 
