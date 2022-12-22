@@ -15,12 +15,12 @@ const logger = getLogger('api');
 const dbInstance = collection(database, 'availability')
 
 export default async function handler(req: NextRequest) {
-    if (req.method !== "POST")
+    if (req.method !== "GET")
         return new Response(null, { status: 404, statusText: "Not Found" });
     try {
-        const yearParams = req.nextUrl.searchParams.get('year')
-        const machine = req.nextUrl.searchParams.get('machine')
-        if(!machine || !yearParams){
+        const start = req.nextUrl.searchParams.get('startDate')
+        const end = req.nextUrl.searchParams.get('endDate')
+        if (!start || !end) {
             return new Response(
                 JSON.stringify({
                     error: 'missing params',
@@ -34,22 +34,25 @@ export default async function handler(req: NextRequest) {
             )
         }
 
-        logger.info(`will create all availability for year ${yearParams} for machine ${machine}`)
-        const startYear = +yearParams 
-        const startDate = DateTime.fromObject({ year:startYear}, { zone: 'utc'})
-        const endDate = DateTime.fromObject({year: startYear + 1}, { zone: 'utc'})
-        const interval = Interval.fromDateTimes(startDate, endDate)
-        const days = interval.splitBy(Duration.fromObject({days: 1})).map(obj => obj.start.toJSDate());
-        
-        for await (const day of days){
-            await addDoc(dbInstance, {
-                date: day,
-                machine,
-                available: true
-            })
-            logger.debug(`Day ${day} created for machine ${machine}`)
-          };
-
+        const startDate = DateTime.fromISO(start, { zone: 'utc' })
+        const endDate = DateTime.fromISO(end, { zone: 'utc' })
+        const q = query(dbInstance, where("date", ">=", startDate.toJSDate()), where("date", "<=", endDate.toJSDate()))
+        const res = await getDocs(q)
+        const DBAvailability = res.docs.map(doc => doc.data()).map((doc) => {
+            const date = doc.date as Timestamp
+            doc.date = date.toDate().toISOString()
+            return doc
+        })
+        const machineAvailability = groupBy(DBAvailability, 'date')
+        return new Response(
+            JSON.stringify(machineAvailability),
+            {
+                status: 200,
+                headers: {
+                    'content-type': 'application/json',
+                },
+            }
+        )
     } catch (e) {
         logger.error(`error : ${e}`)
         new Response(
@@ -65,3 +68,10 @@ export default async function handler(req: NextRequest) {
         )
     }
 }
+
+const groupBy = function (xs: Array<any>, key: string) {
+    return xs.reduce(function (rv, x) {
+        (rv[x[key]] = rv[x[key]] || []).push(x);
+        return rv;
+    }, {});
+};
