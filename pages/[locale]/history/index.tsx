@@ -6,6 +6,8 @@ import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 import { useTranslation } from 'next-i18next'
 import coco from '../../../public/images/coco.png'
 import Image from 'next/image'
+import imgCouverture from "../../../public/images/couverture/party-cover.jpg";
+import iconFut from "../../../public/images/icons/futs-transp.png";
 
 
 const getStaticProps = makeStaticProps(['history', 'common']);
@@ -21,15 +23,35 @@ export default function History() {
         <Head>
           <title>{t('history:pageTitle')}</title>
         </Head>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
-          <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
+        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+          <Image
+              src={imgCouverture}
+              alt={name}
+              loading="lazy"
+              layout='fill'
+              objectFit={'cover'}
+              objectPosition={'center'}
+          />
+          <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                 maxHeight='max'>
             <Box w='100%' h='100%'>
-              <Heading as='h1' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
+              <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                       lineHeight={'110%'} textAlign='center' position={'relative'}
+                       textTransform={'uppercase'}
+                       margin={'44px'}
+                       color={'white'}>
                 {t("common:about_us")}
               </Heading>
             </Box>
           </Stack>
+          <Image
+              src={iconFut}
+              alt={name}
+              loading="lazy"
+              style={{position: 'absolute', bottom: '26px', left: 0, right:0, backgroundColor: 'white', borderRadius: '50%', width: '75px', margin: 'auto', padding: '6px'}}
+          />
         </Container>
+
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'}>
 
           <VStack spacing={8} alignItems={'center'} w={'100%'} h={'100%'}>
@@ -88,7 +110,7 @@ export default function History() {
                       src={coco}
                       alt={name}
                       loading="lazy"
-                      style={{ borderRadius: '50%' }}  
+                      style={{ borderRadius: '50%' }}
                     />
                   </Box>
                 </Center>
