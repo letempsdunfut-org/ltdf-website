@@ -8,6 +8,9 @@ import Image from 'next/image'
 import draftPics from '../../../public/images/tireurse.png'
 import ecoCup from '../../../public/images/ecoCupDef.png'
 import LinkComponent from '../../../components/LinkComponent '
+import imgCouverture from "../../../public/images/couverture/drafts-bw.jpg";
+import iconPromo from "../../../public/images/icons/promotions-transp.png";
+import iconTireuse from '../../../public/images/icons/tireuse-transp.png'
 
 const getStaticProps = makeStaticProps(['product', 'common']);
 export { getStaticPaths, getStaticProps };
@@ -22,15 +25,35 @@ export default function Product() {
         <Head>
           <title>{t('product:pageTitle')}</title>
         </Head>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
-          <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
+        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+          <Image
+              src={imgCouverture}
+              alt={name}
+              loading="lazy"
+              layout='fill'
+              objectFit={'cover'}
+              objectPosition={'center'}
+          />
+          <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                 maxHeight='max'>
             <Box w='100%' h='100%'>
-              <Heading as='h1' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
+              <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                       lineHeight={'110%'} textAlign='center' position={'relative'}
+                       textTransform={'uppercase'}
+                       margin={'44px'}
+                       color={'white'}>
                 {t("common:product")}
               </Heading>
             </Box>
           </Stack>
+          <Image
+              src={iconTireuse}
+              alt={name}
+              loading="lazy"
+              style={{position: 'absolute', bottom: '26px', left: 0, right:0, backgroundColor: 'white', borderRadius: '50%', width: '75px', margin: 'auto', padding: '6px'}}
+          />
         </Container>
+
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'} >
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
             <Box w='50%' h='100%'>
