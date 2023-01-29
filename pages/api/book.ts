@@ -73,7 +73,7 @@ async function deleteAvailability(id:string) {
 export default async function handler(req: NextRequest) {
     let booking;
     if (req.method !== "POST")
-        return new Response(null, { status: 404, statusText: "Not Found" });
+        return new Response("", { status: 404, statusText: "Not Found" });
     try {
         const body = await req.json() as BookingRequest
         const availability = await checkAvailability(DateTime.fromISO(body.startDate, { zone: 'utc' }), DateTime.fromISO(body.endDate, { zone: 'utc' }))
@@ -81,7 +81,7 @@ export default async function handler(req: NextRequest) {
             logger.info(`Machine ${availability.machine} available`)
             booking = await confirmBooking(availability.machine, body)
             for await(const day of availability.days){
-                logger.info(`Deleting avaialability for machine ${availability.machine} at date ${day.date.toDate()} with id ${day.id}`)
+                logger.info(`Deleting availability for machine ${availability.machine} at date ${day.date.toDate()} with id ${day.id}`)
                 await deleteAvailability(day.id)
             }
         } else {

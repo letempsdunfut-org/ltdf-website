@@ -5,7 +5,6 @@ import { query, where } from "@firebase/firestore";
 import { DateTime, Interval, Duration } from "luxon";
 import type { NextRequest } from 'next/server'
 import { getLogger } from '../../logging/log-util'
-import { log } from 'util';
 
 export const config = {
     runtime: 'edge',
@@ -16,7 +15,7 @@ const dbInstance = collection(database, 'availability')
 
 export default async function handler(req: NextRequest) {
     if (req.method !== "GET")
-        return new Response(null, { status: 404, statusText: "Not Found" });
+        return new Response("", { status: 404, statusText: "Not Found" });
     try {
         const start = req.nextUrl.searchParams.get('startDate')
         const end = req.nextUrl.searchParams.get('endDate')
@@ -34,11 +33,28 @@ export default async function handler(req: NextRequest) {
             )
         }
 
+        const now = DateTime.now()
         const startDate = DateTime.fromISO(start, { zone: 'utc' })
         const endDate = DateTime.fromISO(end, { zone: 'utc' })
+        if(startDate < now || endDate < now){
+            return new Response(
+                    JSON.stringify({
+                        error: 'invalid dates',
+                    }),
+                    {
+                        status: 400,
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                    }
+                    )
+        }
+
         const q = query(dbInstance, where("date", ">=", startDate.toJSDate()), where("date", "<=", endDate.toJSDate()))
         const res = await getDocs(q)
-        const DBAvailability = res.docs.map(doc => doc.data()).map((doc) => {
+        const DBAvailability = res.docs
+        .map(doc => doc.data())
+        .map((doc) => {
             const date = doc.date as Timestamp
             doc.date = date.toDate().toISOString()
             return doc
