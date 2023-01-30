@@ -99,7 +99,7 @@ export default function Booking() {
 
   return (
     <>
-      <Layout >
+      <Layout>
         <Head>
           <title>{t('booking:pageTitle')}</title>
         </Head>
