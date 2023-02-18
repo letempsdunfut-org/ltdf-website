@@ -9,6 +9,18 @@ import { DateTime } from 'luxon'
 import type { BookingRequest } from '../../api/book'
 import React from 'react'
 
+interface Booking{
+  id: string,
+  machine:string,
+  firstName: string,
+  lastName: string,
+  email: string,
+  qty: number,
+  co2: boolean,
+  startDate: string,
+  endDate: string
+}
+
 const getStaticProps = makeStaticProps(['booking', 'common']);
 const logger = getLogger('pages');
 export { getStaticPaths, getStaticProps };
@@ -27,7 +39,7 @@ export default function Booking() {
   const [qty, setQty] = React.useState<number>(1);
   const [co2, setCo2] = React.useState<string>('false');
 
-  const [booking, setBooking] = React.useState<object>({});
+  const [booking, setBooking] = React.useState<Booking|undefined>(undefined);
 
   const [loading, setLoading] = React.useState<boolean>(false)
 
@@ -233,7 +245,7 @@ export default function Booking() {
               <ModalBody>
                 Votre demande de réservation a été transmise. Nos équipes vont bientot vous recontacter par courriel pour confirmer votre réservation.
 
-                ID :
+                ID : {booking?.id}
 
               </ModalBody>
 
