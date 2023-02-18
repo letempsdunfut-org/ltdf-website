@@ -55,14 +55,14 @@ export default function Booking() {
                       <FormLabel htmlFor="first-name" fontWeight={'normal'}>
                         {t('firstname')}
                       </FormLabel>
-                      <Input id="first-name" placeholder={t('firstname')} bg={'white'} />
+                      <Input id="first-name" placeholder={t('firstname') as string} bg={'white'} />
                     </FormControl>
 
                     <FormControl>
                       <FormLabel htmlFor="last-name" fontWeight={'normal'}>
                         {t('lastname')}
                       </FormLabel>
-                      <Input id="last-name" placeholder={t('lastname')} bg={'white'} />
+                      <Input id="last-name" placeholder={t('lastname') as string} bg={'white'} />
                     </FormControl>
                   </Flex>
                   <FormControl mt="2%">
@@ -84,7 +84,7 @@ export default function Booking() {
                       </FormLabel>
                       <Input
                         id='startDate'
-                        placeholder={t('datePlaceholder')}
+                        placeholder={t('datePlaceholder') as string}
                         size="md"
                         type="datetime-local"
                         min={Date.now().toLocaleString()}
@@ -97,7 +97,7 @@ export default function Booking() {
                       </FormLabel>
                       <Input
                         id='endDate'
-                        placeholder={t('datePlaceholder')}
+                        placeholder={t('datePlaceholder') as string}
                         size="md"
                         type="datetime-local"
                         bg={'white'}
