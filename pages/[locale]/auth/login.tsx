@@ -22,7 +22,7 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
                 <Stack as={Box} box={'center'} spacing={{ base: 1, md: 2 }} py={{ base: 5, md: 10 }} >
                     <Box p='4' >
                         <Center>
-                            <AspectRatio ratio={1 / 1} boxSize='30vh'>
+                            <AspectRatio ratio={1} boxSize='30vh'>
                                 <Image
                                     //priority
                                     src="/images/logoLtdf.svg"

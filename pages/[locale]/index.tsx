@@ -13,7 +13,6 @@ import {
     Wrap,
     WrapItem,
     VStack,
-    AspectRatio,
     ListItem,
     List
 } from '@chakra-ui/react'
@@ -25,8 +24,6 @@ import Image from 'next/image'
 import logoLtdf from '../../public/images/logoLtdfWhite.svg'
 import imgCouverture from '../../public/images/couverture/bartender.jpg'
 import imgLocation from '../../public/images/ltdf/tireuse-noel.jpg'
-import tireurse from '../../public/images/tireurse.png'
-import ecoCupDef from '../../public/images/ecoCupDef.png'
 import coco from '../../public/images/team/coco.png'
 import greg from '../../public/images/team/greg.png'
 import arthur from '../../public/images/team/arthur.jpg'
@@ -58,9 +55,8 @@ export default function Home() {
                         src={imgCouverture}
                         alt={name}
                         loading="lazy"
-                        layout='fill'
-                        objectFit={'cover'}
-                        objectPosition={'center'}
+                        fill={true}
+                        style={{objectFit: 'cover', objectPosition: 'center',backgroundColor: 'gray'}}
                     />
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
@@ -71,7 +67,7 @@ export default function Home() {
                                         src={logoLtdf}
                                         alt={name}
                                         loading="lazy"
-                                        style={{position: 'relative'}}
+                                        style={{position: 'relative', backgroundColor: 'black', borderRadius: '50%'}}
                                     />
                                 </Box>
                             </Center>
@@ -103,7 +99,17 @@ export default function Home() {
                         src={iconBeer}
                         alt={name}
                         loading="lazy"
-                        style={{position: 'absolute', bottom: '26px', left: 0, right:0, backgroundColor: 'white', borderRadius: '50%', width: '75px', margin: 'auto', padding: '6px'}}
+                        style={{
+                            position: 'absolute',
+                            bottom: '26px',
+                            left: 0,
+                            right: 0,
+                            backgroundColor: 'white',
+                            borderRadius: '50%',
+                            width: '75px',
+                            margin: 'auto',
+                            padding: '6px'
+                        }}
                     />
                 </Container>
 
@@ -172,31 +178,34 @@ export default function Home() {
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
 
-                        <Box w='50%' h='100%' ml={20} margin={'auto'}>
-                            <Image
-                                src={iconBeer}
-                                alt={name}
-                                loading="lazy"
-                                style={{marginLeft: 'auto', width: '200px', display: 'inline-block'}}
-                            />
-                            <Image
-                            src={iconTireuse}
-                            alt={name}
-                            loading="lazy"
-                            style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
-                        />
-                            <Image
-                                src={iconFut}
-                                alt={name}
-                                loading="lazy"
-                                style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
-                            />
-                            <Image
-                                src={iconPromo}
-                                alt={name}
-                                loading="lazy"
-                                style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
-                            />
+                        <Box w='60%' h='100%' ml={20} margin={'auto'}>
+                            <Center>
+                                <Image
+                                    src={iconBeer}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{marginLeft: 'auto', width: '200px', display: 'inline-block'}}
+                                />
+                                <Image
+                                    src={iconTireuse}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
+                                />
+                                <Image
+                                    src={iconFut}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
+                                />
+                                <Image
+                                    src={iconPromo}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
+                                />
+                            </Center>
+
                             <Center mt={'5'}>
                                 <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -229,7 +238,9 @@ export default function Home() {
                         </Box>
 
                     </Stack>
+
                 </Container>
+
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}

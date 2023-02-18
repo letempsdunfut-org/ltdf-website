@@ -30,9 +30,8 @@ export default function Product() {
               src={imgCouverture}
               alt={name}
               loading="lazy"
-              layout='fill'
-              objectFit={'cover'}
-              objectPosition={'center'}
+              fill={true}
+              style={{objectFit: 'cover', objectPosition: 'center',backgroundColor: 'gray'}}
           />
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                  maxHeight='max'>
