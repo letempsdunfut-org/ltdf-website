@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "0477ab57-02a1-46bd-9fb0-8ac487d51c05",
+		"name": "LTDF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CheckAvailability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/availability?startDate=2023-01-31&endDate=2023-02-15",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"availability"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-01-31"
+						},
+						{
+							"key": "endDate",
+							"value": "2023-02-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Camille\",\r\n    \"lastName\": \"cuicui\",\r\n    \"startDate\": \"2021-01-10\",\r\n    \"endDate\": \"2021-01-15\",\r\n    \"qtn\": 1,\r\n    \"co2\": false,\r\n    \"email\": \"cuicui@toto.ca\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/book",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Machine init",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\": \"2022-12-19\",\r\n    \"endDate\": \"2022-12-21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/machineInit?year=2022&machine=citra",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"machineInit"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2022"
+						},
+						{
+							"key": "machine",
+							"value": "citra"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

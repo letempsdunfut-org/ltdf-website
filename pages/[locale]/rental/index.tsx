@@ -1,10 +1,27 @@
 import Head from 'next/head'
 import Layout from '../../../components/layout'
-import { Box, Center, Heading, Text, Container, Stack, Button, VStack, List, ListIcon, ListItem } from '@chakra-ui/react'
+import {
+  Box,
+  Center,
+  Heading,
+  Text,
+  Container,
+  Stack,
+  Button,
+  VStack,
+  List,
+  ListIcon,
+  ListItem,
+  Wrap, WrapItem
+} from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 import { Trans, useTranslation } from 'next-i18next'
 import LinkComponent from '../../../components/LinkComponent '
+import Image from "next/image";
+import imgCouverture from "../../../public/images/couverture/private-party-cover.jpg";
+import iconPromo from '../../../public/images/icons/promotions-transp.png'
+
 
 const getStaticProps = makeStaticProps(['rental', 'common']);
 export { getStaticPaths, getStaticProps };
@@ -19,25 +36,33 @@ export default function Rental() {
         <Head>
           <title>{t('rental:pageTitle')}</title>
         </Head>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
-          <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
+        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+          <Image
+              src={imgCouverture}
+              alt={name}
+              loading="lazy"
+              layout='fill'
+              objectFit={'cover'}
+              objectPosition={'center'}
+          />
+          <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                 maxHeight='max'>
             <Box w='100%' h='100%'>
-              <Center>
-                <VStack>
-                  <Heading as='h1' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
-                    {t("common:rental")}
-                  </Heading>
-                  <Text w='50%' textAlign={"justify"}>
-                    {t('subTitle')}
-                  </Text>
-                  <Text w='50%' textAlign={"justify"} as={'cite'}>
-                    <strong>{t('subSubTitle')}</strong>
-                  </Text>
-                </VStack>
-              </Center>
-
+              <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                       lineHeight={'110%'} textAlign='center' position={'relative'}
+                       textTransform={'uppercase'}
+                       margin={'44px'}
+                       color={'white'}>
+                {t("common:rental")}
+              </Heading>
             </Box>
           </Stack>
+          <Image
+              src={iconPromo}
+              alt={name}
+              loading="lazy"
+              style={{position: 'absolute', bottom: '26px', left: 0, right:0, backgroundColor: 'white', borderRadius: '50%', width: '75px', margin: 'auto', padding: '6px'}}
+          />
         </Container>
         <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} backgroundColor={'#095d78'} color={'white'}>
           <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'} maxHeight='max' >
@@ -49,6 +74,9 @@ export default function Rental() {
                   </Heading>
                   <Center>
                     <VStack textAlign={'justify'}>
+                      <Text w='50%' textAlign={"justify"} as={'cite'}>
+                        <strong>{t('deliveryCta')}</strong>
+                      </Text>
                       <Trans i18nKey='retntalDraftText' t={t}
                         components={{ text: <Text />, bold: <strong /> }}>
                       </Trans>
