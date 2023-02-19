@@ -56,7 +56,7 @@ export default function Home() {
                         alt={name}
                         loading="lazy"
                         fill={true}
-                        style={{objectFit: 'cover', objectPosition: 'center',backgroundColor: 'gray'}}
+                        style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>

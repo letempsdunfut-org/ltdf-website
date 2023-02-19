@@ -60,13 +60,13 @@ export default function Layout({
                 <link rel="icon" href="/favicon.ico"/>
                 <meta
                     name="description"
-                    content={t('description') as string}
+                    content={t('description')}
                 />
                 <meta
                     property="og:image"
                     content="https://deft-moxie-184876.netlify.app/images/logoLtdf.svg"
                 />
-                <meta name="og:title" content={t('title') as string}/>
+                <meta name="og:title" content={t('title')}/>
             </Head>
             <>
                 <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} position={'fixed'} width={'100%'}
@@ -85,7 +85,7 @@ export default function Layout({
                                     <Avatar
                                         size={'sm'}
                                         src={'/images/logoLtdf.svg'}
-                                        name={t('logoSite') as string}
+                                        name={t('logoSite')}
                                     />
                                 </LinkComponent>
                             </Box>
@@ -159,7 +159,7 @@ export default function Layout({
                                         src={
                                             profileImg
                                         }
-                                        name={t('logoProfile') as string}
+                                        name={t('logoProfile')}
                                     />
                                 </MenuButton>
                                 <MenuList>
@@ -186,7 +186,8 @@ export default function Layout({
                         </Box>
                     ) : null}
                 </Box>
-                <Box p={1} width={'fit-content'}>
+
+                <Box p={1} minW={'calc(100vh)'}>
                     <main>{children}</main>
                     <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'}
                                backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'}>
