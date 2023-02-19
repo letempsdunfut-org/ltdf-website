@@ -39,7 +39,7 @@ export default function Rental() {
                     <Image
                         src={imgCouverture}
                         alt={name}
-                        loading="lazy"
+                        priority={true}
                         fill={true}
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
