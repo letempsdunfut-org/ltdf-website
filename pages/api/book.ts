@@ -49,7 +49,7 @@ interface BookingEntity {
 async function checkAvailability(startDate: DateTime, endDate: DateTime): Promise<MachineBooking | null> {
     const now = DateTime.now()
     if(startDate < now || endDate < now){
-        throw new BadRequestError('startDate or EndDate should not be in the past', 400)
+        throw new BadRequestError('startDate or EndDate should not be in the past', 400, "DATE_PAST")
     }
 
     const days = endDate.diff(startDate, 'days').toObject().days! + 1 // Adding 1 because machine is more exact than business (48h usage != 3 days rental)
@@ -89,7 +89,8 @@ export default async function handler(req: NextRequest) {
             return new Response(
                 JSON.stringify({
                     status: 'failed',
-                    message: 'unavailable'
+                    message: 'unavailable',
+                    errorCode : "NO_AVAILABILITY"
                 }),
                 {
                     status: 200,
@@ -107,7 +108,8 @@ export default async function handler(req: NextRequest) {
             return new Response(
                 JSON.stringify({
                     status: 'failed',
-                    message: error.message
+                    message: error.message,
+                    errorCode: error.errorCode
                 }),
                 {
                     status: error.statusCode,
@@ -122,7 +124,8 @@ export default async function handler(req: NextRequest) {
         return new Response(
             JSON.stringify({
                 status: 'failed',
-                message: 'server error'
+                message: 'server error',
+                errorCode: 'ÚNKNOWN'
             }),
             {
                 status: 500,
@@ -178,9 +181,11 @@ async function confirmBooking(machine: string, request: BookingRequest) {
 
 class BadRequestError extends Error {
     statusCode = 0;
-    constructor(msg: string, statusCode: number){
+    errorCode = ''
+    constructor(msg: string, statusCode: number, errorCode: string){
         super(msg)
         this.statusCode = statusCode
+        this.errorCode = errorCode
         Object.setPrototypeOf(this, BadRequestError.prototype)
     }
 }

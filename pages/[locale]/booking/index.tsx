@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from '../../../components/layout'
-import { Box, Center, InputLeftElement, Flex, Checkbox, Heading, Spinner, HStack, useCheckbox, IconButton, Link, Spacer, Text, Image, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, FormControl, FormHelperText, FormLabel, Input, InputGroup, InputRightElement, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, } from '@chakra-ui/react'
+import { Alert, AlertIcon, AlertDescription, AlertTitle, Box, Center, InputLeftElement, Flex, Checkbox, Heading, Spinner, HStack, useCheckbox, IconButton, Link, Spacer, Text, Image, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, FormControl, FormHelperText, FormLabel, Input, InputGroup, InputRightElement, useDisclosure, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, } from '@chakra-ui/react'
 import { EmailIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 import { useTranslation } from 'next-i18next'
@@ -9,9 +9,9 @@ import { DateTime } from 'luxon'
 import type { BookingRequest } from '../../api/book'
 import React from 'react'
 
-interface Booking{
+interface Booking {
   id: string,
-  machine:string,
+  machine: string,
   firstName: string,
   lastName: string,
   email: string,
@@ -28,6 +28,7 @@ export { getStaticPaths, getStaticProps };
 export default function Booking() {
   const now = DateTime.now().toFormat('yyyy-MM-dd')
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const toast = useToast()
   const { t } = useTranslation(['booking', 'common']);
   const name = t('common:title');
 
@@ -39,7 +40,7 @@ export default function Booking() {
   const [qty, setQty] = React.useState<number>(1);
   const [co2, setCo2] = React.useState<string>('false');
 
-  const [booking, setBooking] = React.useState<Booking|undefined>(undefined);
+  const [booking, setBooking] = React.useState<Booking | undefined>(undefined);
 
   const [loading, setLoading] = React.useState<boolean>(false)
 
@@ -60,7 +61,7 @@ export default function Booking() {
       startDate,
       endDate,
       qtn: qty,
-      co2:  (co2.toLowerCase() == 'true')
+      co2: (co2.toLowerCase() == 'true')
     }
 
 
@@ -69,12 +70,38 @@ export default function Booking() {
       headers: myHeaders,
       body: JSON.stringify(bookingRequest)
     };
-    
-    const res = await fetch("localhost:3000/api/book", requestOptions)
+
+    const res = await fetch("/api/book", requestOptions)
     const bookingResponse = await res.json()
     console.log(JSON.stringify(bookingResponse))
-    setBooking(bookingResponse)
-    onOpen()
+    if (bookingResponse.status === "failed") {
+      switch (bookingResponse.errorCode) {
+        case "NO_AVAILABILITY":
+          toast({
+            title: `Aucune disponibilité pour la période souhaitée`,
+            status: 'error',
+            isClosable: true,
+          })
+          break;
+        case "DATE_PAST":
+          toast({
+            title: `Vous ne pouvez pas réservez pour le jour même ou dans le passé`,
+            status: 'error',
+            isClosable: true,
+          })
+          break;
+        case "UNKNOWN":
+          toast({
+            title: `Une erreur inattendue est survenue`,
+            status: 'error',
+            isClosable: true,
+          })
+          break;
+      }
+    } else {
+      setBooking(bookingResponse.booking)
+      onOpen()
+    }
     setLoading(false)
   }
 
@@ -237,16 +264,31 @@ export default function Booking() {
               </Center>
             </Box>
           </Stack>
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
+          <Modal isOpen={isOpen} onClose={onClose} size={'xl'} >
+            <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(10px)' />
+            <ModalContent minHeight={'250px'}>
               <ModalHeader>Demande de réservation enregistrée</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                Votre demande de réservation a été transmise. Nos équipes vont bientot vous recontacter par courriel pour confirmer votre réservation.
-
-                ID : {booking?.id}
-
+                <Alert
+                  status='success'
+                  variant='subtle'
+                  flexDirection='column'
+                  alignItems='center'
+                  justifyContent='center'
+                  textAlign='center'
+                  height='250px'
+                  minHeight={'250px'}
+                >
+                  <AlertIcon boxSize='40px' mr={0} />
+                  <AlertTitle mt={4} mb={1} fontSize='lg'>
+                    Réservation effectuée!
+                  </AlertTitle>
+                  <AlertDescription maxWidth='sm'>
+                    Nous vous remercions pour votre réservation. Nos équipes vont bientôt vous recontacter par courriel pour confirmer votre réservation.<br /><br />
+                    <b>Identifant de commande : </b>{booking?.id}
+                  </AlertDescription>
+                </Alert>
               </ModalBody>
 
               <ModalFooter>
