@@ -1,11 +1,12 @@
 import { database } from '../../FirebaseConfig'
-import { collection, deleteDoc, getDocs, doc, addDoc } from "@firebase/firestore";
+import { collection, deleteDoc, getDocs, doc, addDoc } from "@firebase/firestore"
 import { Timestamp } from "@firebase/firestore"
-import { query, where } from "@firebase/firestore";
+import { query, where } from "@firebase/firestore"
 import { DateTime } from "luxon";
 import type { NextRequest } from 'next/server'
 import { getLogger } from '../../logging/log-util'
 
+const nodemailer = require('nodemailer');
 
 const logger = getLogger('api');
 
@@ -25,7 +26,9 @@ export interface BookingRequest {
     startDate: string,
     endDate: string,
     qtn: number,
-    co2: boolean
+    co2: boolean,
+    delivery: boolean,
+    ecocup: boolean,
 }
 
 interface AvailabilityEntity {
@@ -37,13 +40,18 @@ interface AvailabilityEntity {
 
 interface BookingEntity {
     id: string,
+    orderId: string,
+    machine: string,
+    status: string,
     firstName: string,
     lastName: string,
     email: string,
     startDate: Date,
     endDate: Date,
     qtn: number,
-    co: boolean
+    co: boolean,
+    delivery: boolean,
+    ecocup: boolean,
 }
 
 async function checkAvailability(startDate: DateTime, endDate: DateTime): Promise<MachineBooking | null> {
@@ -66,10 +74,6 @@ async function checkAvailability(startDate: DateTime, endDate: DateTime): Promis
     return null
 }
 
-async function deleteAvailability(id:string) {
-    await deleteDoc(doc(database, 'availability', id))
-}
-
 export default async function handler(req: NextRequest) {
     let booking;
     if (req.method !== "POST")
@@ -80,10 +84,6 @@ export default async function handler(req: NextRequest) {
         if (availability) {
             logger.info(`Machine ${availability.machine} available`)
             booking = await confirmBooking(availability.machine, body)
-            for await(const day of availability.days){
-                logger.info(`Deleting availability for machine ${availability.machine} at date ${day.date.toDate()} with id ${day.id}`)
-                await deleteAvailability(day.id)
-            }
         } else {
             logger.info('machine unavailable')
             return new Response(
@@ -158,24 +158,28 @@ const groupBy = function (xs: Array<any>, key: string) {
 };
 
 async function confirmBooking(machine: string, request: BookingRequest) {
+    const orderId = `ltdf-${DateTime.now().toISODate({ format: 'basic' })}${random(1000,9999)}`
+
     const dbInstance = collection(database, 'bookings')
     const startDate = DateTime.fromISO(request.startDate, { zone: 'utc'})
     const endDate = DateTime.fromISO(request.endDate, { zone: 'utc'})
     const booking = {
         machine,
+        orderId,
+        status: 'WAITING_PAYMENT',
         firstName: request.firstName,
         lastName: request.lastName,
         email: request.email,
         qtn: request.qtn,
         co: request.co2,
+        delivery: request.delivery,
+        ecocup: request.ecocup,
         startDate: startDate.toJSDate(),
         endDate: endDate.toJSDate()
-    }
+    } as BookingEntity
     const ref = await addDoc(dbInstance, booking)
-    return {
-        id: ref.id,
-        ...booking
-    }
+    booking.id = ref.id
+    return booking
 }
 
 
@@ -188,4 +192,8 @@ class BadRequestError extends Error {
         this.errorCode = errorCode
         Object.setPrototypeOf(this, BadRequestError.prototype)
     }
+}
+
+function random(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }

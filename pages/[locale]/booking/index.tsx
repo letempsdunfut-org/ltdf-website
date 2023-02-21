@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from '../../../components/layout'
 import { Alert, AlertIcon, AlertDescription, AlertTitle, Box, Center, InputLeftElement, Flex, Checkbox, Heading, Spinner, HStack, useCheckbox, IconButton, Link, Spacer, Text, Image, Container, Stack, Button, ButtonGroup, Wrap, WrapItem, FormControl, FormHelperText, FormLabel, Input, InputGroup, InputRightElement, useDisclosure, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, } from '@chakra-ui/react'
+import { BeatLoader } from 'react-spinners'
 import { EmailIcon } from '@chakra-ui/icons'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 import { useTranslation } from 'next-i18next'
@@ -8,6 +9,7 @@ import { getLogger } from '../../../logging/log-util'
 import { DateTime } from 'luxon'
 import type { BookingRequest } from '../../api/book'
 import React from 'react'
+import { de } from 'date-fns/locale'
 
 interface Booking {
   id: string,
@@ -39,16 +41,19 @@ export default function Booking() {
   const [endDate, setEndDate] = React.useState<string>(now);
   const [qty, setQty] = React.useState<number>(1);
   const [co2, setCo2] = React.useState<string>('false');
+  const [delivery, setDelivery] = React.useState<string>('false');
+  const [ecocup, setEcocup] = React.useState<string>('false');
+
 
   const [booking, setBooking] = React.useState<Booking | undefined>(undefined);
 
   const [loading, setLoading] = React.useState<boolean>(false)
 
-  const [firstNameInvalid, setFirstNameInvalid] = React.useState<boolean>(false);
-  const [lastNameInvalid, setLastNameInvalid] = React.useState<boolean>(false);
-  const [emailInvalid, setEmailInvalid] = React.useState<boolean>(false);
-  const [startDateInvalid, setStartDateInvalid] = React.useState<boolean>(false);
-  const [endDateInvalid, setEndDateInvalid] = React.useState<boolean>(false);
+  const [firstNameInvalid, setFirstNameInvalid] = React.useState<boolean>(true);
+  const [lastNameInvalid, setLastNameInvalid] = React.useState<boolean>(true);
+  const [emailInvalid, setEmailInvalid] = React.useState<boolean>(true);
+  const [startDateInvalid, setStartDateInvalid] = React.useState<boolean>(true);
+  const [endDateInvalid, setEndDateInvalid] = React.useState<boolean>(true);
 
   const handleClick = async function () {
     setLoading(true)
@@ -60,6 +65,8 @@ export default function Booking() {
       email,
       startDate,
       endDate,
+      delivery: (delivery.toLowerCase() == 'true'),
+      ecocup: (ecocup.toLowerCase() == 'true'),
       qtn: qty,
       co2: (co2.toLowerCase() == 'true')
     }
@@ -254,11 +261,18 @@ export default function Booking() {
                       <FormLabel htmlFor="co2" fontWeight={'normal'} mt="2%">
                         {t('options')}
                       </FormLabel>
-                      <Checkbox id='co2' bg={'white'} value={co2} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCo2(e.target.value)}>CO2 + 30$</Checkbox>
+                      <Checkbox id='co2' bg={'white'} marginRight={"10px"} value={co2} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCo2(e.target.value)}>Co2</Checkbox>
+                      <Checkbox id='delivery' bg={'white'} value={delivery} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDelivery(e.target.value)}>Livraison</Checkbox>
+                      <Checkbox id='ecocup' bg={'white'} value={ecocup} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEcocup(e.target.value)}>EcoCup</Checkbox>
                     </FormControl>
                   </Flex>
-                  <Button disabled={loading} onClick={handleClick}>
-                    {loading ? (<Spinner />) : (t('submit'))}
+                  <Button 
+                    isDisabled={firstNameInvalid || lastNameInvalid || emailInvalid || startDateInvalid || endDateInvalid} 
+                    onClick={handleClick}
+                    isLoading={loading}
+                    spinner={<BeatLoader size={8} color='black' />}
+                  >
+                   {t('submit')}
                   </Button>
                 </Stack>
               </Center>
