@@ -33,9 +33,7 @@ import facebookLogo from '../public/images/facebookLogo.svg'
 import instagramLogo from '../public/images/Instagram_logo_2016.svg'
 
 
-export default function Layout({
-                                   children
-                               }: {
+export default function Layout({children}: {
     children: React.ReactNode
 }) {
     const router = useRouter()
