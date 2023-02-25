@@ -44,6 +44,7 @@ export default function Home() {
         {name: t('common:about_us'), path: '/history'}
     ];
 
+    const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
     return (
         <>
             <Layout>
@@ -58,29 +59,27 @@ export default function Home() {
                         fill={true}
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
-                        <Box w='100%' h='100%'>
-                            <Center>
-                                <Box boxSize={'25vh'}>
-                                    <Image
-                                        src={logoLtdf}
-                                        alt={name}
-                                        loading="lazy"
-                                        style={{position: 'relative', backgroundColor: 'black', borderRadius: '50%'}}
-                                    />
-                                </Box>
-                            </Center>
-                            <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}
-                                     color={'white'}>
-                                {name}
-                            </Heading>
-                            <Center mt={'5'}>
-                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'50%'}
-                                       maxHeight='max'>
+                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                        <VStack spacing={5} alignItems={'center'} h={"fit"}>
+                            <Box boxSize={'26vh'} paddingTop={5}>
+                                <Image
+                                    src={logoLtdf}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{position: 'relative', backgroundColor: 'black', borderRadius: '50%'}}
+                                />
+                            </Box>
+                            <Box>
+                                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                         lineHeight={'110%'} textAlign='center' position={'relative'}
+                                         textTransform={'uppercase'}
+                                         margin={'44px'}
+                                         color={'white'}>
+                                    {name}
+                                </Heading>
+                            </Box>
+                            <Box>
+                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'}>
                                     <Wrap spacing={4}>
                                         {Links.map((link) => (
                                             <WrapItem key={link.name}>
@@ -92,25 +91,25 @@ export default function Home() {
                                         ))}
                                     </Wrap>
                                 </Stack>
-                            </Center>
-                        </Box>
-                    </Stack>
-                    <Image
-                        src={iconBeer}
-                        alt={name}
-                        loading="lazy"
-                        style={{
-                            position: 'absolute',
-                            bottom: '26px',
-                            left: 0,
-                            right: 0,
-                            backgroundColor: 'white',
-                            borderRadius: '50%',
-                            width: '75px',
-                            margin: 'auto',
-                            padding: '6px'
-                        }}
-                    />
+                            </Box>
+                            <Box minH={'calc(10vh)'}>
+                                <Image
+                                    width={75}
+                                    src={iconBeer}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{
+                                        backgroundColor: 'white',
+                                        borderRadius: '50%',
+                                        margin: 'auto',
+                                    }}
+                                />
+                            </Box>
+                        </VStack>
+
+                    </Center>
+
+
                 </Container>
 
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
@@ -130,97 +129,128 @@ export default function Home() {
                                 </Box>
                             </Center>
                         </Box>
-                        <Box w='30%' h='100%'>
-                            <Center>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                        <Box w='100%' h='100%'>
+                            <Stack alignItems={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                                <Box>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center'>
                                         {t('common:rental')}
                                     </Heading>
+                                </Box>
+                                <Box>
                                     <VStack w='100%' h='100%'>
-                                        <Heading as='h3' fontWeight={600} fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
-                                                 lineHeight={'110%'}>
-                                            {t('rentalSubTitle')}
-                                        </Heading>
-
-                                        <List spacing={3} w='100%' h='100%'>
-                                            <ListItem>
-                                                <ListIcon as={AddIcon} color='#FF893B'/>
-                                                <Trans i18nKey='rentalDraft' t={t}
-                                                       components={{cite: <Text as={'cite'}/>, bold: <strong/>}}>
-                                                </Trans>
-                                            </ListItem>
-                                            <ListItem>
-                                                <ListIcon as={AddIcon} color='#FF893B'/>
-                                                <Trans i18nKey='rentalGlass' t={t}
-                                                       components={{cite: <Text as={'cite'}/>, bold: <strong/>}}>
-                                                </Trans>
-                                            </ListItem>
-                                            <ListItem>
-                                                <ListIcon as={AddIcon} color='#FF893B'/>
-                                                <Trans i18nKey='rentalLicence' t={t}
-                                                       components={{cite: <Text as={'cite'}/>, bold: <strong/>}}>
-                                                </Trans>
-                                            </ListItem>
-                                        </List>
+                                        <Box>
+                                            <Heading as='h3' fontWeight={600}
+                                                     fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
+                                                     lineHeight={'110%'}>
+                                                {t('rentalSubTitle')}
+                                            </Heading>
+                                        </Box>
+                                        <Box>
+                                            <Center>
+                                                <List spacing={3} w={magicRatio}
+                                                      h='100%'>
+                                                    <ListItem textAlign={'justify'}>
+                                                        <ListIcon as={AddIcon} color='#FF893B'/>
+                                                        <Trans i18nKey='rentalDraft' t={t}
+                                                               components={{
+                                                                   cite: <Text as={'cite'}/>,
+                                                                   bold: <strong/>
+                                                               }}>
+                                                        </Trans>
+                                                    </ListItem>
+                                                    <ListItem textAlign={'justify'}>
+                                                        <ListIcon as={AddIcon} color='#FF893B'/>
+                                                        <Trans i18nKey='rentalGlass' t={t}
+                                                               components={{
+                                                                   cite: <Text as={'cite'}/>,
+                                                                   bold: <strong/>
+                                                               }}>
+                                                        </Trans>
+                                                    </ListItem>
+                                                    <ListItem textAlign={'justify'}>
+                                                        <ListIcon as={AddIcon} color='#FF893B'/>
+                                                        <Trans i18nKey='rentalLicence' t={t}
+                                                               components={{
+                                                                   cite: <Text as={'cite'}/>,
+                                                                   bold: <strong/>
+                                                               }}>
+                                                        </Trans>
+                                                    </ListItem>
+                                                </List>
+                                            </Center>
+                                        </Box>
                                     </VStack>
+                                </Box>
+                                <Box>
                                     <Center>
                                         <LinkComponent href='/rental' _hover={{textDecoration: 'none'}}><Button
                                             backgroundColor={'white'}
                                             color='#095d78'>{t('moreinfo')}</Button></LinkComponent>
                                     </Center>
-                                </Stack>
-                            </Center>
+                                </Box>
+
+                            </Stack>
+
                         </Box>
                     </Stack>
                 </Container>
-                <Container minHeight={'calc(55vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
-
-                        <Box w='60%' h='100%' ml={20} margin={'auto'}>
+                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
+                    <VStack spacing={2} alignItems={'center'} minHeight={'calc(80vh)'}
+                            maxHeight='max'>
+                        <Box w='100%' h='50%'>
                             <Center>
-                                <Image
-                                    src={iconBeer}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{marginLeft: 'auto', width: '200px', display: 'inline-block'}}
-                                />
-                                <Image
-                                    src={iconTireuse}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
-                                />
-                                <Image
-                                    src={iconFut}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
-                                />
-                                <Image
-                                    src={iconPromo}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{marginRight: 'auto', width: '200px', display: 'inline-block'}}
-                                />
+                                <HStack spacing={3} alignItems={'center'}>
+                                    <Box maxH={200} maxW={200}>
+                                        <Image
+                                            src={iconBeer}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </Box>
+                                    <Box maxH={200} maxW={200}>
+                                        <Image
+                                            src={iconTireuse}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </Box>
+                                    <Box maxH={200} maxW={200}>
+                                        <Image
+                                            src={iconFut}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </Box>
+                                    <Box maxH={200} maxW={200}>
+                                        <Image
+                                            src={iconPromo}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </Box>
+                                </HStack>
                             </Center>
-
-                            <Center mt={'5'}>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                        </Box>
+                        <Box h='40%' w='100%' ml={20} margin={'auto'}>
+                            <VStack spacing={8} alignItems={'center'}>
+                                <Box>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center'>
                                         {t('common:product')}
                                     </Heading>
+                                </Box>
+                                <Box>
                                     <Center>
-                                        <List spacing={3} w='100%' h='100%'>
-                                            <ListItem>
+                                        <List spacing={3} w={magicRatio} h='100%'>
+                                            <ListItem textAlign={"justify"}>
                                                 <ListIcon as={CheckIcon} color='#FF893B'/>
                                                 <Trans i18nKey='productDraft' t={t}
                                                        components={{text: <Text/>, bold: <strong/>}}>
                                                 </Trans>
                                             </ListItem>
-                                            <ListItem>
+
+                                            <ListItem textAlign={"justify"}>
                                                 <ListIcon as={CheckIcon} color='#FF893B'/>
                                                 <Trans i18nKey='productGlass' t={t}
                                                        components={{text: <Text/>, bold: <strong/>}}>
@@ -228,16 +258,16 @@ export default function Home() {
                                             </ListItem>
                                         </List>
                                     </Center>
-                                    <Center>
-                                        <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
-                                            backgroundColor={'#095d78'}
-                                            color='white'>{t('moreinfo')}</Button></LinkComponent>
-                                    </Center>
-                                </Stack>
-                            </Center>
+                                </Box>
+                                <Box>
+                                    <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
+                                        backgroundColor={'#095d78'}
+                                        color='white'>{t('moreinfo')}</Button></LinkComponent>
+                                </Box>
+                            </VStack>
                         </Box>
 
-                    </Stack>
+                    </VStack>
 
                 </Container>
 
@@ -276,38 +306,46 @@ export default function Home() {
                             </Center>
 
                         </Box>
-                        <Box w='49%' h='100%'>
+                        <Box w='100%' h='100%'>
                             <Center>
                                 <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
-                                    <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                             lineHeight={'110%'} textAlign='center'>
-                                        {t('common:about_us')}
-                                    </Heading>
+                                    <Box>
+                                        <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                                 lineHeight={'110%'} textAlign='center'>
+                                            {t('common:about_us')}
+                                        </Heading>
+                                    </Box>
+                                    <Box>
+                                        <Center>
+                                            <VStack spacing={6} textAlign={'justify'} w={magicRatio}>
+                                                <Trans i18nKey='history' t={t}
+                                                       components={{
+                                                           text: <Text/>,
+                                                           bold: <strong/>,
+                                                           box: <Box verticalAlign='middle' fontWeight='normal' px='5'
+                                                                     lineHeight='tall' position='relative' color='white'
+                                                                     _before={{
+                                                                         content: `\"\"`,
+                                                                         position: 'absolute',
+                                                                         display: 'block',
+                                                                         left: '-1%',
+                                                                         borderLeftWidth: '0.5rem',
+                                                                         borderLeftColor: '#FF893B',
+                                                                         height: '100%'
+                                                                     }}/>
+                                                       }}>
+                                                </Trans>
+                                            </VStack>
+                                        </Center>
+                                    </Box>
+                                    <Box>
+                                        <Center>
+                                            <LinkComponent href='/history' _hover={{textDecoration: 'none'}}><Button
+                                                backgroundColor={'white'}
+                                                color='#095d78'>{t('moreinfo')}</Button></LinkComponent>
+                                        </Center>
+                                    </Box>
 
-                                    <VStack spacing={6}>
-                                        <Trans i18nKey='history' t={t}
-                                               components={{
-                                                   text: <Text/>,
-                                                   bold: <strong/>,
-                                                   box: <Box verticalAlign='middle' fontWeight='normal' px='5'
-                                                             lineHeight='tall' position='relative' color='white'
-                                                             _before={{
-                                                                 content: `\"\"`,
-                                                                 position: 'absolute',
-                                                                 display: 'block',
-                                                                 left: '-1%',
-                                                                 borderLeftWidth: '0.5rem',
-                                                                 borderLeftColor: '#FF893B',
-                                                                 height: '100%'
-                                                             }}/>
-                                               }}>
-                                        </Trans>
-                                    </VStack>
-                                    <Center>
-                                        <LinkComponent href='/history' _hover={{textDecoration: 'none'}}><Button
-                                            backgroundColor={'white'}
-                                            color='#095d78'>{t('moreinfo')}</Button></LinkComponent>
-                                    </Center>
                                 </Stack>
                             </Center>
                         </Box>

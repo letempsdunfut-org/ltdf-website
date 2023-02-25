@@ -21,6 +21,7 @@ import LinkComponent from '../../../components/LinkComponent '
 import Image from "next/image";
 import imgCouverture from "../../../public/images/couverture/private-party-cover.jpg";
 import iconPromo from '../../../public/images/icons/promotions-transp.png'
+import iconBeer from "../../../public/images/icons/degustation-transp.png";
 
 const getStaticProps = makeStaticProps(['rental', 'common']);
 export {getStaticPaths, getStaticProps};
@@ -29,55 +30,64 @@ export default function Rental() {
     const {t} = useTranslation(['rental', 'common']);
     const name = t('common:title');
 
+    const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
+
     return (
         <>
             <Layout>
                 <Head>
                     <title>{t('rental:pageTitle')}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+                <Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'} position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
-                        priority={true}
+                        loading="lazy"
                         fill={true}
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
-                        <Box w='100%' h='100%'>
-                            <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}
-                                     color={'white'}>
-                                {t("common:rental")}
-                            </Heading>
-                        </Box>
-                    </Stack>
-                    <Image
-                        src={iconPromo}
-                        alt={name}
-                        loading="lazy"
-                        style={{
-                            position: 'absolute',
-                            bottom: '26px',
-                            left: 0,
-                            right: 0,
-                            backgroundColor: 'white',
-                            borderRadius: '50%',
-                            width: '75px',
-                            margin: 'auto',
-                            padding: '6px'
-                        }}
-                    />
+
+                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                        <VStack spacing={5} alignItems={'center'} h={"fit"}>
+                            <Box>
+                                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                         lineHeight={'110%'} textAlign='center' position={'relative'}
+                                         textTransform={'uppercase'}
+                                         margin={'44px'}
+                                         color={'white'}>
+                                    {t("common:rental")}
+                                </Heading>
+                            </Box>
+
+                            <Box>
+
+                                <Image
+                                    src={iconPromo}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{
+                                        position: 'absolute',
+                                        bottom: '26px',
+                                        left: 0,
+                                        right: 0,
+                                        backgroundColor: 'white',
+                                        borderRadius: '50%',
+                                        width: '75px',
+                                        margin: 'auto',
+                                        padding: '6px'
+                                    }}
+                                />
+                            </Box>
+                        </VStack>
+                    </Center>
+
                 </Container>
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
                         <Center>
-                            <Box w='60%' h='100%'>
+                            <Box w={magicRatio} h='100%'>
                                 <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center'>
@@ -85,7 +95,7 @@ export default function Rental() {
                                     </Heading>
                                     <Center>
                                         <VStack textAlign={'justify'}>
-                                            <Text w='50%' textAlign={"justify"} as={'cite'}>
+                                            <Text w='100%' textAlign={"justify"} as={'cite'}>
                                                 <strong>{t('deliveryCta')}</strong>
                                             </Text>
                                             <Trans i18nKey='retntalDraftText' t={t}
@@ -124,7 +134,7 @@ export default function Rental() {
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max' minW='100%'>
                         <Center w='100%' h='100%'>
-                            <Box w='60%' h='100%' textAlign={'justify'}>
+                            <Box w={magicRatio} h='100%' textAlign={'justify'}>
                                 <Center>
                                     <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                         <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -157,7 +167,7 @@ export default function Rental() {
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
                         <Center w='100%' h='100%'>
-                            <Box w='60%' h='100%'>
+                            <Box w={magicRatio} h='100%'>
                                 <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}
                                        w='100%' h='100%'>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -165,7 +175,7 @@ export default function Rental() {
                                         {t('rentalEventTitle')}
                                     </Heading>
                                     <Center w='100%' h='100%'>
-                                        <VStack w='100%' h='100%'>
+                                        <VStack w='100%' h='100%' textAlign={'justify'}>
                                             <Trans i18nKey='rentalEventText' t={t}
                                                    components={{text: <Text/>, bold: <strong/>}}>
                                             </Trans>
