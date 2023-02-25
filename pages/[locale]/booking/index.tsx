@@ -13,6 +13,7 @@ import { de } from 'date-fns/locale'
 
 interface Booking {
   id: string,
+  orderId: string,
   machine: string,
   firstName: string,
   lastName: string,
@@ -300,7 +301,7 @@ export default function Booking() {
                   </AlertTitle>
                   <AlertDescription maxWidth='sm'>
                     Nous vous remercions pour votre réservation. Nos équipes vont bientôt vous recontacter par courriel pour confirmer votre réservation.<br /><br />
-                    <b>Identifant de commande : </b>{booking?.id}
+                    <b>Identifant de commande : </b>{booking?.orderId}
                   </AlertDescription>
                 </Alert>
               </ModalBody>

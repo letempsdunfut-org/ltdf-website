@@ -5,10 +5,14 @@ import { query, where } from "@firebase/firestore"
 import { DateTime } from "luxon";
 import type { NextRequest } from 'next/server'
 import { getLogger } from '../../logging/log-util'
+import { ResponseError } from '@sendgrid/mail/src/mail';
 
-const nodemailer = require('nodemailer');
 
 const logger = getLogger('api');
+if (process.env.SENDGRID_API_KEY === null) {
+    console.error("Could not read SENDGRID_API_KEY : empty")
+}
+
 
 export const config = {
     runtime: 'edge',
@@ -56,7 +60,7 @@ interface BookingEntity {
 
 async function checkAvailability(startDate: DateTime, endDate: DateTime): Promise<MachineBooking | null> {
     const now = DateTime.now()
-    if(startDate < now || endDate < now){
+    if (startDate < now || endDate < now) {
         throw new BadRequestError('startDate or EndDate should not be in the past', 400, "DATE_PAST")
     }
 
@@ -90,7 +94,7 @@ export default async function handler(req: NextRequest) {
                 JSON.stringify({
                     status: 'failed',
                     message: 'unavailable',
-                    errorCode : "NO_AVAILABILITY"
+                    errorCode: "NO_AVAILABILITY"
                 }),
                 {
                     status: 200,
@@ -102,7 +106,7 @@ export default async function handler(req: NextRequest) {
         }
 
     } catch (e) {
-        if(e instanceof BadRequestError){
+        if (e instanceof BadRequestError) {
             let error = e as BadRequestError
             logger.error(`error while making booking : ${error.message}`)
             return new Response(
@@ -158,11 +162,10 @@ const groupBy = function (xs: Array<any>, key: string) {
 };
 
 async function confirmBooking(machine: string, request: BookingRequest) {
-    const orderId = `ltdf-${DateTime.now().toISODate({ format: 'basic' })}${random(1000,9999)}`
-
+    const orderId = `ltdf-${DateTime.now().toISODate({ format: 'basic' })}${random(100, 999)}`
     const dbInstance = collection(database, 'bookings')
-    const startDate = DateTime.fromISO(request.startDate, { zone: 'utc'})
-    const endDate = DateTime.fromISO(request.endDate, { zone: 'utc'})
+    const startDate = DateTime.fromISO(request.startDate, { zone: 'utc' })
+    const endDate = DateTime.fromISO(request.endDate, { zone: 'utc' })
     const booking = {
         machine,
         orderId,
@@ -178,15 +181,61 @@ async function confirmBooking(machine: string, request: BookingRequest) {
         endDate: endDate.toJSDate()
     } as BookingEntity
     const ref = await addDoc(dbInstance, booking)
+    logger.info(`booking confirmed for ${booking.machine} with orderId ${booking.orderId}`)
     booking.id = ref.id
+    await sendConfirmationEmails(booking)
     return booking
+}
+
+async function sendConfirmationEmails(booking: BookingEntity) {
+    const msg = {
+        "personalizations": [
+            {
+                "to": [
+                    {
+                        "email": booking.email
+                    }
+                ],
+                "cc": [{ "email": "order@letempsdunfut.ca" }]
+            }
+        ],
+        "from": {
+            "email": "order@letempsdunfut.ca"
+        },
+        "subject": `Commande #${booking.orderId}`,
+        "content": [
+            {
+                "type": "text/html",
+                "value": `<h1>Merci pour votre commande !</h1><br/><hr/><br/>Voici un résumé : <br/><ul><li>⏺️Machine : ${booking.machine}</li><li> 🛒 Commande : ${booking.orderId}</li><li> Prénom : ${booking.firstName}</li><li> Nom : ${booking.lastName}</li><li> 📧 Email : ${booking.machine}</li><li> Nombre de machine : ${booking.qtn}</li><li> 📅 Date de début de location : ${booking.startDate.toISOString()}</li><li>📅 Date de fin de location : ${booking.endDate.toISOString()}</li></ul>`
+            }
+        ]
+    }
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${process.env.SENDGRID_API_KEY}`);
+    const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: JSON.stringify(msg)
+    }
+    try {
+        const res = await fetch('https://api.sendgrid.com/v3/mail/send',requestOptions);
+        const statusCode = res.statusText
+        if(res.status >= 400){
+            throw new Error(await res.json());
+        }
+        logger.info(`mail send to ${booking.email}`)
+    } catch (error) {
+        logger.error(`Error while sending confirmation email, Response from SendGrid : ${error}`)
+    }
+
 }
 
 
 class BadRequestError extends Error {
     statusCode = 0;
     errorCode = ''
-    constructor(msg: string, statusCode: number, errorCode: string){
+    constructor(msg: string, statusCode: number, errorCode: string) {
         super(msg)
         this.statusCode = statusCode
         this.errorCode = errorCode
