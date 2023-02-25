@@ -12,5 +12,10 @@
     "endDate": "End date",
     "qty": "Quantity of draft",
     "options": "Options",
-    "submit": "Confirm the reservation"
+    "submit": "Confirm the reservation",
+    "confirmHeadline": "Booking confirmed",
+    "confirmTitle": "Booking confirmed",
+    "confirmText": "Thank you for your booking. We'll contact you very soon by email to confirm with you your booking and give you the payment details",
+    "confirmOrder":"Order number",
+    "confirmClose": "close"
 }

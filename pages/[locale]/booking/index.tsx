@@ -282,7 +282,7 @@ export default function Booking() {
           <Modal isOpen={isOpen} onClose={onClose} size={'xl'} >
             <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(10px)' />
             <ModalContent minHeight={'250px'}>
-              <ModalHeader>Demande de réservation enregistrée</ModalHeader>
+              <ModalHeader>{t('booking:confirmHeadline')}</ModalHeader>
               <ModalCloseButton />
               <ModalBody>
                 <Alert
@@ -297,18 +297,18 @@ export default function Booking() {
                 >
                   <AlertIcon boxSize='40px' mr={0} />
                   <AlertTitle mt={4} mb={1} fontSize='lg'>
-                    Réservation effectuée!
+                  {t('booking:confirmTitle')}
                   </AlertTitle>
                   <AlertDescription maxWidth='sm'>
-                    Nous vous remercions pour votre réservation. Nos équipes vont bientôt vous recontacter par courriel pour confirmer votre réservation.<br /><br />
-                    <b>Identifant de commande : </b>{booking?.orderId}
+                  {t('booking:confirmText')}<br /><br />
+                    <b>{t('booking:confirmOrder')} </b>{booking?.orderId}
                   </AlertDescription>
                 </Alert>
               </ModalBody>
 
               <ModalFooter>
                 <Button colorScheme='blue' mr={3} onClick={onClose}>
-                  Close
+                {t('booking:confirmClose')}
                 </Button>
               </ModalFooter>
             </ModalContent>

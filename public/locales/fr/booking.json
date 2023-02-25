@@ -12,5 +12,10 @@
     "endDate": "Date de fin",
     "qty": "Quantité de tireuse",
     "options": "Options",
-    "submit": "Soumettre ma réservation"
+    "submit": "Soumettre ma réservation",
+    "confirmHeadline": "Demande de réservation",
+    "confirmTitle": "Réservation confirmée",
+    "confirmText": "Merci pour votre réservation. Nous allons vous vous contacter très prochainement par courriel afin de confirmer votre demande",
+    "confirmOrder":"Numéro de commande",
+    "confirmClose": "Fermer"
 }
