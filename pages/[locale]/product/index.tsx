@@ -43,6 +43,7 @@ export {getStaticPaths, getStaticProps};
 export default function Product() {
     const {t} = useTranslation(['product', 'common']);
     const name = t('common:title');
+    const magicRatio = ['95%', '85%', '80%', '70%', '60%', '50%'];
 
     return (
         <>
@@ -58,55 +59,58 @@ export default function Product() {
                         fill={true}
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
-                        <Box w='100%' h='100%'>
-                            <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}
-                                     color={'white'}>
-                                {t("common:product")}
-                            </Heading>
-                        </Box>
-                    </Stack>
-                    <Image
-                        src={iconTireuse}
-                        alt={name}
-                        loading="lazy"
-                        style={{
-                            position: 'absolute',
-                            bottom: '26px',
-                            left: 0,
-                            right: 0,
-                            backgroundColor: 'white',
-                            borderRadius: '50%',
-                            width: '75px',
-                            margin: 'auto',
-                            padding: '6px'
-                        }}
-                    />
+
+                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                        <VStack spacing={5} alignItems={'center'} h={"fit"}>
+                            <Box w='100%' h='100%'>
+                                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                         lineHeight={'110%'} textAlign='center' position={'relative'}
+                                         textTransform={'uppercase'}
+                                         margin={'44px'}
+                                         color={'white'}>
+                                    {t("common:product")}
+                                </Heading>
+                            </Box>
+                            <Box>
+                                <Image
+                                    src={iconTireuse}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{
+                                        position: 'absolute',
+                                        bottom: '26px',
+                                        left: 0,
+                                        right: 0,
+                                        backgroundColor: 'white',
+                                        borderRadius: '50%',
+                                        width: '75px',
+                                        margin: 'auto',
+                                        padding: '6px'
+                                    }}
+                                />
+                            </Box>
+                        </VStack>
+                    </Center>
                 </Container>
 
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <Stack direction={['column', 'row']} spacing={6} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
                         <Box w='50%' h='100%'>
-                            <Center w='100%' h='100%'>
+                            <Center>
                                 <Image
                                     src={draftPics}
                                     alt={name}
                                     loading={'lazy'}
                                 />
-
                             </Center>
                         </Box>
-                        <Box w='50%' h='100%'>
-                            <Center w={'100%'} h={'100%'}>
-                                <VStack w={'100%'} h={'100%'}>
-                                    <Box w='90%' h='100%'>
-                                        <Accordion defaultIndex={[0]}>
+                        <Box w={magicRatio} h='100%' pr={5}>
+                            <VStack w='100%'   >
+                                <Box w={'100%'} >
+                                    <Center w={'100%'}>
+                                        <Accordion defaultIndex={[0]} w={'100%'}>
                                             <AccordionItem>
                                                 <Heading as='h2' fontWeight={600}
                                                          fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -121,7 +125,7 @@ export default function Product() {
                                                     </AccordionButton>
                                                 </Heading>
                                                 <AccordionPanel pb={4}>
-                                                    <List w={'100%'} h={'100%'} spacing={3}>
+                                                    <List spacing={3}>
                                                         <Trans i18nKey='draftTechnicalList' t={t}
                                                                components={{
                                                                    listItem: <ListItem/>,
@@ -217,27 +221,27 @@ export default function Product() {
                                                 </AccordionPanel>
                                             </AccordionItem>
                                         </Accordion>
-                                    </Box>
-                                    <Box w='100%' h='100%'>
-                                        <Center>
-                                            <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                                backgroundColor={'white'} color='#095d78'>{t('book')}</Button>
-                                            </LinkComponent>
-                                        </Center>
-                                    </Box>
-                                </VStack>
-                            </Center>
+                                    </Center>
+                                </Box>
+                                <Box w='100%' h='100%'>
+                                    <Center padding={5}>
+                                        <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
+                                            backgroundColor={'white'} color='#095d78'>{t('book')}</Button>
+                                        </LinkComponent>
+                                    </Center>
+                                </Box>
+                            </VStack>
                         </Box>
                     </Stack>
                 </Container>
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
-                        <Box w='50%' h='100%'>
-                            <Center w={'100%'} h={'100%'}>
-                                <VStack w={'100%'} h={'100%'}>
-                                    <Box w='90%' h='100%'>
-                                        <Accordion defaultIndex={[0]}>
+                        <Box w={magicRatio} h='100%'>
+                            <VStack w={'100%'}>
+                                <Box w={'100%'} h='100%'>
+                                    <Center w={'100%'}>
+                                        <Accordion w={'100%'} defaultIndex={[0]}>
                                             <AccordionItem>
                                                 <Heading as='h2' fontWeight={600}
                                                          fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -328,16 +332,16 @@ export default function Product() {
                                                 </AccordionPanel>
                                             </AccordionItem>
                                         </Accordion>
-                                    </Box>
-                                    <Box w='100%' h='100%'>
-                                        <Center>
-                                            <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                                backgroundColor={'#095d78'}
-                                                color='white'>{t('book')}</Button></LinkComponent>
-                                        </Center>
-                                    </Box>
-                                </VStack>
-                            </Center>
+                                    </Center>
+                                </Box>
+                                <Box w='100%' h='100%'>
+                                    <Center padding={5}>
+                                        <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
+                                            backgroundColor={'#095d78'}
+                                            color='white'>{t('book')}</Button></LinkComponent>
+                                    </Center>
+                                </Box>
+                            </VStack>
                         </Box>
 
                         <Box w='50%' h='100%'>
