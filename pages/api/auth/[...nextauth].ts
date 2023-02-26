@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth, {NextAuthOptions} from "next-auth"
 import FacebookProvider from "next-auth/providers/facebook"
 import GoogleProvider from "next-auth/providers/google"
 import InstagramProvider from "next-auth/providers/instagram"
@@ -10,7 +10,7 @@ import AppleProvider from "next-auth/providers/apple"
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
     // https://next-auth.js.org/configuration/providers
     providers: [
         FacebookProvider({
@@ -130,4 +130,6 @@ export default NextAuth({
 
     // Enable debug messages in the console if you are having problems
     debug: false,
-})
+}
+
+export default NextAuth(authOptions)
