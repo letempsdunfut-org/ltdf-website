@@ -23,11 +23,11 @@ const handler = async (req: NextApiRequest,
             .setHeader('Allow', 'POST')
             .end('Method Not Allowed');
     }
-    const session = await getServerSession(req, res, authOptions)
-
-    if (!session) {
-        return res.status(401).json({statusCode: 401, message: 'your identity cannot be validated please reconnect'})
-    }
+    // const session = await getServerSession(req, res, authOptions)
+    //
+    // if (!session) {
+    //     return res.status(401).json({statusCode: 401, message: 'your identity cannot be validated please reconnect'})
+    // }
 
     // TODO the request body should contain a list af "TAP" product and for each as qty the number of day rent
     try {
@@ -39,11 +39,31 @@ const handler = async (req: NextApiRequest,
                     //TODO change the price id vor a real value
                     price: 'price_1MfR0UI8Qg1rn3okGNAVhWye',
                     quantity: 1, // the quantity act as the rental days number
+                    // tax_rates: ['txr_1MfWz9I8Qg1rn3okDxjKybDn'],
+                },
+                {
+                    //TODO get the backend Mapping for device -> price ID
+                    //TODO change the price id vor a real value
+                    price: 'price_1MfR0UI8Qg1rn3okGNAVhWye',
+                    quantity: 1, // the quantity act as the rental days number
+                    // tax_rates: ['txr_1MfWz9I8Qg1rn3okDxjKybDn'],
+                },
+                {
+                    //TODO get the backend Mapping for device -> price ID
+                    //TODO change the price id vor a real value
+                    price: 'price_1MfR0UI8Qg1rn3okGNAVhWye',
+                    quantity: 4, // the quantity act as the rental days number
+                    // tax_rates: ['txr_1MfWz9I8Qg1rn3okDxjKybDn'],
                 },
             ],
-            mode: 'payment',
-            success_url: `${origin}/?success=true`,
-            cancel_url: `${origin}/?canceled=true`,
+            shipping_options: [
+                {
+                    shipping_rate: 'shr_1MfX0eI8Qg1rn3ok9tzYo67o',
+                }
+            ],
+            mode: "payment",
+            success_url: `${origin}/booking/?success=true`,
+            cancel_url: `${origin}/booking/?canceled=true`,
         }
 
         const checkoutSession: Stripe.Checkout.Session =
@@ -52,7 +72,7 @@ const handler = async (req: NextApiRequest,
         if (checkoutSession.url === null) {
             return res.status(500).json({statusCode: 500, message: 'checkoutSession url is null'})
         }
-        return res.redirect(303, checkoutSession.url);
+        return res.status(200).json(checkoutSession);
     } catch (err) {
         const errorMessage =
             err instanceof Error ? err.message : 'Internal server error'
