@@ -44,7 +44,7 @@ export default function Layout({
     const Links = [
         {name: t('rental'), path: '/rental'},
         {name: t('product'), path: '/product'},
-        {name: t('about_us'), path: '/history'}
+        {name: t('professional'), path: '/professional'}
     ];
     const {data: session} = useSession()
     const profileImg = session && session.user ? session?.user.image! : "/images/notLoggedUser.svg"
@@ -72,13 +72,7 @@ export default function Layout({
                 <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} position={'fixed'} width={'100%'}
                      zIndex={'1'}>
                     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                        <IconButton
-                            size={'md'}
-                            icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
-                            aria-label={'Open Menu'}
-                            display={{md: 'none'}}
-                            onClick={isOpen ? onClose : onOpen}
-                        />
+
                         <HStack spacing={8} alignItems={'center'}>
                             <Box>
                                 <LinkComponent href='/'>
@@ -88,6 +82,14 @@ export default function Layout({
                                         name={t('logoSite')}
                                     />
                                 </LinkComponent>
+                                <IconButton
+                                    marginLeft={5}
+                                    size={'md'}
+                                    icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
+                                    aria-label={'Open Menu'}
+                                    display={{md: 'none'}}
+                                    onClick={isOpen ? onClose : onOpen}
+                                />
                             </Box>
                             <HStack
                                 as={'nav'}

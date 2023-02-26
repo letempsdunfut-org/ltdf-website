@@ -41,7 +41,7 @@ export default function Home() {
     const Links = [
         {name: t('common:rental'), path: '/rental'},
         {name: t('common:product'), path: '/product'},
-        {name: t('common:about_us'), path: '/history'}
+        {name: t('common:professional'), path: '/professional'}
     ];
 
     const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
@@ -259,8 +259,8 @@ export default function Home() {
                                         </List>
                                     </Center>
                                 </Box>
-                                <Box>
-                                    <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
+                                <Box padding={5}>
+                                    <LinkComponent  href='/product' _hover={{textDecoration: 'none'}}><Button
                                         backgroundColor={'#095d78'}
                                         color='white'>{t('moreinfo')}</Button></LinkComponent>
                                 </Box>
@@ -312,7 +312,7 @@ export default function Home() {
                                     <Box>
                                         <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                                  lineHeight={'110%'} textAlign='center'>
-                                            {t('common:about_us')}
+                                            {t('common:professional')}
                                         </Heading>
                                     </Box>
                                     <Box>
