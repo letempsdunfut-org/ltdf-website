@@ -257,7 +257,7 @@ export default function Product() {
                                                 </Heading>
                                                 <AccordionPanel pb={4}>
                                                     <List w={'100%'} h={'100%'} spacing={3}>
-                                                        <Trans i18nKey='draftTechnicalList' t={t}
+                                                        <Trans i18nKey='glassTechnicalList' t={t}
                                                                components={{
                                                                    listItem: <ListItem/>,
                                                                    listIcon: <ListIcon as={ArrowForwardIcon}
