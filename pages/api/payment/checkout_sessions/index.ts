@@ -37,31 +37,42 @@ const handler = async (req: NextApiRequest,
                 {
                     //TODO get the backend Mapping for device -> price ID
                     //TODO change the price id vor a real value
-                    price: 'price_1MfR0UI8Qg1rn3okGNAVhWye',
+                    price: 'price_1MnCVKI8Qg1rn3okakZiU4aV',
                     quantity: 1, // the quantity act as the rental days number
-                    // tax_rates: ['txr_1MfWz9I8Qg1rn3okDxjKybDn'],
                 },
                 {
                     //TODO get the backend Mapping for device -> price ID
                     //TODO change the price id vor a real value
-                    price: 'price_1MfR0UI8Qg1rn3okGNAVhWye',
-                    quantity: 1, // the quantity act as the rental days number
-                    // tax_rates: ['txr_1MfWz9I8Qg1rn3okDxjKybDn'],
+                    price: 'price_1MnCYpI8Qg1rn3okpgLesvNF',
+                    // quantity: 1, // the quantity act as the rental days number
                 },
                 {
                     //TODO get the backend Mapping for device -> price ID
                     //TODO change the price id vor a real value
-                    price: 'price_1MfR0UI8Qg1rn3okGNAVhWye',
-                    quantity: 4, // the quantity act as the rental days number
-                    // tax_rates: ['txr_1MfWz9I8Qg1rn3okDxjKybDn'],
+                    price: 'price_1MnCxhI8Qg1rn3okPWCPNOki',
+                    quantity: 2, // the quantity act as the rental days number
+                },
+                {
+                    //TODO get the backend Mapping for device -> price ID
+                    //TODO change the price id vor a real value
+                    price: 'price_1MnCy3I8Qg1rn3okYKiHsbbc',
+                    quantity: 1, // the quantity act as the rental days number
+                }, {
+                    //TODO get the backend Mapping for device -> price ID
+                    //TODO change the price id vor a real value
+                    price: 'price_1MnCzEI8Qg1rn3okui1evfbm',
+                    quantity: 1, // the quantity act as the rental days number
                 },
             ],
-            shipping_options: [
-                {
-                    shipping_rate: 'shr_1MfX0eI8Qg1rn3ok9tzYo67o',
-                }
-            ],
-            mode: "payment",
+            // shipping_options: [
+            //     {
+            //         shipping_rate: 'shr_1MfX0eI8Qg1rn3ok9tzYo67o',
+            //     }
+            // ],
+            subscription_data: {
+                default_tax_rates: ['txr_1MnDc2I8Qg1rn3okwEHgKvyb', 'txr_1MnDelI8Qg1rn3oka1r4H8bt', 'txr_1MnDfMI8Qg1rn3okTZuTqStB'],
+            },
+            mode: "subscription",
             success_url: `${origin}/booking/?success=true`,
             cancel_url: `${origin}/booking/?canceled=true`,
         }
