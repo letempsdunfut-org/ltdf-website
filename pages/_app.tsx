@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme, StyleFunctionProps } from '@chakra-ui/react'
 
-import { Montserrat } from '@next/font/google'
+import { Montserrat } from "next/font/google"
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { appWithTranslation } from 'next-i18next'
 import { SessionProvider } from "next-auth/react"
