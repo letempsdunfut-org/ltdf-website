@@ -49,9 +49,13 @@ export default function Booking() {
                   <Heading as='h3' fontWeight={600} fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }} lineHeight={'110%'} textAlign='center'>
                     {t('booking:bookingWIP')}
                   </Heading>
-                  <Center><Text>{t('booking:bookingWIPText')}</Text></Center>
-                  <Button href="mailto:order@letempsdunfut.com">{t('common:contactUs')}</Button>
-                </Stack>
+                  <Center>
+                    <Text>{t('booking:bookingWIPText')}</Text>
+                  </Center>
+                  <Center>
+                    <Button  onClick={() => window.location.href = 'mailto:yourmail@domain.com'}>{t('common:contactUs')}</Button>
+                  </Center>
+                  </Stack>
               </Center>
             </Box>
           </Stack>
