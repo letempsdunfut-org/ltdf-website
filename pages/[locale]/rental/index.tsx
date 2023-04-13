@@ -132,39 +132,6 @@ export default function Rental() {
                 </Container>
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max' minW='100%'>
-                        <Center w='100%' h='100%'>
-                            <Box w={magicRatio} h='100%' textAlign={'justify'}>
-                                <Center>
-                                    <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
-                                        <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                                 lineHeight={'110%'} textAlign='center'>
-                                            {t('rentalGlassTitle')}
-                                        </Heading>
-                                        <Center>
-                                            <VStack>
-                                                <Text>
-                                                    {t('rentalGlassText')}
-                                                </Text>
-                                                <Text>
-                                                    TODO : RAJOUTER LES ENJEUX ECOLOGIQUE
-                                                </Text>
-                                            </VStack>
-                                        </Center>
-                                        <Center>
-                                            <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                                backgroundColor={'#095d78'}
-                                                color='white'>{t('book')}</Button></LinkComponent>
-                                        </Center>
-                                    </Stack>
-                                </Center>
-                            </Box>
-                        </Center>
-                    </Stack>
-                </Container>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
-                           backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
                         <Center w='100%' h='100%'>
                             <Box w={magicRatio} h='100%'>
@@ -183,7 +150,7 @@ export default function Rental() {
                                     </Center>
                                     <Center>
                                         <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                            backgroundColor={'white'} color='#095d78'>{t('book')}</Button>
+                                           >{t('book')}</Button>
                                         </LinkComponent>
                                     </Center>
                                 </Stack>

@@ -1,3 +1,16 @@
 {
-    "pageTitle": "Le temps d'un fût - Rental"
+    "pageTitle": "Le temps d'un fût - Rental",
+    "book": "Book now",
+    "subTitle":"",
+    "deliveryCta": "Free delivery of your beer and kombucha dispenser for all 48 hour rentals*",
+    "deliveryDisclaimer": "Only Montreal Island is eligible for delivery. Do not hesitate to contact us to see if an exception is possible for your order.",
+    "retntalDraftTitle": "Dispensers rentals",
+    "retntalDraftText": "With the ability to serve up to two beverages at once, our dispensers are designed for professional chilling and serving of the perfect beverage at home, garden parties, corporate parties and small commercial events. </text><text>Perfect for enjoying a keg of kombucha or a keg of beer, this is the ideal alternative for a party with or without alcohol.</text><text>The small size and integrated air system opens up new possibilities even in professional environments.</text><text ><bold>The advantages you have using one of our dispensers instead of a \"kegerator\" or \"jockey box\" are:</bold></text></text",
+    "rentalDraftList": "<listItem> <listIcon/> You don't need multiple systems, our dispenser works with beer, wine, cider, kombucha, cold brew coffee, cocktails and sodas. </listItem> <listItem> <listIcon/> You don't have to wait hours to enjoy your favorite beverage at the perfect temperature. In less than 10 minutes, IT'S COLD! </listItem> <listItem> <listIcon /> You can control the temperature for each drink from a freezing 38°F to a cellar temperature of 50°F. </listItem> <listItem> <listIcon /> You don't have to keep your kegs cold all the time. </listItem> <listItem> <listIcon />You don't need much space because it's small, compact and easy to transport.</listItem> <listItem> </listItem> </listItem>. <listItem> <listIcon/>The power consumption is very small, so you are free to use a small generator for outdoor events. </listItem> <listItem> <listIcon as={AddIcon} color='#FF893B' />You can simplify your life because no extra wiring is needed! Just plug and pour! </listItem> <listItem> <listIcon />You can reduce your carbon footprint because it uses 45% less energy than \"kegerators\" and other conventional coolers.",
+    "rentalDraftConclusion": "<bold>No need for ice</bold>! Replaces jockey boxes and kegerators! Connect your keg to our dispenser, and in minutes, <bold>pour your drink at the desired temperature!</bold> Rentals start at $90 + tax.",
+    "rentalGlassTitle": "Location de verres réutilisables",
+    "rentalGlassText": "Baisser l’empreinte carbone de votre party c’est totalement possible et ça commence par ne pas produire de nouveaux déchets grâce à la location de gobelets réutilisables pour vos évènements.",
+    "rentalEventTitle": "Procedures for event permits",
+    "rentalEventText": "<text> The team of <bold>temps d'un keg</bold> guides you in the distribution of alcoholic beverages during your events on the regulatory and legal parts.</text> <text> We provide a compendium of information on the licenses required in Quebec to distribute alcohol during private and public events.</text><text> This guide can be useful in the organization of your events when you want to rent a beer dispenser and distribute beverages to your participants.</text>"
+
 }

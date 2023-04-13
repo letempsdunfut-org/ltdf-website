@@ -12,5 +12,7 @@
     "endDate": "Date de fin",
     "qty": "Quantité de tireuse",
     "options": "Options",
-    "submit": "Soumettre ma réservation"
+    "submit": "Soumettre ma réservation",
+    "bookingWIP": "Notre système de réservation arrive bientot !",
+    "bookingWIPText": "En attendant, envoyez-nous un courriel pour profiter de nos services !"
 }

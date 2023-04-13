@@ -148,26 +148,6 @@ export default function Layout({
 
                                 </MenuList>
                             </Menu>
-
-                            <Menu>
-                                <MenuButton
-                                    as={Button}
-                                    rounded={'full'}
-                                    variant={'link'}
-                                    cursor={'pointer'}
-                                    minW={0}>
-                                    <Avatar
-                                        size={'sm'}
-                                        src={
-                                            profileImg
-                                        }
-                                        name={t('logoProfile')}
-                                    />
-                                </MenuButton>
-                                <MenuList>
-                                    {loginLogout}
-                                </MenuList>
-                            </Menu>
                         </Flex>
                     </Flex>
 

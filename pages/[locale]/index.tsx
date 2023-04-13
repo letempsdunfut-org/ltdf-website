@@ -161,15 +161,6 @@ export default function Home() {
                                                     </ListItem>
                                                     <ListItem textAlign={'justify'}>
                                                         <ListIcon as={AddIcon} color='#FF893B'/>
-                                                        <Trans i18nKey='rentalGlass' t={t}
-                                                               components={{
-                                                                   cite: <Text as={'cite'}/>,
-                                                                   bold: <strong/>
-                                                               }}>
-                                                        </Trans>
-                                                    </ListItem>
-                                                    <ListItem textAlign={'justify'}>
-                                                        <ListIcon as={AddIcon} color='#FF893B'/>
                                                         <Trans i18nKey='rentalLicence' t={t}
                                                                components={{
                                                                    cite: <Text as={'cite'}/>,
@@ -249,13 +240,6 @@ export default function Home() {
                                                        components={{text: <Text/>, bold: <strong/>}}>
                                                 </Trans>
                                             </ListItem>
-
-                                            <ListItem textAlign={"justify"}>
-                                                <ListIcon as={CheckIcon} color='#FF893B'/>
-                                                <Trans i18nKey='productGlass' t={t}
-                                                       components={{text: <Text/>, bold: <strong/>}}>
-                                                </Trans>
-                                            </ListItem>
                                         </List>
                                     </Center>
                                 </Box>
@@ -312,7 +296,7 @@ export default function Home() {
                                     <Box>
                                         <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                                  lineHeight={'110%'} textAlign='center'>
-                                            {t('common:professional')}
+                                            {t('storyTitle')}
                                         </Heading>
                                     </Box>
                                     <Box>
@@ -338,14 +322,6 @@ export default function Home() {
                                             </VStack>
                                         </Center>
                                     </Box>
-                                    <Box>
-                                        <Center>
-                                            <LinkComponent href='/history' _hover={{textDecoration: 'none'}}><Button
-                                                backgroundColor={'white'}
-                                                color='#095d78'>{t('moreinfo')}</Button></LinkComponent>
-                                        </Center>
-                                    </Box>
-
                                 </Stack>
                             </Center>
                         </Box>

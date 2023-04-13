@@ -1,3 +1,14 @@
 {
-    "pageTitle": "Le temps d'un fût - Products"
+    "pageTitle": "Le temps d'un fût - Products",
+    "book": "Book now !",
+    "draftTechnicalTilte": "Features",
+    "draftTechnicalList": "<listItem> <listIcon /> 13 gallons/hr continuous cooling capacity. </listItem><listItem> <listIcon /> Professional features</listItem><listItem> <listIcon /> Two tap lines</listItem><listItem> <listIcon /> Can cool two kegs of different capacities at the same time</listItem><listItem> <listIcon /> Small size, fits in the trunk of a small car. </listItem> <listItem> <listIcon/> Your beer on tap, guaranteed fresh in under 10 minutes</listItem>",
+    "draftMaintainTitle": "Maintenance",
+    "draftMaintainInfo": "Hygiene is our priority. All our machines are rigorously controlled, inspected and disinfected between each rental.",
+    "draftDelivryTitle": "Delivery",
+    "draftDelivryInfo": "Only Montreal Island is eligible for delivery. However, please do not hesitate to get in touch with us to see if an exception can be made for your order.",
+    "draftServiceTitle": "Setup",
+    "draftServiceInfo": "Every rental of our machines includes a short training on how to use it, as well as a user manual. In the case of a delivery, we even take care of the installation.",
+    "draftPriceTitle": "Pricing",
+    "draftPricePanel": "<list> <listItem> <listIcon /> 24 hrs = from $90 + tax </listItem> <listItem> <listIcon /> 48 hrs = from $130 + tax </listItem></list><box ><text > *Shipping = from $20 + tax</text><cr /><text> *More than 48 hrs on quote</text></box>"
 }
