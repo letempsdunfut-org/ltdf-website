@@ -46,7 +46,7 @@ export default function Booking() {
                 <Head>
                     <title>{t('booking:pageTitle')}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
+              <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
@@ -86,7 +86,7 @@ export default function Booking() {
                 </Container>
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
                   backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <VStack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
                            maxHeight='max'>
                         <Box w='100%' h='100%'>
                             <Center bg={'white'}>
@@ -105,7 +105,7 @@ export default function Booking() {
                                 </Stack>
                             </Center>
                         </Box>
-                    </Stack>
+                    </VStack>
                 </Container>
             </Layout>
         </>
