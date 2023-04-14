@@ -183,6 +183,7 @@ export default function Layout({
                                         </Heading>
                                         <Text> <a href='mailto:contact@letempsdunfut.ca'> contact@letempsdunfut.ca</a>
                                         </Text>
+                                        <Text>+1 (438)-793-6644</Text>
                                     </VStack>
                                 </Center>
                             </Box>

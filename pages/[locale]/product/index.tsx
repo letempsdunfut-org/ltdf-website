@@ -107,8 +107,8 @@ export default function Product() {
                             </Center>
                         </Box>
                         <Box w={magicRatio} h='100%' pr={5}>
-                            <VStack w='100%'   >
-                                <Box w={'100%'} >
+                            <VStack w='100%'>
+                                <Box w={'100%'}>
                                     <Center w={'100%'}>
                                         <Accordion defaultIndex={[0]} w={'100%'}>
                                             <AccordionItem>

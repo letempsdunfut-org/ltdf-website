@@ -13,6 +13,6 @@
     "qty": "Machine's quantity",
     "options": "Options",
     "submit": "Confirm the booking",
-    "bookingWIP": "We are building our booking system",
-    "bookingWIPText": "Send us an email to book our machines in the meantime !"
+    "bookingWIP": "We are building our booking system...",
+    "bookingWIPText": "but you can send us an email or call us to book our machines !"
 }
