@@ -1,5 +1,16 @@
 {
-    "description": "Rental of beer and/or kombucha draft system for businesses and individuals on the island of Montreal.",
-    "rental": "Want to rent our machines? send us",
-    "email": "an email !"
+    "description": "Rental of beer and/or kombucha draft system for companies and individuals on Montréal's island.",
+    "rental": "Want to rent one of our machines? Send us",
+    "email": "an email !",
+    "productsInfo": "Our professional dispensers are designed to chill, dispense and serve a wide range of beverages at home, garden parties, corporate parties and small commercial events, with the ability to pour up to two beverages at a time.  Perfect for enjoying a keg of kombucha as well as a keg of beer, the ideal alternative for a party with or without alcohol.",
+    "locationInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui mi. Vestibulum ut consectetur nisl. Nullam auctor risus eu convallis malesuada. Sed a iaculis metus. Sed iaculis malesuada suscipit. Morbi at quam quis dui elementum suscipit quis vel diam. Pellentesque quam odio, bibendum id lacinia ut, sagittis sed tellus. Etiam at nisl at mi egestas rutrum vel ac tortor. Nulla tellus mi, placerat vel aliquet malesuada, finibus a dui. Nullam accumsan nisi justo, at tempor nisi condimentum id. Vivamus ut tellus eget ex blandit blandit. Nullam ex elit, dictum in felis quis, tincidunt fermentum ipsum. Fusce porttitor auctor tempus. Sed at nunc non nisl euismod gravida at sed elit. Vivamus faucibus porta ligula, eget venenatis velit convallis vel. In finibus, lorem ac vestibulum eleifend, nibh libero interdum augue, eu sollicitudin justo nulla id lorem.",
+    "moreinfo": "More info",
+    "storyTitle": "Our story",
+    "history": "<text><bold>Le Temps d'un fût</bold> is the story of three friends and longtime beer geeks who fell in love with Québec's microbreweries.</text><box> <text as='cite' >While organizing various events, <bold>we noticed that it was very difficult to get access to high-performance beer taps and that their installation was often laborious.</bold> </text> </box> <text>Aware of all three climate issues and the importance of reducing waste, we asked ourselves how our company could be environmentally responsible. <br /> <bold > That's why we came up with the idea of offering a kegged beer distribution service</bold> to minimize the waste associated with traditional distribution.</text> <text> Renting a kegerator is very advantageous for several reasons.<br/>In addition to being <bold> very economical</bold>, it allows a greater number of people to discover <bold>the wonders of the Quebec microbrewery scene.</bold><br/>It also allows us to promote the work of Quebec’s brewers by using professional equipment at a price accessible to all.</text>",
+    "productDraft": "Our machines are designed for <bold>professional service</bold> of <bold>perfectly chilled</bold> beverages at home, garden parties, company parties and small commercial events",
+    "productGlass": "Our <bold>BPA-free</bold> reusable cups allow you to <bold>lower the carbon footprint</bold> of your events",
+    "rentalSubTitle": "We offer these services:",
+    "rentalDraft": "<bold>Beer Dispenser Rentals</bold><cite> Our dispensers are designed to cool and serve a wide variety of beverages in a professional manner.",
+    "rentalGlass": "<bold>Reusable glass rentals</bold> <cite>Lower your party's carbon footprint, no more aluminum can waste</cite>",
+    "rentalLicence": "<bold>Event Permit Process</bold> <cite> Le temps d'un fut team will guide you through the regulatory and legal aspects of serving alcoholic beverages at your events."
 }

@@ -1,5 +1,6 @@
 import i18nextConfig from '../next-i18next.config'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { getCsrfToken } from "next-auth/react"
 
 
 
@@ -18,7 +19,7 @@ export const getStaticPaths = () => ({
 export const getI18nProps = async (ctx: any, ns: string[] = ['common']) => {
     const locale = ctx?.params?.locale
     let props = {
-        ... await serverSideTranslations(locale, ns),
+        ... (await serverSideTranslations(locale, ns)),
     }
     return props
 }
