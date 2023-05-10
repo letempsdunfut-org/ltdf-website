@@ -47,6 +47,14 @@ export default function Layout({
         {name: t('professional'), path: '/professional'}
     ];
     const {data: session} = useSession()
+
+    const localemoji = (locale) => {
+        if (locale === 'en'){
+            return "🇺🇸"
+        } else if (locale === 'fr') {
+            return "🇫🇷"
+        }
+    }
     const profileImg = session && session.user ? session?.user.image! : "/images/notLoggedUser.svg"
     const loginLogout = session && session.user ? <LinkComponent href='/auth/logout'
                                                                  _hover={{textDecoration: 'none'}}><MenuItem>{t('logout')}</MenuItem></LinkComponent> :
@@ -139,7 +147,7 @@ export default function Layout({
                                                 key={locale}
                                             >
                                                 <MenuItem key={locale}>
-                                                    {locale}
+                                                    {localemoji(locale)}
                                                 </MenuItem>
                                             </LanguageSwitchLink>
 
