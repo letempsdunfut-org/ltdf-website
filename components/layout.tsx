@@ -48,7 +48,7 @@ export default function Layout({
     ];
     const {data: session} = useSession()
 
-    const localemoji = (locale) => {
+    const localemoji = (locale: String) => {
         if (locale === 'en'){
             return "🇺🇸"
         } else if (locale === 'fr') {
