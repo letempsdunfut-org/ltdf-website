@@ -44,7 +44,8 @@ export default function Layout({
     const Links = [
         {name: t('rental'), path: '/rental'},
         {name: t('product'), path: '/product'},
-        {name: t('professional'), path: '/professional'}
+        {name: t('professional'), path: '/professional'},
+        {name: t('monthly'), path: '/monthly'}
     ];
     const {data: session} = useSession()
     const profileImg = session && session.user ? session?.user.image! : "/images/notLoggedUser.svg"

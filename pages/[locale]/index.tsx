@@ -41,7 +41,8 @@ export default function Home() {
     const Links = [
         {name: t('common:rental'), path: '/rental'},
         {name: t('common:product'), path: '/product'},
-        {name: t('common:professional'), path: '/professional'}
+        {name: t('common:professional'), path: '/professional'},
+        {name: t('common:monthly'), path: '/monthly'}
     ];
 
     const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
