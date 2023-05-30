@@ -6,4 +6,4 @@ Allow: /
 Host: https://letempsdunfut.ca
 
 # Sitemaps
-Sitemap: https://letempsdunfut.ca/sitemap.xml
+Sitemap: https://letempsdunfut.ca/sitemap-0.xml
