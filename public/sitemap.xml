@@ -1,28 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://letempsdunfut.ca/fr/</loc>
-		<lastmod>2023-04-28T10:00:20-05:00</lastmod>
-	</url>
-  	<url>
-		<loc>https://letempsdunfut.ca/en/</loc>
-		<lastmod>2023-04-28T10:00:20-05:00</lastmod>
-	</url>
-	<url>
-		<loc>https://letempsdunfut.com/en/</loc>
-		<lastmod>2023-04-28T10:00:20-05:00</lastmod>
-	</url>
-
-	<url>
-		<loc>https://letempsdunfut.com/fr/</loc>
-		<lastmod>2023-04-28T10:00:20-05:00</lastmod>
-	</url>
-	<url>
-		<loc>https://ltdf.ca/en/</loc>
-		<lastmod>2023-04-28T10:00:20-05:00</lastmod>
-	</url>
-	<url>
-		<loc>https://ltdf.ca/fr/</loc>
-		<lastmod>2023-04-28T10:00:20-05:00</lastmod>
-	</url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap><loc>https://letempsdunfut.ca/sitemap-0.xml</loc></sitemap>
+</sitemapindex>
