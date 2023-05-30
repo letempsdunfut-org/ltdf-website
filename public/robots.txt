@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://letempsdunfut.ca
+
+# Sitemaps
 Sitemap: https://letempsdunfut.ca/sitemap.xml
