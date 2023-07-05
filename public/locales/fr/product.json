@@ -10,7 +10,7 @@
     "draftServiceTitle": "Mise en service",
     "draftServiceInfo": "Chaque location de tireuse est accompagnée d’un briefing d’installation et d’utilisation dans le cas où vous ne vous feriez pas livrer votre tireuse.",
     "draftPriceTitle": "Tarification",
-    "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = 100$ + tx </listItem></list><box ><text > * Livraison =  à partir de 20 $ + taxes</text><cr /><text> *Plus de 48 h sur devis</text></box>",
+    "draftPricePanel": "<list> <listItem> <listIcon /> 24 h = à partir de 90 $ + tx </listItem> <listItem> <listIcon />  Weekend = à partir de 100$ + tx </listItem></list><box ><text > * Livraison =  à partir de 20 $ + taxes</text><cr /><text> *Plus de 48 h sur devis</text></box>",
     "glassTechnicalTilte": "Caractéristiques techniques",
     "glassTechnicalList": "<listItem><listIcon /> Verres réutilisables de 40 cl (12 oz)</listItem><listItem><listIcon />Sans BPA</listItem>",
     "glassCoverTilte": "Personnalisation et achat",

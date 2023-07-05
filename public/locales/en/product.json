@@ -10,5 +10,4 @@
     "draftServiceTitle": "Setup",
     "draftServiceInfo": "Every rental of our machines includes a short training on how to use it, as well as a user manual. In the case of a delivery, we even take care of the installation.",
     "draftPriceTitle": "Pricing",
-    "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = $100 + tx </listItem></list><box ><text > *Shipping = from $20 + tax</text><cr /><text> *More than 48 hrs on quote</text></box>"
-}
+    "draftPricePanel": "<list> <listItem> <listIcon /> 24 hrs = from $90 + tx </listItem> <listItem> <listIcon /> Weekend  = from $100 + tx </listItem></list><box ><text > *Shipping = from $20 + tax</text><cr /><text> *More than 48 hrs on quote</text></box>"}
