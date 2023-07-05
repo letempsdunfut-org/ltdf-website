@@ -46,7 +46,7 @@ export default function Booking() {
         <Head>
           <title>{t('booking:pageTitle')}</title>
         </Head>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+        <Container minHeight={'95vh'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
           <Image
             src={imgCouverture}
             alt={name}
@@ -54,7 +54,7 @@ export default function Booking() {
             fill={true}
             style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray', filter: 'grayscale(100%)'}}
           />
-          <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+          <Center minH={'90vh'} maxHeight='max' maxW='100%'>
             <VStack spacing={5} alignItems={'center'} h={"fit"}>
               <Box w='100%' h='100%'>
                 <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -84,9 +84,9 @@ export default function Booking() {
             </VStack>
           </Center>
         </Container>
-        <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
+        <Container minHeight={'95vh'} maxHeight='max' maxW='100%' paddingTop={'16'}
                    backgroundColor={'#095d78'} color={'white'}>
-          <VStack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+          <VStack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
                   maxHeight='max'>
             <Box w='90%' h='100%' paddingLeft={'5%'}>
               <Center bg={'white'}>

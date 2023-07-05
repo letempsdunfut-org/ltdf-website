@@ -51,7 +51,7 @@ export default function Product() {
                 <Head>
                     <title>{t('product:pageTitle')}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+                <Container minHeight={'95vh'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
@@ -60,7 +60,7 @@ export default function Product() {
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
 
-                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                    <Center minH={'90vh'} maxHeight='max' maxW='100%'>
                         <VStack spacing={5} alignItems={'center'} h={"fit"}>
                             <Box w='100%' h='100%'>
                                 <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -93,9 +93,9 @@ export default function Product() {
                     </Center>
                 </Container>
 
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
+                <Container minHeight={'95vh'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={6} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <Stack direction={['column', 'row']} spacing={6} alignItems={'center'} minHeight={'80vh'}
                            maxHeight='max'>
                         <Box w='50%' h='100%'>
                             <Center>

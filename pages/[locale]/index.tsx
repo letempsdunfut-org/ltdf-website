@@ -92,7 +92,7 @@ export default function Home() {
                                     </Wrap>
                                 </Stack>
                             </Box>
-                            <Box minH={'calc(10vh)'}>
+                            <Box minH={'10vh'}>
                                 <Image
                                     width={75}
                                     src={iconBeer}
@@ -253,7 +253,7 @@ export default function Home() {
 
                 <Container minHeight={'95vh'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
                            maxHeight='max'>
                         <Box w='49%' h='100%'>
                             <Center>
