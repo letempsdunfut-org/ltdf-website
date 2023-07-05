@@ -51,15 +51,14 @@ export default function Home() {
                 <Head>
                     <title>{name}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+                <Container minHeight={'95vh'} maxHeight='95vh' maxW='100%' paddingTop={'16'} position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
-                        loading="lazy"
                         fill={true}
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
-                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                    <Center minH={'90vh'} maxHeight='90vh' maxW='100%'>
                         <VStack spacing={5} alignItems={'center'} h={"fit"}>
                             <Box boxSize={'26vh'} paddingTop={5}>
                                 <Image
@@ -112,9 +111,9 @@ export default function Home() {
 
                 </Container>
 
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
+                <Container minHeight={'95vh'} maxHeight='95vh' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
                            maxHeight='max'>
                         <Box w='50%' h='100%'>
                             <Center>
@@ -244,7 +243,7 @@ export default function Home() {
                                     </Center>
                                 </Box>
                                 <Box padding={5}>
-                                    <LinkComponent  href='/product' _hover={{textDecoration: 'none'}}><Button
+                                    <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
                                         backgroundColor={'#095d78'}
                                         color='white'>{t('moreinfo')}</Button></LinkComponent>
                                 </Box>
@@ -255,10 +254,10 @@ export default function Home() {
 
                 </Container>
 
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
+                <Container minHeight={'95vh'} maxHeight='95vh' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
+                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
+                           maxHeight='80vh'>
                         <Box w='49%' h='100%'>
                             <Center>
                                 <VStack spacing={{base: 4, md: 8}}>

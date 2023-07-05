@@ -7,104 +7,104 @@ const createSitemap = (host: string) =>
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://${host}/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/auth/login/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/auth/login</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/auth/logout/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/auth/logout</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/booking/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/booking</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/product/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/product</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/professional/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/professional</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/rental/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/rental</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/fr/product/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/fr/product</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://${host}/en/product/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/fr/booking/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/fr/booking</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/en/booking/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/en/booking</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/fr/rental/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/fr/rental</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/en/rental/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/en/rental</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/fr/professional/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/fr/professional</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://${host}/en/professional/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/fr/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/fr</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/en/</loc>
-        <lastmod>2023-05-30T17:56:11.165Z</lastmod>
+        <loc>https://${host}/en</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>

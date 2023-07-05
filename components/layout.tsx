@@ -47,6 +47,14 @@ export default function Layout({
         {name: t('professional'), path: '/professional'}
     ];
     const {data: session} = useSession()
+
+    const localemoji = (locale: String) => {
+        if (locale === 'en'){
+            return "🇺🇸"
+        } else if (locale === 'fr') {
+            return "🇫🇷"
+        }
+    }
     const profileImg = session && session.user ? session?.user.image! : "/images/notLoggedUser.svg"
     const loginLogout = session && session.user ? <LinkComponent href='/auth/logout'
                                                                  _hover={{textDecoration: 'none'}}><MenuItem>{t('logout')}</MenuItem></LinkComponent> :
@@ -139,7 +147,7 @@ export default function Layout({
                                                 key={locale}
                                             >
                                                 <MenuItem key={locale}>
-                                                    {locale}
+                                                    {localemoji(locale)}
                                                 </MenuItem>
                                             </LanguageSwitchLink>
 
@@ -169,11 +177,11 @@ export default function Layout({
                     ) : null}
                 </Box>
 
-                <Box p={1} minW={'calc(100vh)'}>
+                <Box p={1} minW={'100vh'}>
                     <main>{children}</main>
-                    <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'}
+                    <Container minHeight={'30vh'} maxHeight='max' maxW='100%' paddingTop={'5'}
                                backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'}>
-                        <Flex h='calc(29vh)'>
+                        <Flex h='29vh'>
                             <Box w='33%' h='100%'>
                                 <Center h='100%'>
                                     <VStack>
