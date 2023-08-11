@@ -31,6 +31,8 @@ import i18nextConfig from '../next-i18next.config'
 import {useRouter} from 'next/router';
 import facebookLogo from '../public/images/facebookLogo.svg'
 import instagramLogo from '../public/images/Instagram_logo_2016.svg'
+import {Meta} from "next/dist/lib/metadata/generate/meta";
+import React from "react";
 
 
 export default function Layout({
@@ -49,7 +51,7 @@ export default function Layout({
     const {data: session} = useSession()
 
     const localemoji = (locale: String) => {
-        if (locale === 'en'){
+        if (locale === 'en') {
             return "🇺🇸"
         } else if (locale === 'fr') {
             return "🇫🇷"
@@ -75,6 +77,9 @@ export default function Layout({
                     content="https://deft-moxie-184876.netlify.app/images/logoLtdf.svg"
                 />
                 <meta name="og:title" content={t('title')}/>
+                <meta name={"viewport"}
+                      content={"width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"}></meta>
+
             </Head>
             <>
                 <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} position={'fixed'} width={'100%'}
@@ -177,11 +182,11 @@ export default function Layout({
                     ) : null}
                 </Box>
 
-                <Box p={1} minW={'100vh'}>
+                <Box p={1} minW={'100vw'}>
                     <main>{children}</main>
-                    <Container minHeight={'30vh'} maxHeight='max' maxW='100%' paddingTop={'5'}
+                    <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'}
                                backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'}>
-                        <Flex h='29vh'>
+                        <Flex h='calc(29vh)'>
                             <Box w='33%' h='100%'>
                                 <Center h='100%'>
                                     <VStack>

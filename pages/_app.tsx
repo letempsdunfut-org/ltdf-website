@@ -8,15 +8,13 @@ import {SessionProvider} from "next-auth/react"
 
 import React from 'react';
 import Head from "next/head";
+import {Meta} from "next/dist/lib/metadata/generate/meta";
 
 // If loading a variable font, you don't need to specify the font weight
 const montserrat = Montserrat({subsets: ['latin']});
 
 const appCore = ({Component, pageProps}: AppProps) => (
     <React.Fragment>
-        <Head>
-            <meta name={"viewport"} content={"width=device-width, initial-scale=1, minimum-scale=1"}/>
-        </Head>
         <ChakraProvider theme={extendTheme({
             fonts: {
                 heading: montserrat.style.fontFamily,
