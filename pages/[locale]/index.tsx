@@ -45,13 +45,14 @@ export default function Home() {
     ];
 
     const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
+    const magicImageRatioVw = ['60vw', '30vh', '30vw', '25vw', '15vw', '15vw'];
     return (
         <>
             <Layout>
                 <Head>
                     <title>{name}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
+                <Container minHeight={'90vh'} maxHeight='max' maxW='100%' paddingTop={'16'} position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
@@ -59,9 +60,9 @@ export default function Home() {
                         fill={true}
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
-                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                    <Center minH={'100%'} maxHeight='max' maxW='100%'>
                         <VStack spacing={5} alignItems={'center'} h={"fit"}>
-                            <Box boxSize={'26vh'} paddingTop={5}>
+                            <Box boxSize={magicImageRatioVw} paddingTop={5}>
                                 <Image
                                     src={logoLtdf}
                                     alt={name}
@@ -78,32 +79,15 @@ export default function Home() {
                                     {name}
                                 </Heading>
                             </Box>
-                            <Box>
-                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'}>
-                                    <Wrap spacing={4}>
-                                        {Links.map((link) => (
-                                            <WrapItem key={link.name}>
-                                                <LinkComponent key={link.name} href={link.path}
-                                                               _hover={{textDecoration: 'none'}}><Button key={link.name}
-                                                                                                         backgroundColor={'#095d78'}
-                                                                                                         color='white'>{link.name}</Button></LinkComponent>
-                                            </WrapItem>
-                                        ))}
-                                    </Wrap>
+                            <Box marginBottom={'10px'}>
+                                <Stack direction={["column", "row"]} alignItems={'center'}>
+                                    {Links.map((link) => (
+                                        <LinkComponent key={link.name} href={link.path}
+                                                       _hover={{textDecoration: 'none'}}><Button key={link.name}
+                                                                                                 backgroundColor={'#095d78'}
+                                                                                                 color='white'>{link.name}</Button></LinkComponent>
+                                    ))}
                                 </Stack>
-                            </Box>
-                            <Box minH={'calc(10vh)'}>
-                                <Image
-                                    width={75}
-                                    src={iconBeer}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{
-                                        backgroundColor: 'white',
-                                        borderRadius: '50%',
-                                        margin: 'auto',
-                                    }}
-                                />
                             </Box>
                         </VStack>
 
@@ -112,18 +96,18 @@ export default function Home() {
 
                 </Container>
 
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
+                <Container minHeight={'95vh'} maxHeight='95vh' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
                            maxHeight='max'>
-                        <Box w='50%' h='100%'>
+                        <Box w='50vw' h='100%'>
                             <Center>
-                                <Box boxSize={'60vh'} overflow={'hidden'}>
+                                <Box boxSize={'40vw'} overflow={'hidden'}>
                                     <Image
                                         src={imgLocation}
                                         alt={name}
                                         loading="lazy"
-                                        sizes='(max-width: 50vh)'
+                                        sizes='(max-width: 30vw)'
                                         style={{filter: 'grayscale(100%)'}}
                                     />
                                 </Box>
@@ -255,22 +239,22 @@ export default function Home() {
 
                 </Container>
 
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
+                <Container minHeight={'95vh'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
+                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
                            maxHeight='max'>
-                        <Box w='49%' h='100%'>
+                        <Box w='45vw' h='100%'>
                             <Center>
                                 <VStack spacing={{base: 4, md: 8}}>
                                     <HStack spacing={{base: 4, md: 8}}>
-                                        <Box boxSize={'25vh'}>
+                                        <Box boxSize={'20vw'}>
                                             <Image
                                                 src={greg}
                                                 alt={name}
                                                 loading="lazy"
                                             />
                                         </Box>
-                                        <Box boxSize={'25vh'}>
+                                        <Box boxSize={'20vw'}>
 
                                             <Image
                                                 src={arthur}
@@ -279,7 +263,7 @@ export default function Home() {
                                             />
                                         </Box>
                                     </HStack>
-                                    <Box boxSize={'25vh'}>
+                                    <Box boxSize={'20vw'}>
                                         <Image
                                             src={coco}
                                             alt={name}
@@ -290,7 +274,7 @@ export default function Home() {
                             </Center>
 
                         </Box>
-                        <Box w='100%' h='100%'>
+                        <Box w='60vw' h='100%'>
                             <Center>
                                 <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Box>

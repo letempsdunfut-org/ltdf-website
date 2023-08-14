@@ -87,23 +87,22 @@ export default function Layout({
                     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
 
                         <HStack spacing={8} alignItems={'center'}>
-                            <Box>
-                                <LinkComponent href='/'>
-                                    <Avatar
-                                        size={'sm'}
-                                        src={'/images/logoLtdf.svg'}
-                                        name={t('logoSite')}
-                                    />
-                                </LinkComponent>
-                                <IconButton
-                                    marginLeft={5}
-                                    size={'md'}
-                                    icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
-                                    aria-label={'Open Menu'}
-                                    display={{md: 'none'}}
-                                    onClick={isOpen ? onClose : onOpen}
+                            <LinkComponent href='/'>
+                                <Avatar
+                                    size={'sm'}
+                                    src={'/images/logoLtdf.svg'}
+                                    name={t('logoSite')}
                                 />
-                            </Box>
+                            </LinkComponent>
+                            <IconButton
+                                marginLeft={5}
+                                size={'md'}
+                                icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
+                                aria-label={'Open Menu'}
+                                display={{md: 'none'}}
+                                onClick={isOpen ? onClose : onOpen}
+                            />
+
                             <HStack
                                 as={'nav'}
                                 spacing={4}
@@ -139,7 +138,7 @@ export default function Layout({
                                     rounded={'full'}
                                     cursor={'pointer'}
                                     minW={0} mr={4}>
-                                    <Text>{t('changeLang')}</Text>
+                                    <Text>{currentLocale}</Text>
                                 </MenuButton>
                                 <MenuList>
                                     {i18nextConfig.i18n.locales.map((locale) => {
@@ -182,62 +181,63 @@ export default function Layout({
                     ) : null}
                 </Box>
 
-                <Box p={1} minW={'100vw'}>
+                <Box paddingTop={1} minW={'100vw'}>
                     <main>{children}</main>
-                    <Container minHeight={'calc(30vh)'} maxHeight='max' maxW='100%' paddingTop={'5'}
-                               backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'}>
-                        <Flex h='calc(29vh)'>
-                            <Box w='33%' h='100%'>
-                                <Center h='100%'>
-                                    <VStack>
-                                        <Heading as='h3' fontWeight={600} fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
-                                                 lineHeight={'110%'}>
-                                            {t('contactUs')}
-                                        </Heading>
-                                        <Text> <a href='mailto:contact@letempsdunfut.ca'> contact@letempsdunfut.ca</a>
-                                        </Text>
-                                        <Text>+1 (438)-793-6644</Text>
-                                    </VStack>
-                                </Center>
-                            </Box>
-                            <Spacer/>
-                            <Box w='33%' h='100%'>
-                                <Center h='100%' alignItems={'flex-end'}>
-                                    <Text> {t('copyright')}</Text>
-                                </Center>
-                            </Box>
-                            <Spacer/>
-                            <Box w='33% ' h='100%'>
-                                <Center h='100%'>
-                                    <VStack>
-                                        <Heading as='h3' fontWeight={600} fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
-                                                 lineHeight={'110%'}>
-                                            {t('folowUs')}
-                                        </Heading>
-                                        <HStack spacing={8}>
-                                            <IconButton aria-label={t('facebookLogoLabel')} backgroundColor='white'
-                                                        icon={<Image src={facebookLogo} height={40} width={40}
-                                                                     alt={t('facebookLogoAlt')}/>}
-                                                        onClick={() => {
-                                                            window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/')
-                                                        }}/>
-
-
-                                            <IconButton aria-label={t('instagramLogoLabel')} backgroundColor='white'
-                                                        icon={<Image src={instagramLogo} height={40} width={40}
-                                                                     alt={t('instagramLogoAlt')}/>}
-                                                        onClick={() => {
-                                                            window.open('https://www.instagram.com/ltdf_qc/')
-                                                        }}/>
-                                        </HStack>
-                                    </VStack>
-                                </Center>
-                            </Box>
-                        </Flex>
-
-
-                    </Container>
                 </Box>
+                <Container minHeight={'30vh'} maxHeight='max' maxW='100%'
+                           backgroundColor={'white'} color={'#095d78'} borderTop={'3px solid #095d78'}>
+                    <Flex h='30vh' w={'100vw'}>
+                        <Box w='50vw' h='100%'>
+                            <Center h='100%'>
+                                <VStack>
+                                    <Heading as='h3' fontWeight={600} fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
+                                             lineHeight={'110%'}>
+                                        {t('contactUs')}
+                                    </Heading>
+                                    <Text> <a href='mailto:contact@letempsdunfut.ca'> contact@letempsdunfut.ca</a>
+                                    </Text>
+                                    <Text>+1 (438)-793-6644</Text>
+                                </VStack>
+                            </Center>
+                        </Box>
+
+                        <Box w='50vw ' h='100%' >
+                            <Center h='100%'>
+                                <VStack>
+                                    <Heading as='h3' fontWeight={600} fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
+                                             lineHeight={'110%'}>
+                                        {t('folowUs')}
+                                    </Heading>
+                                    <HStack spacing={8}>
+                                        <IconButton aria-label={t('facebookLogoLabel')} backgroundColor='white'
+                                                    icon={<Image src={facebookLogo} height={40} width={40}
+                                                                 alt={t('facebookLogoAlt')}/>}
+                                                    onClick={() => {
+                                                        window.open('https://www.facebook.com/people/Le-temps-dun-f%C3%BBt/100087660347259/')
+                                                    }}/>
+
+
+                                        <IconButton aria-label={t('instagramLogoLabel')} backgroundColor='white'
+                                                    icon={<Image src={instagramLogo} height={40} width={40}
+                                                                 alt={t('instagramLogoAlt')}/>}
+                                                    onClick={() => {
+                                                        window.open('https://www.instagram.com/ltdf_qc/')
+                                                    }}/>
+                                    </HStack>
+                                </VStack>
+                            </Center>
+                        </Box>
+                    </Flex>
+                    <Spacer/>
+                    <Box w='100vw' h='100%'>
+                        <Center h='100%'>
+                            <Text> {t('copyright')}</Text>
+                        </Center>
+                    </Box>
+                    <Spacer/>
+
+
+                </Container>
             </>
 
         </div>
