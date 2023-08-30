@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from '../../../components/layout'
+import Layout from '../../../components/shared/layout'
 import {
     Box,
     Center,
@@ -12,16 +12,15 @@ import {
     List,
     ListIcon,
     ListItem,
-    Wrap, WrapItem
 } from '@chakra-ui/react'
 import {AddIcon} from '@chakra-ui/icons'
 import {getStaticPaths, makeStaticProps} from '../../../lib/getStatic'
 import {Trans, useTranslation} from 'next-i18next'
-import LinkComponent from '../../../components/LinkComponent '
 import Image from "next/image";
 import imgCouverture from "../../../public/images/couverture/private-party-cover.jpg";
 import iconPromo from '../../../public/images/icons/promotions-transp.png'
-import iconBeer from "../../../public/images/icons/degustation-transp.png";
+import React from "react";
+import LinkComponent from '../../../components/shared/LinkComponent'
 
 const getStaticProps = makeStaticProps(['rental', 'common']);
 export {getStaticPaths, getStaticProps};
@@ -38,7 +37,8 @@ export default function Rental() {
                 <Head>
                     <title>{t('rental:pageTitle')}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'} position={"relative"}>
+                <Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'}
+                           position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
@@ -150,7 +150,7 @@ export default function Rental() {
                                     </Center>
                                     <Center>
                                         <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                           >{t('book')}</Button>
+                                        >{t('book')}</Button>
                                         </LinkComponent>
                                     </Center>
                                 </Stack>

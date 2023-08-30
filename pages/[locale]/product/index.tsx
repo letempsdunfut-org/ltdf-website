@@ -1,21 +1,13 @@
 import Head from 'next/head'
-import Layout from '../../../components/layout'
+import Layout from '../../../components/shared/layout'
 import {
     Box,
     Center,
-    Flex,
     Heading,
-    HStack,
-    IconButton,
-    Link,
-    Spacer,
     Text,
     Container,
     Stack,
     Button,
-    ButtonGroup,
-    Wrap,
-    WrapItem,
     Accordion,
     AccordionButton,
     AccordionIcon,
@@ -26,16 +18,15 @@ import {
     VStack,
     ListIcon
 } from '@chakra-ui/react'
-import {AddIcon, ArrowForwardIcon, EmailIcon} from '@chakra-ui/icons'
+import {ArrowForwardIcon} from '@chakra-ui/icons'
 import {getStaticPaths, makeStaticProps} from '../../../lib/getStatic'
 import {Trans, useTranslation} from 'next-i18next'
 import Image from 'next/image'
 import draftPics from '../../../public/images/tireurse.png'
-import ecoCup from '../../../public/images/ecoCupDef.png'
-import LinkComponent from '../../../components/LinkComponent '
 import imgCouverture from "../../../public/images/couverture/drafts-bw.jpg";
-import iconPromo from "../../../public/images/icons/promotions-transp.png";
 import iconTireuse from '../../../public/images/icons/tireuse-transp.png'
+import React from "react";
+import LinkComponent from "../../../components/shared/LinkComponent";
 
 const getStaticProps = makeStaticProps(['product', 'common']);
 export {getStaticPaths, getStaticProps};

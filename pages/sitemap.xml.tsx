@@ -7,55 +7,13 @@ const createSitemap = (host: string) =>
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://${host}</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://${host}/auth/login</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://${host}/auth/logout</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://${host}/booking</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://${host}/product</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://${host}/professional</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://${host}/rental</loc>
-        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://${host}/fr/product</loc>
         <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/en/product/</loc>
+        <loc>https://${host}/en/product</loc>
         <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
@@ -91,7 +49,7 @@ const createSitemap = (host: string) =>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/en/professional/</loc>
+        <loc>https://${host}/en/professional</loc>
         <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>

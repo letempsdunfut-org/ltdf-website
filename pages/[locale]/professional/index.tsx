@@ -1,32 +1,20 @@
 import Head from 'next/head'
-import Layout from '../../../components/layout'
+import Layout from '../../../components/shared/layout'
 import {
     Box,
     Center,
-    Flex,
     Heading,
-    HStack,
-    IconButton,
-    Link,
-    Spacer,
     Text,
     Container,
     Stack,
     Button,
-    ButtonGroup,
-    Wrap,
-    WrapItem,
-    VStack, List, ListItem, ListIcon
+    VStack
 } from '@chakra-ui/react'
-import {AddIcon, EmailIcon} from '@chakra-ui/icons'
 import {getStaticPaths, makeStaticProps} from '../../../lib/getStatic'
 import {Trans, useTranslation} from 'next-i18next'
-import coco from '../../../public/images/coco.png'
 import Image from 'next/image'
 import imgCouverture from "../../../public/images/couverture/party-cover.jpg";
 import iconFut from "../../../public/images/icons/futs-transp.png";
-import iconTireuse from "../../../public/images/icons/tireuse-transp.png";
-import LinkComponent from "../../../components/LinkComponent ";
 
 
 const getStaticProps = makeStaticProps(['professional', 'common']);

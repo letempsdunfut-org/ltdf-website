@@ -1,4 +1,4 @@
-import languageDetector from '../lib/lngDetector'
+import languageDetector from '../../lib/lngDetector'
 import { useRouter } from 'next/router'
 import { Link, LinkProps } from '@chakra-ui/react'
 import React from 'react';
