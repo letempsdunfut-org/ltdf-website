@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Layout from '../../../components/layout'
 import {
     Box,
     Center,
@@ -12,22 +11,19 @@ import {
     List,
     ListIcon,
     ListItem,
-    Wrap, WrapItem
 } from '@chakra-ui/react'
 import {AddIcon} from '@chakra-ui/icons'
-import {getStaticPaths, makeStaticProps} from '../../../lib/getStatic'
 import {Trans, useTranslation} from 'next-i18next'
-import LinkComponent from '../../../components/LinkComponent '
 import Image from "next/image";
-import imgCouverture from "../../../public/images/couverture/private-party-cover.jpg";
-import iconPromo from '../../../public/images/icons/promotions-transp.png'
-import iconBeer from "../../../public/images/icons/degustation-transp.png";
+import imgCouverture from "../../public/images/couverture/private-party-cover.jpg";
+import iconPromo from '../../public/images/icons/promotions-transp.png'
+import React from "react";
+import Layout from '../shared/layout';
+import LinkComponent from "../shared/LinkComponent";
 
-const getStaticProps = makeStaticProps(['rental', 'common']);
-export {getStaticPaths, getStaticProps};
 
 export default function Rental() {
-    const {t} = useTranslation(['rental', 'common']);
+    const {t} = useTranslation(['dailyRental', 'common']);
     const name = t('common:title');
 
     const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
@@ -36,9 +32,10 @@ export default function Rental() {
         <>
             <Layout>
                 <Head>
-                    <title>{t('rental:pageTitle')}</title>
+                    <title>{t('dailyRental:pageTitle')}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'} position={"relative"}>
+                <Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'}
+                           position={"relative"}>
                     <Image
                         src={imgCouverture}
                         alt={name}
@@ -55,7 +52,7 @@ export default function Rental() {
                                          textTransform={'uppercase'}
                                          margin={'44px'}
                                          color={'white'}>
-                                    {t("common:rental")}
+                                    {t("common:rentalDaily")}
                                 </Heading>
                             </Box>
 
@@ -150,7 +147,7 @@ export default function Rental() {
                                     </Center>
                                     <Center>
                                         <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                           >{t('book')}</Button>
+                                        >{t('book')}</Button>
                                         </LinkComponent>
                                     </Center>
                                 </Stack>
