@@ -33,13 +33,13 @@ export default function Panel({isInvert, children, imageData, imageAltName}: {
     if (isInvert) {
         return (
             <Container minHeight={'95vh'} maxW='100%' paddingTop={'16'} position={"relative"}
-                       backgroundColor={'#095d78'} color={'white'} alignItems={'center'}>
+                       backgroundColor={'#095d78'} color={'white'}>
                 {child}
             </Container>
         )
     } else {
         return (
-            <Container minHeight={'95vh'} maxW='100%' paddingTop={'16'} position={"relative"} alignItems={'center'}>
+            <Container minHeight={'95vh'} maxW='100%' paddingTop={'16'} position={"relative"}>
                 {child}
             </Container>
 
