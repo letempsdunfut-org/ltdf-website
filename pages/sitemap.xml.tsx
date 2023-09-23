@@ -31,13 +31,25 @@ const createSitemap = (host: string) =>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/fr/rental</loc>
+        <loc>https://${host}/fr/rentalDaily</loc>
         <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://${host}/en/rental</loc>
+        <loc>https://${host}/en/rentalDaily</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+        <url>
+        <loc>https://${host}/fr/rentalMonthly</loc>
+        <lastmod>2023-08-11T10:00:00.165Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://${host}/en/rentalMonthly</loc>
         <lastmod>2023-08-11T10:00:00.165Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>

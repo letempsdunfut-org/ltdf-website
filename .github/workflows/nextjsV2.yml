@@ -40,6 +40,7 @@ jobs:
           FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
           GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
           GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
+          MAILCHIMP_KEY: ${{ secrets.MAILCHIMP_KEY }}
 
       # - name: 🧹 Run lint
       #   run: npm run lint

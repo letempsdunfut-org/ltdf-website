@@ -9,27 +9,26 @@ import kegkumImg from "../../public/images/kegkumLight.png";
 import LinkComponent from "../shared/LinkComponent";
 import imgLocation from "../../public/images/ltdf/tireuse-noel.jpg";
 import {AddIcon} from "@chakra-ui/icons";
+import React from "react";
 
 
 export default function MonthlyRental() {
-    const {t} = useTranslation(['monthelyRental', 'common']);
-    const name = t('monthelyRental:pageTitle');
+    const {t} = useTranslation(['monthlyRental', 'common']);
 
-    const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
     const magicImageRatioVw = ['80vw', '60vw', '60vw', '40vw', '30vw', '30vw'];
 
     return (
         <>
             <Layout>
                 <Head>
-                    <title>{name}</title>
+                    <title>{t('monthlyRental:pageName')}</title>
                 </Head>
                 <Panel isInvert={false}>
                     <VStack spacing={5}>
                         <Box boxSize={magicImageRatioVw} paddingTop={5}>
                             <Image
                                 src={kegkumImg}
-                                alt={name}
+                                alt={t('monthlyRental:pageName')}
                                 loading="lazy"
                                 style={{position: 'relative', backgroundColor: '#095d78', borderRadius: '50%'}}
                             />
@@ -39,119 +38,71 @@ export default function MonthlyRental() {
                                      lineHeight={'110%'} textAlign='center' position={'relative'}
                                      textTransform={'uppercase'}
                                      margin={'44px'}>
-                                Location mensuel (tout compris)
+                                {t('monthlyRental:title')}
                             </Heading>
                         </Box>
                         <Box marginBottom={'10px'}>
-                            <VStack alignItems={'center'}>
-                                <Text fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}>À PARTIR 259,99$ + TX / MOIS</Text>
-                                <Text fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}>
-                                    <strong>DISTRIBUTRICE INCLUSE!</strong></Text>
-                            </VStack>
+                            <Trans i18nKey='subTitle' t={t}
+                                   components={{
+                                       vstack: <VStack alignItems={'center'}/>,
+                                       text: <Text fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}/>,
+                                       bold: <strong/>,
+                                   }}>
+                            </Trans>
                         </Box>
                     </VStack>
                 </Panel>
 
                 <Panel isInvert={true}>
-                    <VStack alignItems={'center'}>
-                        <Box>
-                            <Heading as='h2' fontWeight={600} fontSize={{base: '3xl', sm: '1xl', md: '4xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}>
-                                DE LA KOMBUCHA
-                            </Heading>
-                        </Box>
-                        <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                               maxHeight='max'>
-                            <Box w='50vw' h='100%'>
+                    <Center textAlign={'justify'}>
+                        <VStack direction={['row']} spacing={8} padding={8} alignItems={'center'}
+                                minHeight={'calc(80vh)'}
+                                maxHeight='max' w={'60%'}>
+                            <Box>
+                                <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                         lineHeight={'110%'} textAlign='center'>
+                                    {t('KombuOffer')}
+                                </Heading>
+                            </Box>
+
+                            <Box>
+                                <VStack>
+                                    <Trans i18nKey='KombuOfferExplain' t={t}
+                                           components={{
+                                               text: <Text/>,
+                                           }}>
+                                    </Trans>
+                                </VStack>
+                            </Box>
+                            <Box>
+                                <Trans i18nKey='KombuOfferPitch' t={t}
+                                       components={{
+                                           text: <Text/>,
+                                       }}>
+                                </Trans>
+
+                            </Box>
+                            <Box backgroundColor={'gray.50'} color={'black'}>
+                                <Box margin={'2vw'}>
+                                    <Trans i18nKey='KombuOfferContent' t={t}
+                                           components={{
+                                               text: <Text/>,
+                                               li: <li/>,
+                                           }}>
+                                    </Trans>
+                                </Box>
+                            </Box>
+                            <Box>
                                 <Center>
-                                    <VStack>
-                                        <Text>Et si vous proposiez au
-                                            quotidien des breuvages sans alcool à vos collaborateur ou clients?</Text>
-                                        <br/>
-                                        <br/>
-                                        <Text>Une alternative a la caféine
-                                            garantit vegan, naturel et sans aromes artificiel ? Toujours fraiche et en
-                                            quantité adaptées a vos besoin ? Avec pour seul inconvénient mensuel, le
-                                            choix du ou des parfums que vous souhaitez proposer ?</Text>
-
-                                    </VStack>
-                                </Center>
-
-                            </Box>
-                            <Box w='100%' h='100%'>
-                                <Center>
-                                    <Image
-                                        src={kegkumImg}
-                                        alt={name}
-                                        loading="lazy"
-                                        style={{position: 'relative', backgroundColor: '#095d78', borderRadius: '50%'}}
-                                    />
+                                    <a href='mailto:contact@letempsdunfut.ca'> <Button
+                                        backgroundColor={'white'}
+                                        color='#095d78'>{t('ContactUs')}</Button>
+                                    </a>
                                 </Center>
                             </Box>
-                        </Stack>
-                    </VStack>
-                </Panel>
+                        </VStack>
+                    </Center>
 
-                <Panel isInvert={false}>
-                    <VStack>
-                        <Box>
-                            <Heading as='h2' fontWeight={600} fontSize={{base: '3xl', sm: '1xl', md: '4xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}>
-                                L&apos;offre Kombu cha cha cha
-                            </Heading>
-                        </Box>
-
-                        <Box>
-                            <Text>
-                                Notre offre est la réponse a toutes vos interrogations.
-                                <br/>
-                                <br/>
-                                Amenez la qualité de service d&apos;un bar dans le confort de vos locaux et offrez à vos
-                                employés,
-                                convives ou clients une expérience de qualité supérieur.
-                                <br/>
-                                Ne vous préoccupez pas de
-                                l&apos;entretien
-                                du matériel ni de son évolution.
-                                <br/>
-                                Libérez vous des corvées de recyclage de canettes, réduisez
-                                votre empreinte carbone et proposez des produits 100% biologique made in Quebec.
-                                <br/>
-                                <br/>
-                                Et puisque désormais vous avez un systeme de tireuse professionel, bénéficiez de
-                                l&apos;accès
-                                a
-                                des
-                                offres de fûts de micro-brasserie quebecquoise pour vos evenements!
-                            </Text>
-                        </Box>
-                        <Box backgroundColor={'gray.50'}>
-                            <Box margin={'2vw'}>
-                                Voici le contenu de notre offre:
-                                <li> Distributrice pro incluse </li>
-                                <li>Livraison et installation</li>
-                                <li>Maintenance mensuelle</li>
-                                <li> À partir de 20L de Kombucha Gutsy (lien vers le site gutsy)</li>
-                                <li> Changez de saveur chaque mois</li>
-                                <li> Augmentez ou réduisez votre forfait au besoin</li>
-                                <li>Livraison des fûts</li>
-                                <li> Gestion des consignes</li>
-                                <li>Paiement en ligne et facturation mensuel</li>
-                                <li> Accés aux offres de fûts des micro quebecquoise</li>
-                            </Box>
-                        </Box>
-
-                    </VStack>
-
-
-                </Panel>
-
-                <Panel isInvert={true}>
-                    <></>
                 </Panel>
             </Layout>
         </>

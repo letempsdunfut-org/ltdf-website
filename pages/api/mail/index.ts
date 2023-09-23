@@ -10,22 +10,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     try {
         let transporter = createTransport({
-            service: 'gmail',
+            host: "smtp.mandrillapp.com",
+            port: 587,
             auth: {
-                type: 'OAuth2',
-                user: process.env.MAIL_USERNAME as string,
-                clientId: process.env.OAUTH_CLIENTID as string,
-                clientSecret: process.env.OAUTH_CLIENT_SECRET as string,
-                refreshToken: process.env.OAUTH_REFRESH_TOKEN as string,
-                privateKey: process.env.PRIVATE_KEY as string,
-            }
+                user: "letempsdunfut@gmail.com",
+                pass: process.env.MAILCHIMP_KEY,
+            },
         });
 
         await transporter.sendMail({
-            from: '"Message bot"<contact@letempsdunfut.ca>', // sender address
+            from: '"reservation bot"<noreplay@letempsdunfut.ca>', // sender address
             to: 'order@letempsdunfut.ca', // list of receivers
             subject: `Message de location`, // Subject line
             text: JSON.stringify(req.body), // plain text body
+            priority: "high"
         })
 
         return res.json({status: 200})

@@ -1,6 +1,6 @@
 {
     "pageTitle": "Le temps d'un fût - Matériel",
-    "book": "Réserver",
+
     "draftTechnicalTilte": "Caractéristiques techniques",
     "draftTechnicalList": "<listItem> <listIcon/> Capacité de refroidissement continu de 13 gallons/h. </listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Deux lignes </listItem><listItem> <listIcon />  Possibilité de réfrigérer deux fûts de capacités différentes simultanément</listItem><listItem> <listIcon/>  Peu encombrante, elle tient dans le coffre d’une petite automobile. </listItem> <listItem> <listIcon/> Votre pression, garantie fraîche en moins de 10 minutes.</listItem>",
     "draftMaintainTitle": "Entretien des tireuses",
@@ -18,5 +18,11 @@
     "glassHygenTilte": "Hygiène",
     "glassHygenInfo": "Le lavage et contrôle des verres est effectué par nos soins et ne sera jamais à votre charge.La garantie de toujours avoir dans vos événements des verres propres et réutilisables.",
     "glassPriceTilte": "Tarification",
-    "glassPricePanel": "<list> <listItem><listIcon />Location verre à l'unité = À partir de 1 $ + taxes </listItem><listItem><listIcon />Location par pack de 300 = À partir 100 $ + taxes </listItem></list><box><text> * 1,5 $ (+ taxes) / verre manquant</text><cr /> <text > * 5 jours maximum ( +80 $ la semaine supplémentaire de location)</text></box>"
+    "glassPricePanel": "<list> <listItem><listIcon />Location verre à l'unité = À partir de 1 $ + taxes </listItem><listItem><listIcon />Location par pack de 300 = À partir 100 $ + taxes </listItem></list><box><text> * 1,5 $ (+ taxes) / verre manquant</text><cr /> <text > * 5 jours maximum ( +80 $ la semaine supplémentaire de location)</text></box>",
+
+    "dailyRental": "Location Journaliere",
+    "redirectDaily": "Voir la location journaliere",
+
+    "monthlyRental": "Location Mensuel",
+    "redirectMonthly": "Voir la location Mensuel"
 }
