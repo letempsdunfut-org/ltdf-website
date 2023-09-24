@@ -5,7 +5,7 @@ import {
     VStack,
     Center,
     Heading,
-    Button, FormControl, FormLabel, Input, HStack, Textarea, Select, Text
+    Button, FormControl, FormLabel, Input, HStack, Textarea, Select, Text, Stack
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import {getStaticPaths, makeStaticProps} from '../../../lib/getStatic'
@@ -123,16 +123,16 @@ export default function Booking() {
                 </Panel>
                 <Panel isInvert={true}>
                     <Center w='100%' h='100%'>
-                        <VStack w='60%' bg={'white'} alignItems={'center'} margin={'1%'} padding={'5%'}>
+                        <VStack w={'100%'} bg={'white'}  color={'#095d78'} alignItems={'center'} margin={'5vw'} padding={'5%'}>
                             <Box w={'100%'}>
                                 <Heading as='h3' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                          lineHeight={'110%'} textAlign='center' color={'black'}>
                                     {t('booking:bookingWIP')}
                                 </Heading>
                             </Box>
-                            <Text color={'#095d78'} textAlign={"justify"}>{t('booking:bookingInfo')}</Text>
+                            <Text textAlign={"justify"}>{t('booking:bookingInfo')}</Text>
                             <VStack color={'#095d78'} w={'100%'} spacing={6} padding={5}>
-                                <HStack w='100%'>
+                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} w={'100%'}>
                                     <FormControl isRequired>
                                         <FormLabel>{t('booking:firstname')}</FormLabel>
                                         <Input placeholder={t('booking:firstname')}
@@ -143,8 +143,8 @@ export default function Booking() {
                                         <Input placeholder={t('booking:lastname')}
                                                onChange={event => setLastname(event.target.value)}/>
                                     </FormControl>
-                                </HStack>
-                                <HStack w='100%'>
+                                </Stack>
+                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} w={'100%'}>
                                     <FormControl isRequired>
                                         <FormLabel>{t('booking:phone')}</FormLabel>
                                         <Input placeholder={t('booking:phone')}
@@ -155,8 +155,8 @@ export default function Booking() {
                                         <Input placeholder={t('booking:email')}
                                                onChange={event => setMail(event.target.value)}/>
                                     </FormControl>
-                                </HStack>
-                                <HStack w='100%'>
+                                </Stack>
+                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} w={'100%'}>
                                     <FormControl isRequired>
                                         <FormLabel>{t('booking:city')}</FormLabel>
                                         <Input placeholder={t('booking:city')}
@@ -167,7 +167,7 @@ export default function Booking() {
                                         <Input placeholder={t('booking:city')}
                                                onChange={event => setPostalCode(event.target.value)}/>
                                     </FormControl>
-                                </HStack>
+                                </Stack>
                                 <FormControl isRequired>
                                     <FormLabel>{t('booking:deliveryService')}</FormLabel>
                                     <Select placeholder={t('booking:deliveryService')}
@@ -178,12 +178,11 @@ export default function Booking() {
                                             value={t('booking:deliveryServiceOpt2')}>{t('booking:deliveryServiceOpt2')}</option>
                                         <option
                                             value={t('booking:deliveryServiceOpt3')}>{t('booking:deliveryServiceOpt3')}</option>
-                                    <option
+                                        <option
                                             value={t('booking:deliveryServiceOpt4')}>{t('booking:deliveryServiceOpt4')}</option>
                                     </Select>
                                 </FormControl>
-                                <HStack w='100%'>
-                                    <FormControl isRequired>
+                                <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} w={'100%'}>                                      <FormControl isRequired>
                                         <FormLabel>{t('booking:startDate')}</FormLabel>
                                         <Input type={"date"} max={end}
                                                onChange={event => setStart(event.target.value)}/>
@@ -193,7 +192,7 @@ export default function Booking() {
                                         <Input type={"date"} min={start}
                                                onChange={event => setEnd(event.target.value)}/>
                                     </FormControl>
-                                </HStack>
+                                </Stack>
                                 <FormControl>
                                     <FormLabel>{t('booking:detail')}</FormLabel>
                                     <Textarea placeholder={t('booking:detail')}
