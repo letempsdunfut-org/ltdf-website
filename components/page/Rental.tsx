@@ -44,7 +44,7 @@ export default function Rental() {
                         style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
                     />
 
-                    <Center minH={'calc(90vh)'} maxHeight='max' maxW='100%'>
+                    <Center minH={'90vh'}>
                         <VStack spacing={5} alignItems={'center'} h={"fit"}>
                             <Box>
                                 <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
@@ -90,33 +90,42 @@ export default function Rental() {
                                              lineHeight={'110%'} textAlign='center'>
                                         {t('retntalDraftTitle')}
                                     </Heading>
-                                    <Center>
-                                        <VStack textAlign={'justify'}>
-                                            <Text w='100%' textAlign={"justify"} as={'cite'}>
-                                                <strong>{t('deliveryCta')}</strong>
-                                            </Text>
-                                            <Trans i18nKey='retntalDraftText' t={t}
-                                                   components={{text: <Text/>, bold: <strong/>}}>
-                                            </Trans>
-                                            <Box paddingLeft={30}>
-                                                <List spacing={3} w='100%' h='100%'>
-                                                    <Trans i18nKey='rentalDraftList' t={t}
-                                                           components={{
-                                                               text: <Text/>,
-                                                               bold: <strong/>,
-                                                               listItem: <ListItem/>,
-                                                               listIcon: <ListIcon as={AddIcon} color='#FF893B'/>
-                                                           }}>
-                                                    </Trans>
-                                                </List>
-                                            </Box>
-                                            <Text>
-                                                <Trans i18nKey='rentalDraftConclusion' t={t}
-                                                       components={{bold: <strong/>}}>
+                                    <VStack textAlign={'justify'}>
+                                        <Text w='100%' textAlign={"justify"} as={'cite'}>
+                                            <strong>{t('deliveryCta')}</strong>
+                                        </Text>
+
+                                        <Trans i18nKey='retntalDraftText' t={t}
+                                               components={{
+                                                   text: <Text w={'100%'}/>,
+                                                   bold: <strong/>
+                                               }}>
+                                        </Trans>
+                                        <Trans i18nKey={'retntalDraftTextPros'} t={t}
+                                               components={{
+                                                   text: <Text w={'100%'} paddingTop={5}/>,
+                                                   bold: <strong/>
+                                               }}>
+                                        </Trans>
+
+                                        <Box paddingLeft={30}>
+                                            <List spacing={3} w='100%' h='100%'>
+                                                <Trans i18nKey='rentalDraftList' t={t}
+                                                       components={{
+                                                           text: <Text/>,
+                                                           bold: <strong/>,
+                                                           listItem: <ListItem/>,
+                                                           listIcon: <ListIcon as={AddIcon} color='#FF893B'/>
+                                                       }}>
                                                 </Trans>
-                                            </Text>
-                                        </VStack>
-                                    </Center>
+                                            </List>
+                                        </Box>
+                                        <Text>
+                                            <Trans i18nKey='rentalDraftConclusion' t={t}
+                                                   components={{bold: <strong/>}}>
+                                            </Trans>
+                                        </Text>
+                                    </VStack>
                                     <Center>
                                         <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}><Button
                                             backgroundColor={'white'} color='#095d78'>{t('book')}</Button>

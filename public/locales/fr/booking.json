@@ -1,6 +1,6 @@
 {
-  "pageTitle": "Le temps d'un fût - Location demand de réservation",
-  "infoTitle": "Information",
+  "pageTitle": "Le temps d'un fût - Location, demande de réservation",
+  "infoTitle": "Informations",
   "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui mi. Vestibulum ut consectetur nisl. Nullam auctor risus eu convallis malesuada. Sed a iaculis metus. Sed iaculis malesuada suscipit. Morbi at quam quis dui elementum suscipit quis vel diam. Pellentesque quam odio, bibendum id lacinia ut, sagittis sed tellus. Etiam at nisl at mi egestas rutrum vel ac tortor. Nulla tellus mi, placerat vel aliquet malesuada, finibus a dui. Nullam accumsan nisi justo, at tempor nisi condimentum id. Vivamus ut tellus eget ex blandit blandit. Nullam ex elit, dictum in felis quis, tincidunt fermentum ipsum. Fusce porttitor auctor tempus. Sed at nunc non nisl euismod gravida at sed elit. Vivamus faucibus porta ligula, eget venenatis velit convallis vel. In finibus, lorem ac vestibulum eleifend, nibh libero interdum augue, eu sollicitudin justo nulla id lorem.",
   "bookingTitle": "Formulaire",
   "firstname": "Prénom",
@@ -11,15 +11,15 @@
   "endDate": "Date de fin de la location",
   "submit": "Envoyer ma demande",
   "bookingWIP": "Demande de location",
-  "bookingWIPText": "En attendant, envoyez-nous un courriel ou appelez-nous pour profiter de nos services sur l'ile de Montréal!",
+  "bookingWIPText": "En attendant, envoyez-nous un courriel ou appelez-nous pour profiter de nos services sur l'île de Montréal!",
   "phone": "Téléphone",
   "city": "Ville",
   "postalCode": "Code postal",
   "deliveryService": "Service de livraison",
-  "deliveryServiceOpt1": "Non pas le besoin je me deplace la chercher",
-  "deliveryServiceOpt2": "Non je retire la machine au meme endroit oú j'achète les fût (si ile de Montreal) ",
-  "deliveryServiceOpt3": "Oui sur l'ile de montreal (Gratuit)",
-  "deliveryServiceOpt4": "Oui en dehors de l'ile de montreal (frais en sus) ",
+  "deliveryServiceOpt1": "Non pas le besoin je me déplace la chercher",
+  "deliveryServiceOpt2": "Non je retire la machine au même endroit oú j'achète les fûts (si île de Montreal) ",
+  "deliveryServiceOpt3": "Oui sur l'île de Montreal (Gratuit)",
+  "deliveryServiceOpt4": "Oui en dehors de l'île de Montreal (frais en sus) ",
   "detail": "Autres détails",
-  "bookingInfo": "Pour des fût de biere nous pouvont vous faire parvenire un devis de la part de nos micro-brasserie partenaire , si cela vous interesse veuller nous le preciser dans la partie 'Autres détails' avec le plus d'information su l'evenement possible "
+  "bookingInfo": "Pour des fûts de bière nous pouvons vous faire parvenir un devis de la part de nos microbrasseries partenaires, si cela vous intéresse veuillez nous le preciser dans la partie 'Autres détails' avec le plus d'informations possibles sur l'événement. "
 }

@@ -33,35 +33,38 @@ export default function Home() {
                     <title>{name}</title>
                 </Head>
                 <Panel isInvert={false} imageData={imgCouverture} imageAltName={name}>
-                    <VStack spacing={5}>
-                        <Box boxSize={magicImageRatioVw} paddingTop={5}>
-                            <Image
-                                src={logoLtdf}
-                                alt={name}
-                                loading="lazy"
-                                style={{position: 'relative', backgroundColor: 'black', borderRadius: '50%'}}
-                            />
-                        </Box>
-                        <Box>
-                            <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}
-                                     color={'white'}>
-                                {name}
-                            </Heading>
-                        </Box>
-                        <Box marginBottom={'10px'}>
-                            <Stack direction={["column", "row"]} alignItems={'center'}>
-                                {links.map((link) => (
-                                    <LinkComponent key={link.name} href={link.path}
-                                                   _hover={{textDecoration: 'none'}}><Button key={link.name}
-                                                                                             backgroundColor={'#095d78'}
-                                                                                             color='white'>{link.name}</Button></LinkComponent>
-                                ))}
-                            </Stack>
-                        </Box>
-                    </VStack>
+                    <Center w='100%' h='80vh'>
+                        <VStack spacing={5}>
+                            <Box boxSize={magicImageRatioVw} paddingTop={5}>
+                                <Image
+                                    src={logoLtdf}
+                                    alt={name}
+                                    loading="lazy"
+                                    style={{position: 'relative', backgroundColor: 'black', borderRadius: '50%'}}
+                                />
+                            </Box>
+                            <Box>
+                                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                         lineHeight={'110%'} textAlign='center' position={'relative'}
+                                         textTransform={'uppercase'}
+                                         margin={'44px'}
+                                         color={'white'}>
+                                    {name}
+                                </Heading>
+                            </Box>
+                            <Box marginBottom={'10px'}>
+                                <Stack direction={["column", "row"]} alignItems={'center'}>
+                                    {links.map((link) => (
+                                        <LinkComponent key={link.name} href={link.path}
+                                                       _hover={{textDecoration: 'none'}}><Button key={link.name}
+                                                                                                 backgroundColor={'#095d78'}
+                                                                                                 color='white'>{link.name}</Button></LinkComponent>
+                                    ))}
+                                </Stack>
+                            </Box>
+                        </VStack>
+
+                    </Center>
 
                 </Panel>
 
@@ -90,14 +93,12 @@ export default function Home() {
                                     </Heading>
                                 </Box>
                                 <Box>
-                                    <VStack w='100%' h='100%'>
-                                        <Box>
-                                            <Heading as='h3' fontWeight={600}
-                                                     fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
-                                                     lineHeight={'110%'}>
-                                                {t('rentalSubTitle')}
-                                            </Heading>
-                                        </Box>
+                                    <VStack w='100%' h='100%' textAlign={'justify'}>
+                                        <Heading as='h3' fontWeight={600}
+                                                 fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
+                                                 lineHeight={'110%'}>
+                                            {t('rentalSubTitle')}
+                                        </Heading>
                                         <Box>
                                             <Center>
                                                 <List spacing={3} w={magicRatio}
@@ -126,11 +127,18 @@ export default function Home() {
                                     </VStack>
                                 </Box>
                                 <Box>
-                                    <Center>
-                                        <LinkComponent href='/rental' _hover={{textDecoration: 'none'}}><Button
+                                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'}>
+                                        <Text marginRight={5}>{t('moreinfo')}</Text>
+
+                                        <LinkComponent href='/rentalDaily' _hover={{textDecoration: 'none'}}><Button
                                             backgroundColor={'white'}
-                                            color='#095d78'>{t('moreinfo')}</Button></LinkComponent>
-                                    </Center>
+                                            color='#095d78'>{t('moreinfoDaily')}</Button></LinkComponent>
+
+                                        <LinkComponent href='/rentalMonthly' _hover={{textDecoration: 'none'}}><Button
+                                            backgroundColor={'white'}
+                                            color='#095d78'>{t('moreinfoMonthly')}</Button></LinkComponent>
+                                    </Stack>
+
                                 </Box>
 
                             </Stack>
@@ -140,69 +148,61 @@ export default function Home() {
                 </Panel>
 
                 <Panel isInvert={false}>
-                    <VStack spacing={2} alignItems={'center'} minHeight={'calc(80vh)'}
-                            maxHeight='max'>
-                        <Box w='100%' h='50%'>
-                            <Center>
-                                <HStack spacing={3} alignItems={'center'}>
-                                    <Box maxH={200} maxW={200}>
-                                        <Image
-                                            src={iconBeer}
-                                            alt={name}
-                                            loading="lazy"
-                                        />
-                                    </Box>
-                                    <Box maxH={200} maxW={200}>
-                                        <Image
-                                            src={iconTireuse}
-                                            alt={name}
-                                            loading="lazy"
-                                        />
-                                    </Box>
-                                    <Box maxH={200} maxW={200}>
-                                        <Image
-                                            src={iconFut}
-                                            alt={name}
-                                            loading="lazy"
-                                        />
-                                    </Box>
-                                    <Box maxH={200} maxW={200}>
-                                        <Image
-                                            src={iconPromo}
-                                            alt={name}
-                                            loading="lazy"
-                                        />
-                                    </Box>
-                                </HStack>
-                            </Center>
-                        </Box>
-                        <Box h='40%' w='100%' ml={20} margin={'auto'}>
-                            <VStack spacing={8} alignItems={'center'}>
-                                <Box>
-                                    <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                             lineHeight={'110%'} textAlign='center'>
-                                        {t('common:product')}
-                                    </Heading>
-                                </Box>
-                                <Box>
-                                    <Center>
-                                        <List spacing={3} w={magicRatio} h='100%'>
-                                            <ListItem textAlign={"justify"}>
-                                                <ListIcon as={CheckIcon} color='#FF893B'/>
-                                                <Trans i18nKey='productDraft' t={t}
-                                                       components={{text: <Text/>, bold: <strong/>}}>
-                                                </Trans>
-                                            </ListItem>
-                                        </List>
-                                    </Center>
-                                </Box>
-                                <Box padding={5}>
-                                    <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
-                                        backgroundColor={'#095d78'}
-                                        color='white'>{t('moreinfo')}</Button></LinkComponent>
-                                </Box>
-                            </VStack>
-                        </Box>
+                    <VStack spacing={2} alignItems={'center'} minW={'80vw'} minH={'80vh'}>
+                        <Stack direction={['column', 'row']} spacing={3} alignItems={'center'}>
+                            <Box maxH={200} maxW={200}>
+                                <Image
+                                    src={iconBeer}
+                                    alt={name}
+                                    loading="lazy"
+                                />
+                            </Box>
+                            <Box maxH={200} maxW={200}>
+                                <Image
+                                    src={iconTireuse}
+                                    alt={name}
+                                    loading="lazy"
+                                />
+                            </Box>
+                            <Box maxH={200} maxW={200}>
+                                <Image
+                                    src={iconFut}
+                                    alt={name}
+                                    loading="lazy"
+                                />
+                            </Box>
+                            <Box maxH={200} maxW={200}>
+                                <Image
+                                    src={iconPromo}
+                                    alt={name}
+                                    loading="lazy"
+                                />
+                            </Box>
+                        </Stack>
+
+                        <Stack alignItems={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                            <Box>
+                                <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                         lineHeight={'110%'} textAlign='center'>
+                                    {t('common:product')}
+                                </Heading>
+                            </Box>
+                            <Box >
+                                <List spacing={3}>
+                                    <ListItem textAlign={"justify"}>
+                                        <ListIcon as={CheckIcon} color='#FF893B'/>
+                                        <Trans i18nKey='productDraft' t={t}
+                                               components={{text: <Text/>, bold: <strong/>}}>
+                                        </Trans>
+                                    </ListItem>
+                                </List>
+                            </Box>
+                            <Box padding={5}>
+                                <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
+                                    backgroundColor={'#095d78'}
+                                    color='white'>{t('moreinfo')}</Button></LinkComponent>
+                            </Box>
+                        </Stack>
 
                     </VStack>
 
