@@ -52,16 +52,6 @@ export default function Home() {
                                     {name}
                                 </Heading>
                             </Box>
-                            <Box marginBottom={'10px'}>
-                                <Stack direction={["column", "row"]} alignItems={'center'}>
-                                    {links.map((link) => (
-                                        <LinkComponent key={link.name} href={link.path}
-                                                       _hover={{textDecoration: 'none'}}><Button key={link.name}
-                                                                                                 backgroundColor={'#095d78'}
-                                                                                                 color='white'>{link.name}</Button></LinkComponent>
-                                    ))}
-                                </Stack>
-                            </Box>
                         </VStack>
 
                     </Center>
