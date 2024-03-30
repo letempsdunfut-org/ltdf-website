@@ -20,7 +20,8 @@ import iconPromo from '../../public/images/icons/promotions-transp.png'
 import React from "react";
 import Layout from '../shared/layout';
 import LinkComponent from "../shared/LinkComponent";
-
+import TitlePanel from "../shared/TitlePanel";
+import draftPics from '../../public/images/tireurse.png'
 
 export default function Rental() {
     const {t} = useTranslation(['dailyRental', 'common']);
@@ -34,51 +35,71 @@ export default function Rental() {
                 <Head>
                     <title>{t('dailyRental:pageTitle')}</title>
                 </Head>
-                <Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'}
-                           position={"relative"}>
+                <TitlePanel t={t}
+                            bgImage={imgCouverture}
+                            bgImageAlt={'common:title'}
+                            pageNameKey={"dailyRental:pageTitle"}
+                            pageTitleColor={"white"}
+                            titleKey={"common:rentalDaily"}
+                            pageLogo={draftPics}>
                     <Image
-                        src={imgCouverture}
+                        src={iconPromo}
                         alt={name}
                         loading="lazy"
-                        fill={true}
-                        style={{objectFit: 'cover', objectPosition: 'center', backgroundColor: 'gray'}}
+                        style={{
+                            position: 'absolute',
+                            bottom: '26px',
+                            left: 0,
+                            right: 0,
+                            backgroundColor: 'white',
+                            borderRadius: '50%',
+                            width: '75px',
+                            margin: 'auto',
+                            padding: '6px'
+                        }}
                     />
+                </TitlePanel>
+                {/*<Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'}*/}
+                {/*           position={"relative"}>*/}
 
-                    <Center minH={'90vh'}>
-                        <VStack spacing={5} alignItems={'center'} h={"fit"}>
-                            <Box>
-                                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                         lineHeight={'110%'} textAlign='center' position={'relative'}
-                                         textTransform={'uppercase'}
-                                         margin={'44px'}
-                                         color={'white'}>
-                                    {t("common:rentalDaily")}
-                                </Heading>
-                            </Box>
 
-                            <Box>
+                {/*    <Center minH={'90vh'}>*/}
+                {/*        <VStack spacing={5} alignItems={'center'} h={"fit"}>*/}
+                {/*            <Box>*/}
+                {/*                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}*/}
+                {/*                         lineHeight={'110%'} textAlign='center' position={'relative'}*/}
+                {/*                         textTransform={'uppercase'}*/}
+                {/*                         margin={'44px'}*/}
+                {/*                         color={'white'}>*/}
+                {/*                    {t("common:rentalDaily")}*/}
+                {/*                </Heading>*/}
+                {/*            </Box>*/}
 
-                                <Image
-                                    src={iconPromo}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: '26px',
-                                        left: 0,
-                                        right: 0,
-                                        backgroundColor: 'white',
-                                        borderRadius: '50%',
-                                        width: '75px',
-                                        margin: 'auto',
-                                        padding: '6px'
-                                    }}
-                                />
-                            </Box>
-                        </VStack>
-                    </Center>
+                {/*            <Box>*/}
 
-                </Container>
+                {/*                <Image*/}
+                {/*                    src={iconPromo}*/}
+                {/*                    alt={name}*/}
+                {/*                    loading="lazy"*/}
+                {/*                    style={{*/}
+                {/*                        position: 'absolute',*/}
+                {/*                        bottom: '26px',*/}
+                {/*                        left: 0,*/}
+                {/*                        right: 0,*/}
+                {/*                        backgroundColor: 'white',*/}
+                {/*                        borderRadius: '50%',*/}
+                {/*                        width: '75px',*/}
+                {/*                        margin: 'auto',*/}
+                {/*                        padding: '6px'*/}
+                {/*                    }}*/}
+                {/*                />*/}
+                {/*            </Box>*/}
+                {/*        </VStack>*/}
+                {/*    </Center>*/}
+
+                {/*</Container>*/}
+
+
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
                            backgroundColor={'#095d78'} color={'white'}>
                     <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}

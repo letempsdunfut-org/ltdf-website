@@ -1,8 +1,6 @@
-import {TFunction} from "i18next";
-import {Box, Button, Center, Container, Heading, Stack, VStack} from "@chakra-ui/react";
+import {Container} from "@chakra-ui/react";
 import React from "react";
 import Image, {StaticImageData} from "next/image";
-import imgCouverture from "../../public/images/couverture/bartender.jpg";
 
 export default function Panel({isInvert, children, imageData, imageAltName}: {
     isInvert: boolean,

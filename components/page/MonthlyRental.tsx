@@ -1,5 +1,4 @@
 import {Trans, useTranslation} from "next-i18next";
-import {usePagesLinks} from "../../lib/pagesLinks";
 import Layout from "../shared/layout";
 import Head from "next/head";
 import Panel from "../shared/Panel";
@@ -8,6 +7,7 @@ import Image from "next/image";
 import kegkumImg from "../../public/images/kegkumLight.png";
 
 import React from "react";
+import TitlePanel from "../shared/TitlePanel";
 
 
 export default function MonthlyRental() {
@@ -21,36 +21,16 @@ export default function MonthlyRental() {
                 <Head>
                     <title>{t('monthlyRental:pageName')}</title>
                 </Head>
-                <Panel isInvert={false}>
-                    <VStack spacing={5}>
-                        <Box paddingTop={5}>
-                            <Image
-                                src={kegkumImg}
-                                alt={t('monthlyRental:pageName')}
-                                loading="lazy"
-                                style={{position: 'relative', backgroundColor: '#095d78', borderRadius: '50%'}}
-                            />
-                        </Box>
 
-                        <Box>
-                            <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                     lineHeight={'110%'} textAlign='center' position={'relative'}
-                                     textTransform={'uppercase'}
-                                     margin={'44px'}>
-                                {t('monthlyRental:title')}
-                            </Heading>
-                        </Box>
-                        <Box marginBottom={'10px'}>
-                            <Trans i18nKey='subTitle' t={t}
-                                   components={{
-                                       vstack: <VStack alignItems={'center'}/>,
-                                       text: <Text fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}/>,
-                                       bold: <strong/>,
-                                   }}>
-                            </Trans>
-                        </Box>
-                    </VStack>
-                </Panel>
+                <TitlePanel t={t} pageLogo={kegkumImg} pageTitleColor={"black"} pageNameKey={'pageName'} titleKey={'title'}>
+                    <Trans i18nKey='subTitle' t={t}
+                           components={{
+                               vstack: <VStack alignItems={'center'}/>,
+                               text: <Text fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}/>,
+                               bold: <strong/>,
+                           }}>
+                    </Trans>
+                </TitlePanel>
 
                 <Panel isInvert={true}>
                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
