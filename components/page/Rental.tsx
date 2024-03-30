@@ -1,11 +1,7 @@
 import Head from 'next/head'
 import {
     Box,
-    Center,
-    Heading,
     Text,
-    Container,
-    Stack,
     Button,
     VStack,
     List,
@@ -14,178 +10,96 @@ import {
 } from '@chakra-ui/react'
 import {AddIcon} from '@chakra-ui/icons'
 import {Trans, useTranslation} from 'next-i18next'
-import Image from "next/image";
 import imgCouverture from "../../public/images/couverture/private-party-cover.jpg";
-import iconPromo from '../../public/images/icons/promotions-transp.png'
 import React from "react";
 import Layout from '../shared/layout';
 import LinkComponent from "../shared/LinkComponent";
 import TitlePanel from "../shared/TitlePanel";
 import draftPics from '../../public/images/tireurse.png'
+import FullPanel from "../shared/FullPanel";
 
 export default function Rental() {
     const {t} = useTranslation(['dailyRental', 'common']);
-    const name = t('common:title');
-
-    const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
-
+    
     return (
         <>
             <Layout>
                 <Head>
                     <title>{t('dailyRental:pageTitle')}</title>
                 </Head>
+
                 <TitlePanel t={t}
                             bgImage={imgCouverture}
                             bgImageAlt={'common:title'}
                             pageNameKey={"dailyRental:pageTitle"}
+                            pageLogo={draftPics}
+                            pageLogoBg={'white'}
                             pageTitleColor={"white"}
                             titleKey={"common:rentalDaily"}
-                            pageLogo={draftPics}>
-                    <Image
-                        src={iconPromo}
-                        alt={name}
-                        loading="lazy"
-                        style={{
-                            position: 'absolute',
-                            bottom: '26px',
-                            left: 0,
-                            right: 0,
-                            backgroundColor: 'white',
-                            borderRadius: '50%',
-                            width: '75px',
-                            margin: 'auto',
-                            padding: '6px'
-                        }}
-                    />
+                >
+
+                    <Trans i18nKey='subTitle' t={t} components={{
+                        vstack: <VStack alignItems={'center'}/>,
+                        text: <Text position={'relative'} color={'white'}
+                                    fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}/>,
+                        bold: <strong/>,
+                    }}>
+                    </Trans>
                 </TitlePanel>
-                {/*<Container minHeight={'calc(95vh)'} maxHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'}*/}
-                {/*           position={"relative"}>*/}
+                <FullPanel t={t} isInvert={true} headingTextKey={'retntalDraftTitle'}>
+                    <VStack textAlign={'justify'}>
+                        <Text w='100%' textAlign={"justify"} as={'cite'}>
+                            <strong>{t('deliveryCta')}</strong>
+                        </Text>
 
+                        <Trans i18nKey='retntalDraftText' t={t}
+                               components={{
+                                   text: <Text w={'100%'}/>,
+                                   bold: <strong/>
+                               }}>
+                        </Trans>
+                        <Trans i18nKey={'retntalDraftTextPros'} t={t}
+                               components={{
+                                   text: <Text w={'100%'} paddingTop={5}/>,
+                                   bold: <strong/>
+                               }}>
+                        </Trans>
 
-                {/*    <Center minH={'90vh'}>*/}
-                {/*        <VStack spacing={5} alignItems={'center'} h={"fit"}>*/}
-                {/*            <Box>*/}
-                {/*                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}*/}
-                {/*                         lineHeight={'110%'} textAlign='center' position={'relative'}*/}
-                {/*                         textTransform={'uppercase'}*/}
-                {/*                         margin={'44px'}*/}
-                {/*                         color={'white'}>*/}
-                {/*                    {t("common:rentalDaily")}*/}
-                {/*                </Heading>*/}
-                {/*            </Box>*/}
+                        <Box paddingLeft={30}>
+                            <List spacing={3} w='100%' h='100%'>
+                                <Trans i18nKey='rentalDraftList' t={t}
+                                       components={{
+                                           text: <Text/>,
+                                           bold: <strong/>,
+                                           listItem: <ListItem/>,
+                                           listIcon: <ListIcon as={AddIcon} color='#FF893B'/>
+                                       }}>
+                                </Trans>
+                            </List>
+                        </Box>
+                        <Text>
+                            <Trans i18nKey='rentalDraftConclusion' t={t}
+                                   components={{bold: <strong/>}}>
+                            </Trans>
+                        </Text>
 
-                {/*            <Box>*/}
+                        <LinkComponent paddingTop={5} href='/booking' _hover={{textDecoration: 'none'}}><Button
+                            backgroundColor={'white'} color='#095d78'>{t('book')}</Button>
+                        </LinkComponent>
+                    </VStack>
+                </FullPanel>
 
-                {/*                <Image*/}
-                {/*                    src={iconPromo}*/}
-                {/*                    alt={name}*/}
-                {/*                    loading="lazy"*/}
-                {/*                    style={{*/}
-                {/*                        position: 'absolute',*/}
-                {/*                        bottom: '26px',*/}
-                {/*                        left: 0,*/}
-                {/*                        right: 0,*/}
-                {/*                        backgroundColor: 'white',*/}
-                {/*                        borderRadius: '50%',*/}
-                {/*                        width: '75px',*/}
-                {/*                        margin: 'auto',*/}
-                {/*                        padding: '6px'*/}
-                {/*                    }}*/}
-                {/*                />*/}
-                {/*            </Box>*/}
-                {/*        </VStack>*/}
-                {/*    </Center>*/}
+                <FullPanel t={t} isInvert={false} headingTextKey={'rentalEventTitle'}>
+                    <VStack textAlign={'justify'}>
+                        <Trans i18nKey='rentalEventText' t={t}
+                               components={{text: <Text/>, bold: <strong/>}}>
+                        </Trans>
 
-                {/*</Container>*/}
-
-
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}
-                           backgroundColor={'#095d78'} color={'white'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
-                        <Center>
-                            <Box w={magicRatio} h='100%'>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
-                                    <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                             lineHeight={'110%'} textAlign='center'>
-                                        {t('retntalDraftTitle')}
-                                    </Heading>
-                                    <VStack textAlign={'justify'}>
-                                        <Text w='100%' textAlign={"justify"} as={'cite'}>
-                                            <strong>{t('deliveryCta')}</strong>
-                                        </Text>
-
-                                        <Trans i18nKey='retntalDraftText' t={t}
-                                               components={{
-                                                   text: <Text w={'100%'}/>,
-                                                   bold: <strong/>
-                                               }}>
-                                        </Trans>
-                                        <Trans i18nKey={'retntalDraftTextPros'} t={t}
-                                               components={{
-                                                   text: <Text w={'100%'} paddingTop={5}/>,
-                                                   bold: <strong/>
-                                               }}>
-                                        </Trans>
-
-                                        <Box paddingLeft={30}>
-                                            <List spacing={3} w='100%' h='100%'>
-                                                <Trans i18nKey='rentalDraftList' t={t}
-                                                       components={{
-                                                           text: <Text/>,
-                                                           bold: <strong/>,
-                                                           listItem: <ListItem/>,
-                                                           listIcon: <ListIcon as={AddIcon} color='#FF893B'/>
-                                                       }}>
-                                                </Trans>
-                                            </List>
-                                        </Box>
-                                        <Text>
-                                            <Trans i18nKey='rentalDraftConclusion' t={t}
-                                                   components={{bold: <strong/>}}>
-                                            </Trans>
-                                        </Text>
-                                    </VStack>
-                                    <Center>
-                                        <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}><Button
-                                            backgroundColor={'white'} color='#095d78'>{t('book')}</Button>
-                                        </LinkComponent>
-                                    </Center>
-                                </Stack>
-                            </Box>
-                        </Center>
-                    </Stack>
-                </Container>
-                <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'calc(80vh)'}
-                           maxHeight='max'>
-                        <Center w='100%' h='100%'>
-                            <Box w={magicRatio} h='100%'>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}
-                                       w='100%' h='100%'>
-                                    <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                             lineHeight={'110%'} textAlign='center'>
-                                        {t('rentalEventTitle')}
-                                    </Heading>
-                                    <Center w='100%' h='100%'>
-                                        <VStack w='100%' h='100%' textAlign={'justify'}>
-                                            <Trans i18nKey='rentalEventText' t={t}
-                                                   components={{text: <Text/>, bold: <strong/>}}>
-                                            </Trans>
-                                        </VStack>
-                                    </Center>
-                                    <Center>
-                                        <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}> <Button
-                                        >{t('book')}</Button>
-                                        </LinkComponent>
-                                    </Center>
-                                </Stack>
-                            </Box>
-                        </Center>
-
-                    </Stack>
-                </Container>
+                        <LinkComponent href='/booking' _hover={{textDecoration: 'none'}}>
+                            <Button>{t('book')}</Button>
+                        </LinkComponent>
+                    </VStack>
+                </FullPanel>
             </Layout>
         </>
 

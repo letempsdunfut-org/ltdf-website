@@ -9,6 +9,7 @@ export type TitlePanelProps = {
     pageNameKey: string
     pageTitleColor: string
     pageLogo?: StaticImageData
+    pageLogoBg?: string,
     bgImage?: StaticImageData
     bgImageAlt?: string
     titleKey: string
@@ -20,6 +21,7 @@ export default function TitlePanel({
                                        pageNameKey,
                                        pageTitleColor,
                                        pageLogo,
+                                       pageLogoBg,
                                        bgImage,
                                        bgImageAlt,
                                        titleKey,
@@ -32,7 +34,7 @@ export default function TitlePanel({
                 src={pageLogo!}
                 alt={t(pageNameKey)}
                 loading="lazy"
-                style={{position: 'relative', backgroundColor: '#095d78', borderRadius: '50%'}}
+                style={{position: 'relative', backgroundColor: pageLogoBg!, borderRadius: '50%'}}
             />
         </Box>
     ) : (
