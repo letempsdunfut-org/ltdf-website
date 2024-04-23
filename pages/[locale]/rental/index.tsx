@@ -88,7 +88,7 @@ export default function Rental() {
                            maxHeight='max'>
                         <Center>
                             <Box w={magicRatio} h='100%'>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                                <Stack as={Box}align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center'>
                                         {t('retntalDraftTitle')}
@@ -135,7 +135,7 @@ export default function Rental() {
                            maxHeight='max'>
                         <Center w='100%' h='100%'>
                             <Box w={magicRatio} h='100%'>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}
+                                <Stack as={Box}align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}
                                        w='100%' h='100%'>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center'>

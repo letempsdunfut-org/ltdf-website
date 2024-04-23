@@ -78,7 +78,7 @@ export default function Booking() {
                             maxHeight='max'>
                         <Box w='90%' h='100%' paddingLeft={'5%'}>
                             <Center bg={'white'}>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                                <Stack as={Box}align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Heading as='h3' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center' color={'black'}>
                                         🚧{t('booking:bookingWIP')}🚧

@@ -78,7 +78,7 @@ export default function Professional() {
                            maxHeight='max'>
                         <Center textAlign={'justify'}>
                             <Box w={magicRatio} h='100%'>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                                <Stack as={Box}align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                              lineHeight={'110%'} textAlign='center'>
                                         {t('microTitle')}
@@ -112,7 +112,7 @@ export default function Professional() {
                 </Container>
 
                 <Container minHeight={'calc(95vh)'} maxHeight='max' maxW='100%' paddingTop={'16'}>
-                    <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                    <Stack as={Box}align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                         <Center>
                             <Box w={magicRatio} h='100%'>
 

@@ -244,7 +244,7 @@ export default function Home() {
                         </Box>
                         <Box minW='40vw' h='100%'>
                             <Center>
-                                <Stack as={Box} box={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                                <Stack as={Box}  spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
                                     <Box>
                                         <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                                                  lineHeight={'110%'} textAlign='center'>
