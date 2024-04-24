@@ -18,7 +18,7 @@ export default function Logout({ csrfToken }: { csrfToken: any }) {
                 <title>{name}</title>
             </Head>
             <Container>
-                <Stack as={Box} box={'center'} spacing={{ base: 1, md: 2 }} py={{ base: 5, md: 10 }} >
+                <Stack as={Box}align={'center'} spacing={{ base: 1, md: 2 }} py={{ base: 5, md: 10 }} >
                     <Box p='4' >
                         <Center>
                             <Image

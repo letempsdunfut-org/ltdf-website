@@ -5,7 +5,7 @@ import instagramLogo from "../../public/images/Instagram_logo_2016.svg";
 import React from "react";
 import {TFunction} from "i18next";
 
-export default function Footer({t}: { t: TFunction<"common", undefined, "common"> }) {
+export default function Footer({t}: { t: TFunction<"common", "common"> }) {
 
     return (
         <Box backgroundColor={'white'} color={'#095d78'} py={8} borderTop={"1px #095d78 solid"}>

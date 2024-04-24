@@ -20,7 +20,7 @@ import LinkComponent from "./LinkComponent";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import {usePagesLinks} from "../../lib/pagesLinks";
 
-export default function HeaderMenu({t}: { t: TFunction<"common", undefined, "common"> }) {
+export default function HeaderMenu({t}: { t: TFunction<"common", "common"> }) {
     const router = useRouter()
     const {isOpen, onOpen, onClose} = useDisclosure();
 
