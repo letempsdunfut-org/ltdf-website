@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\" ",
     "export": "next build && next export"
   },
   "dependencies": {
@@ -17,7 +18,7 @@
     "framer-motion": "^11.1.7",
     "gray-matter": "^4.0.3",
     "i18next": "^23.11.2",
-    "next": "^14.2.2",
+    "next": "^14.2.3",
     "next-auth": "^4.24.7",
     "next-i18next": "^15.3.0",
     "next-language-detector": "^1.1.0",
@@ -28,15 +29,15 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "sharp": "^0.33.3",
-    "nodemailer": "^6.9.5",
+    "nodemailer": "^6.9.13",
     "lodash": "^4.17.21",
-    "@types/nodemailer": "^6.4.10"
+    "@types/nodemailer": "^6.4.14"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.2",
+    "eslint-config-next": "14.2.3",
     "next-sitemap": "^4.2.3",
     "typescript": "^5.4.5"
   }

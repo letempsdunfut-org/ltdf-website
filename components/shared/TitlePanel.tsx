@@ -5,7 +5,7 @@ import React from "react";
 import {Namespace, TFunction} from "i18next";
 
 export type TitlePanelProps = {
-    t: TFunction<Namespace<string>, undefined, string>
+    t: TFunction<Namespace<string>, string>
     pageNameKey: string
     pageTitleColor: string
     pageLogo?: StaticImageData

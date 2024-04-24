@@ -1,14 +1,11 @@
-import {Box, Button, Center, Heading, Stack, StyleProps, Text, VStack} from "@chakra-ui/react";
+import {Box, Center, Heading, Stack} from "@chakra-ui/react";
 import Image, {StaticImageData} from "next/image";
-import kegkumImg from "../../public/images/kegkumLight.png";
-import {Trans} from "next-i18next";
 import Panel from "./Panel";
 import React, {CSSProperties} from "react";
 import {Namespace, TFunction} from "i18next";
-import kegPics from "../../public/images/kegator.png";
 
 export type SplitImageTextPanelProps = {
-    t: TFunction<Namespace<string>, undefined, string>
+    t: TFunction<Namespace<string>, string>
     isInvert: boolean
     headingTextKey: string
     isImageLeft: boolean

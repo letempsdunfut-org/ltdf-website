@@ -18,7 +18,7 @@ import SimpleAccordion from "../shared/SimpleAccordion";
 import {Namespace, TFunction} from "i18next";
 
 export type PriceItemComponentProps = {
-    t: TFunction<Namespace<string>, undefined, string>
+    t: TFunction<Namespace<string>, string>
     itemContentKey: string
     icon?: ComponentWithAs<'svg', IconProps>
 
@@ -42,7 +42,7 @@ export function PriceItemComponent({t, itemContentKey, icon}: PriceItemComponent
 }
 
 export type ListFromTranslationComponentProps = {
-    t: TFunction<Namespace<string>, undefined, string>
+    t: TFunction<Namespace<string>, string>
     listContentKey: string
     icon?: ComponentWithAs<'svg', IconProps>
 }

@@ -16,7 +16,7 @@ export type SimpleAccordionItem = {
 }
 
 export type SimpleAccordionProps = {
-    t: TFunction<Namespace<string>, undefined, string>
+    t: TFunction<Namespace<string>, string>
     items: SimpleAccordionItem[]
 }
 

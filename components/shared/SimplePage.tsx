@@ -6,7 +6,7 @@ import TitlePanel from "./TitlePanel";
 import {StaticImageData} from "next/image";
 
 export type SimplePageProps = {
-    t: TFunction<Namespace<string>, undefined, string>
+    t: TFunction<Namespace<string>, string>
     pageTitleKey: string
     title: {
         bgImage?: StaticImageData
