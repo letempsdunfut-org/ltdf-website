@@ -28,8 +28,10 @@ export default function TitlePanel({
                                        children
                                    }: TitlePanelProps) {
 
+    const magicImageRatioVw = ['60vw', '30vh', '30vw', '25vw', '15vw', '15vw'];
+
     const pageLogoChild = (pageLogo) ? (
-        <Box paddingTop={5}>
+        <Box paddingTop={5} boxSize={magicImageRatioVw}>
             <Image
                 src={pageLogo!}
                 alt={t(pageNameKey)}
@@ -43,7 +45,7 @@ export default function TitlePanel({
 
     return (
         <Panel isInvert={false} imageData={bgImage} imageAltName={bgImageAlt}>
-            <Center minH={'90vh'}>
+            <Center w='100%' h='calc(90vh)'>
                 <VStack spacing={5}>
                     {pageLogoChild}
                     <Box>

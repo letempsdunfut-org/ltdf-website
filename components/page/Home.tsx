@@ -33,14 +33,14 @@ export default function Home() {
                     <title>{name}</title>
                 </Head>
                 <Panel isInvert={false} imageData={imgCouverture} imageAltName={name}>
-                    <Center w='100%' h='80vh'>
+                    <Center w='100%' h='calc(90vh)'>
                         <VStack spacing={5}>
                             <Box boxSize={magicImageRatioVw} paddingTop={5}>
                                 <Image
                                     src={logoLtdf}
                                     alt={name}
                                     loading="lazy"
-                                    style={{position: 'relative', backgroundColor: 'black', borderRadius: '50%'}}
+                                    style={{position: 'relative', backgroundColor: '#095d78', borderRadius: '50%'}}
                                 />
                             </Box>
                             <Box>
@@ -48,7 +48,7 @@ export default function Home() {
                                          lineHeight={'110%'} textAlign='center' position={'relative'}
                                          textTransform={'uppercase'}
                                          margin={'44px'}
-                                         color={'white'}>
+                                         color={'#095d78'}>
                                     {name}
                                 </Heading>
                             </Box>
@@ -177,7 +177,7 @@ export default function Home() {
                                     {t('common:product')}
                                 </Heading>
                             </Box>
-                            <Box >
+                            <Box>
                                 <List spacing={3}>
                                     <ListItem textAlign={"justify"}>
                                         <ListIcon as={CheckIcon} color='#FF893B'/>

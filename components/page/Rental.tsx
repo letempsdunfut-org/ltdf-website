@@ -33,14 +33,14 @@ export default function Rental() {
                             bgImageAlt={'common:title'}
                             pageNameKey={"dailyRental:pageTitle"}
                             pageLogo={draftPics}
-                            pageLogoBg={'white'}
-                            pageTitleColor={"white"}
+                            pageLogoBg={'#095d78'}
+                            pageTitleColor={"#095d78"}
                             titleKey={"common:rentalDaily"}
                 >
 
                     <Trans i18nKey='subTitle' t={t} components={{
                         vstack: <VStack alignItems={'center'}/>,
-                        text: <Text position={'relative'} color={'white'}
+                        text: <Text position={'relative'} color={'#095d78'}
                                     fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}/>,
                         bold: <strong/>,
                     }}>

@@ -1,0 +1,16 @@
+{
+  "pageTitle": "Le temps d'un fût - Daily Rental",
+  "book": "Book",
+  "subTitle": "<vstack> <text> FROM <bold> $100 </bold> PER DAY </text> <text> </vstack>",
+  "deliveryCta": "Delivery of your beer and kombucha tap offered for all rentals of 48 hrs*.",
+  "deliveryDisclaimer": "Delivery is available exclusively on the Island of Montreal. Do not hesitate to contact us to see if an exception can be made based on your order.",
+  "retntalDraftTitle": "Tap Rental",
+  "retntalDraftText": "Our dispensers are designed for cooling, distribution, and professional service of perfectly chilled beverages at home, garden parties, corporate events, and small commercial events, with the ability to serve up to two beverages simultaneously. Perfect for enjoying a keg of kombucha and a keg of beer, the ideal alternative for a party with and without alcohol. Their small size and integrated air system open up new possibilities, even in professional environments.",
+  "retntalDraftTextPros": "<text> <bold> The advantages of using one of our taps instead of a 'kegerator' or a 'jockey box' are:</bold></text>",
+  "rentalDraftList": "<listItem> <listIcon/> You do not need multiple systems, our tap works with beer, wine, cider, kombucha, cold-brew coffee, cocktails, and sodas. </listItem> <listItem> <listIcon/> You do not need to wait hours to enjoy your favorite drink at the ideal temperature. In less than 10 minutes, ENJOY! </listItem> <listItem> <listIcon /> You can control the temperature for each glass from an icy cold 38 °F to a cellar temperature of 50 °F. </listItem> <listItem> <listIcon/> You do not need to keep your kegs constantly cold. </listItem> <listItem> <listIcon /> You do not need a lot of space because it is small, compact, and easily transportable. </listItem> <listItem> <listIcon/> You can gain freedom because it can be powered by a small generator for outdoor events as the power consumption is very low! </listItem> <listItem> <listIcon as={AddIcon} color='#FF893B' /> You can simplify your life because no additional wiring is needed! Just plug in and pour! </listItem> <listItem> <listIcon /> You can reduce your ecological footprint because it uses 45% less energy than 'kegerators' and other conventional coolers.</listItem>",
+  "rentalDraftConclusion": "<bold>No need for ice</bold>! Replaces Jockey boxes and Kegerator units! Connect your keg to our tap, and in a few minutes, <bold>pull your drink at the desired temperature!</bold> Rental starting from $100 + taxes.",
+  "rentalGlassTitle": "Rental of Reusable Glasses",
+  "rentalGlassText": "Lowering the carbon footprint of your party is totally possible and it starts by not producing new waste through the rental of reusable cups for your events.",
+  "rentalEventTitle": "Procedures for Event Permits",
+  "rentalEventText": "<text> The team at <bold>Le temps d'un fût</bold> assists you in the distribution of beverages at your events regarding regulatory and legal aspects.</text> <text> We provide a collection of information on the licenses required in Quebec to distribute beer at private and public events.</text><text> This guide can be useful in organizing your events if you wish to rent a beer tap and distribute beverages to your participants.</text>"
+}

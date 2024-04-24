@@ -3,7 +3,8 @@ import Layout from "../shared/layout";
 import Head from "next/head";
 import {Box, Button, Center, Stack, Text, VStack} from "@chakra-ui/react";
 import kegkumImg from "../../public/images/kegkumLight.png";
-import imgCouverture from "../../public/images/couverture/private-party-cover.jpg";
+import office from "../../public/images/couverture/office.jpg";
+
 import React from "react";
 import TitlePanel from "../shared/TitlePanel";
 import SplitPanel from "../shared/SplitImageTextPanel";
@@ -20,19 +21,19 @@ export default function MonthlyRental() {
                 </Head>
 
                 <TitlePanel t={t}
-                            bgImage={imgCouverture}
+                            bgImage={office}
                             bgImageAlt={'pageName'}
                             pageNameKey={'pageName'}
                             pageLogo={kegkumImg}
                             pageLogoBg={'#095d78'}
-                            pageTitleColor={"orange"}
+                            pageTitleColor={"#095d78"}
                             titleKey={'title'}
                 >
 
                     <Trans i18nKey='subTitle' t={t} components={{
                         vstack: <VStack alignItems={'center'}/>,
                         text: <Text position={`relative`}
-                                    color={'orange.900'}
+                                    color={'#095d78'}
                                     fontSize={{base: '2xl', sm: 'xl', md: '3xl'}}/>,
                         bold: <strong/>,
                     }}>
