@@ -13,7 +13,7 @@ export type TitlePanelProps = {
     bgImage?: StaticImageData
     bgImageAlt?: string
     titleKey: string
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export default function TitlePanel({
@@ -43,6 +43,12 @@ export default function TitlePanel({
         <></>
     )
 
+    const innerChildren = (children) ? (
+        <Box marginBottom={'10px'}>
+            {children}
+        </Box>
+    ) : null
+
     return (
         <Panel isInvert={false} imageData={bgImage} imageAltName={bgImageAlt}>
             <Center w='100%' h='calc(90vh)'>
@@ -57,9 +63,7 @@ export default function TitlePanel({
                             {t(titleKey)}
                         </Heading>
                     </Box>
-                    <Box marginBottom={'10px'}>
-                        {children}
-                    </Box>
+                    {innerChildren}
                 </VStack>
             </Center>
         </Panel>

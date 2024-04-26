@@ -2,12 +2,24 @@ import {Trans, useTranslation} from "next-i18next";
 import {usePagesLinks} from "../../lib/pagesLinks";
 import Layout from "../shared/layout";
 import Head from "next/head";
-import Panel from "../shared/Panel";
 import imgCouverture from "../../public/images/couverture/bartender.jpg";
-import {Box, Button, Center, Heading, HStack, List, ListIcon, ListItem, Stack, Text, VStack} from "@chakra-ui/react";
+import {
+    Box,
+    Button,
+    Center,
+    Container, Flex,
+    Heading,
+    HStack,
+    List,
+    ListIcon,
+    ListItem,
+    Stack,
+    Text,
+    VStack, Wrap, WrapItem
+} from "@chakra-ui/react";
 import Image from "next/image";
 import logoLtdf from "../../public/images/logoLtdfWhite.svg";
-import imgLocation from "../../public/images/ltdf/tireuse-noel.jpg";
+import imgLocation from "../../public/images/ltdf/tirieuse-location.jpg";
 import {AddIcon, CheckIcon} from "@chakra-ui/icons";
 import iconBeer from "../../public/images/icons/degustation-transp.png";
 import iconTireuse from "../../public/images/icons/tireuse-transp.png";
@@ -17,14 +29,15 @@ import greg from "../../public/images/team/greg.png";
 import arthur from "../../public/images/team/arthur.jpg";
 import coco from "../../public/images/team/coco.png";
 import LinkComponent from "../shared/LinkComponent";
+import TitlePanel from "../shared/TitlePanel";
+import React from "react";
+import SplitImageTextPanel from "../shared/SplitImageTextPanel";
+import FullPanel from "../shared/FullPanel";
+import {ACCENT_COLOR, MAGIC_RATIO, PRIMARY_COLOR} from "../shared/utils";
 
 export default function Home() {
     const {t} = useTranslation(['home', 'common']);
     const name = t('common:title');
-    const links = usePagesLinks()
-
-    const magicRatio = ['95%', '95%', '90%', '80%', '70%', '60%'];
-    const magicImageRatioVw = ['60vw', '30vh', '30vw', '25vw', '15vw', '15vw'];
 
     return (
         <>
@@ -32,243 +45,221 @@ export default function Home() {
                 <Head>
                     <title>{name}</title>
                 </Head>
-                <Panel isInvert={false} imageData={imgCouverture} imageAltName={name}>
-                    <Center w='100%' h='calc(90vh)'>
-                        <VStack spacing={5}>
-                            <Box boxSize={magicImageRatioVw} paddingTop={5}>
-                                <Image
-                                    src={logoLtdf}
-                                    alt={name}
-                                    loading="lazy"
-                                    style={{position: 'relative', backgroundColor: '#095d78', borderRadius: '50%'}}
-                                />
-                            </Box>
-                            <Box>
-                                <Heading as='h1' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                         lineHeight={'110%'} textAlign='center' position={'relative'}
-                                         textTransform={'uppercase'}
-                                         margin={'44px'}
-                                         color={'#095d78'}>
-                                    {name}
-                                </Heading>
-                            </Box>
-                        </VStack>
 
-                    </Center>
+                <TitlePanel t={t}
+                            bgImage={imgCouverture}
+                            bgImageAlt={'pageName'}
+                            pageNameKey={'pageName'}
+                            pageLogo={logoLtdf}
+                            pageLogoBg={PRIMARY_COLOR}
+                            pageTitleColor={PRIMARY_COLOR}
+                            titleKey={name}
+                />
 
-                </Panel>
+                <SplitImageTextPanel t={t} isInvert={true}
+                                     textElement={
+                                         <Center h={'100%'} padding={3}>
+                                             <VStack textAlign={"justify"}>
+                                                 <Box>
+                                                     <Heading as='h2' fontWeight={600}
+                                                              fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                                              lineHeight={'110%'} textAlign='center'>
+                                                         {t('common:rental')}
+                                                     </Heading>
+                                                 </Box>
+                                                 <Box>
+                                                     <VStack w='100%' h='100%' textAlign={'justify'} spacing={2}>
+                                                         <Heading as='h3' fontWeight={600}
+                                                                  fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
+                                                                  lineHeight={'110%'}>
+                                                             {t('rentalSubTitle')}
+                                                         </Heading>
+                                                         <Box w='100%'>
+                                                             <Center w='100%'>
+                                                                 <List spacing={3}>
+                                                                     <ListItem textAlign={'justify'}>
+                                                                         <ListIcon as={AddIcon} color='#FF893B'/>
+                                                                         <Trans i18nKey='rentalDraft' t={t}
+                                                                                components={{
+                                                                                    cite: <Text as={'cite'}/>,
+                                                                                    bold: <strong/>
+                                                                                }}>
+                                                                         </Trans>
+                                                                     </ListItem>
+                                                                     <ListItem textAlign={'justify'}>
+                                                                         <ListIcon as={AddIcon} color='#FF893B'/>
+                                                                         <Trans i18nKey='rentalLicence' t={t}
+                                                                                components={{
+                                                                                    cite: <Text as={'cite'}/>,
+                                                                                    bold: <strong/>
+                                                                                }}>
+                                                                         </Trans>
+                                                                     </ListItem>
+                                                                 </List>
+                                                             </Center>
+                                                         </Box>
+                                                     </VStack>
+                                                 </Box>
+                                                 <Box>
+                                                     <Stack direction={['column', 'row']} spacing={8}
+                                                            alignItems={'center'}>
+                                                         <LinkComponent href='/rentalDaily'
+                                                                        _hover={{textDecoration: 'none'}}><Button
+                                                             backgroundColor={'white'}
+                                                             color='#095d78'>{t('moreinfoDaily')}</Button></LinkComponent>
 
-                <Panel isInvert={true}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
-                           maxHeight='max'>
-                        <Box w='50vw' h='100%'>
-                            <Center>
-                                <Box boxSize={'40vw'} overflow={'hidden'}>
-                                    <Image
-                                        src={imgLocation}
-                                        alt={name}
-                                        loading="lazy"
-                                        sizes='(max-width: 30vw)'
-                                        style={{filter: 'grayscale(100%)'}}
-                                    />
-                                </Box>
+                                                         <LinkComponent href='/rentalMonthly'
+                                                                        _hover={{textDecoration: 'none'}}><Button
+                                                             backgroundColor={'white'}
+                                                             color='#095d78'>{t('moreinfoMonthly')}</Button></LinkComponent>
+                                                     </Stack>
+
+                                                 </Box>
+                                             </VStack>
+                                         </Center>
+                                     }
+                                     isImageLeft={true}
+                                     imageSrc={imgLocation}
+                                     imageAltKey={name}
+                                     imageStyle={{
+                                         filter: 'grayscale(100%)',
+                                         objectFit: 'contain',
+                                         height: '80%',
+                                         width: '80%'
+                                     }}
+                />
+
+                <FullPanel t={t} isInvert={false}>
+                    <Stack direction={{base: 'column', md: 'column'}} h={'100%'}>
+                        <Box>
+                            <Center h={'100%'}>
+                                <Wrap spacing="16" align='center' justify={"center"}>
+                                    <WrapItem boxSize={'200'}>
+                                        <Image
+                                            src={iconBeer}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </WrapItem>
+                                    <WrapItem boxSize={'200'}>
+                                        <Image
+                                            src={iconTireuse}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </WrapItem>
+                                    <WrapItem boxSize={'200'}>
+                                        <Image
+                                            src={iconFut}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </WrapItem>
+                                    <WrapItem boxSize={'200'}>
+                                        <Image
+                                            src={iconPromo}
+                                            alt={name}
+                                            loading="lazy"
+                                        />
+                                    </WrapItem>
+                                </Wrap>
                             </Center>
                         </Box>
-                        <Box w='100%' h='100%'>
-                            <Stack alignItems={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
-                                <Box>
-                                    <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                             lineHeight={'110%'} textAlign='center'>
-                                        {t('common:rental')}
-                                    </Heading>
-                                </Box>
-                                <Box>
-                                    <VStack w='100%' h='100%' textAlign={'justify'}>
-                                        <Heading as='h3' fontWeight={600}
-                                                 fontSize={{base: '2xl', sm: '1xl', md: '2xl'}}
-                                                 lineHeight={'110%'}>
-                                            {t('rentalSubTitle')}
+
+                        <Box>
+                            <Center h={'100%'}>
+                                <VStack textAlign={"justify"} w={MAGIC_RATIO} padding={2}>
+                                    <Box>
+                                        <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
+                                                 lineHeight={'110%'} textAlign='center'>
+                                            {t('common:product')}
                                         </Heading>
-                                        <Box>
-                                            <Center>
-                                                <List spacing={3} w={magicRatio}
-                                                      h='100%'>
-                                                    <ListItem textAlign={'justify'}>
-                                                        <ListIcon as={AddIcon} color='#FF893B'/>
-                                                        <Trans i18nKey='rentalDraft' t={t}
-                                                               components={{
-                                                                   cite: <Text as={'cite'}/>,
-                                                                   bold: <strong/>
-                                                               }}>
-                                                        </Trans>
-                                                    </ListItem>
-                                                    <ListItem textAlign={'justify'}>
-                                                        <ListIcon as={AddIcon} color='#FF893B'/>
-                                                        <Trans i18nKey='rentalLicence' t={t}
-                                                               components={{
-                                                                   cite: <Text as={'cite'}/>,
-                                                                   bold: <strong/>
-                                                               }}>
-                                                        </Trans>
-                                                    </ListItem>
-                                                </List>
-                                            </Center>
-                                        </Box>
-                                    </VStack>
-                                </Box>
-                                <Box>
-                                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'}>
-                                        <Text marginRight={5}>{t('moreinfo')}</Text>
+                                    </Box>
+                                    <Box>
+                                        <List spacing={3}>
+                                            <ListItem textAlign={"justify"}>
+                                                <ListIcon as={CheckIcon} color='#FF893B'/>
+                                                <Trans i18nKey='productDraft' t={t}
+                                                       components={{text: <Text/>, bold: <strong/>}}>
+                                                </Trans>
+                                            </ListItem>
+                                        </List>
+                                    </Box>
+                                    <Box padding={5}>
+                                        <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
+                                            backgroundColor={PRIMARY_COLOR}
+                                            color={ACCENT_COLOR}>{t('moreinfo')}</Button></LinkComponent>
+                                    </Box>
+                                </VStack>
 
-                                        <LinkComponent href='/rentalDaily' _hover={{textDecoration: 'none'}}><Button
-                                            backgroundColor={'white'}
-                                            color='#095d78'>{t('moreinfoDaily')}</Button></LinkComponent>
-
-                                        <LinkComponent href='/rentalMonthly' _hover={{textDecoration: 'none'}}><Button
-                                            backgroundColor={'white'}
-                                            color='#095d78'>{t('moreinfoMonthly')}</Button></LinkComponent>
-                                    </Stack>
-
-                                </Box>
-
-                            </Stack>
-
+                            </Center>
                         </Box>
                     </Stack>
-                </Panel>
+                </FullPanel>
 
-                <Panel isInvert={false}>
-                    <VStack spacing={2} alignItems={'center'} minW={'80vw'} minH={'80vh'}>
-                        <Stack direction={['column', 'row']} spacing={3} alignItems={'center'}>
-                            <Box maxH={200} maxW={200}>
-                                <Image
-                                    src={iconBeer}
-                                    alt={name}
-                                    loading="lazy"
-                                />
-                            </Box>
-                            <Box maxH={200} maxW={200}>
-                                <Image
-                                    src={iconTireuse}
-                                    alt={name}
-                                    loading="lazy"
-                                />
-                            </Box>
-                            <Box maxH={200} maxW={200}>
-                                <Image
-                                    src={iconFut}
-                                    alt={name}
-                                    loading="lazy"
-                                />
-                            </Box>
-                            <Box maxH={200} maxW={200}>
-                                <Image
-                                    src={iconPromo}
-                                    alt={name}
-                                    loading="lazy"
-                                />
-                            </Box>
-                        </Stack>
+                <FullPanel t={t} isInvert={true} headingTextKey={'storyTitle'}>
+                    <Stack direction={{base: 'column', md: 'column'}} h={'100%'}>
+                        <Box>
+                            <Center h={'100%'}>
+                                <Wrap spacing="16" align='center' justify={"center"}>
+                                    <WrapItem boxSize={'300'}>
+                                        <Image
+                                            src={greg}
+                                            alt={name}
+                                            loading="lazy"
+                                            style={{filter: "grayscale(1)"}}
 
-                        <Stack alignItems={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
-                            <Box>
-                                <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                         lineHeight={'110%'} textAlign='center'>
-                                    {t('common:product')}
-                                </Heading>
-                            </Box>
-                            <Box>
-                                <List spacing={3}>
-                                    <ListItem textAlign={"justify"}>
-                                        <ListIcon as={CheckIcon} color='#FF893B'/>
-                                        <Trans i18nKey='productDraft' t={t}
-                                               components={{text: <Text/>, bold: <strong/>}}>
-                                        </Trans>
-                                    </ListItem>
-                                </List>
-                            </Box>
-                            <Box padding={5}>
-                                <LinkComponent href='/product' _hover={{textDecoration: 'none'}}><Button
-                                    backgroundColor={'#095d78'}
-                                    color='white'>{t('moreinfo')}</Button></LinkComponent>
-                            </Box>
-                        </Stack>
+                                        />
+                                    </WrapItem>
+                                    <WrapItem boxSize={'300'}>
+                                        <Image
+                                            src={arthur}
+                                            alt={name}
+                                            loading="lazy"
+                                            style={{filter: "grayscale(1)"}}
 
-                    </VStack>
-
-                </Panel>
-
-                <Panel isInvert={true}>
-                    <Stack direction={['column', 'row']} spacing={8} alignItems={'center'} minHeight={'80vh'}
-                           maxHeight='max' maxW={'100vw'}>
-                        <Box minW='40vw' h='100%'>
-                            <Center>
-                                <VStack spacing={{base: 4, md: 8}}>
-                                    <HStack spacing={{base: 4, md: 8}}>
-                                        <Box boxSize={'15vw'}>
-                                            <Image
-                                                src={greg}
-                                                alt={name}
-                                                loading="lazy"
-                                            />
-                                        </Box>
-                                        <Box boxSize={'15vw'}>
-
-                                            <Image
-                                                src={arthur}
-                                                alt={name}
-                                                loading="lazy"
-                                            />
-                                        </Box>
-                                    </HStack>
-                                    <Box boxSize={'15vw'}>
+                                        />
+                                    </WrapItem>
+                                    <WrapItem boxSize={'300'}>
                                         <Image
                                             src={coco}
                                             alt={name}
                                             loading="lazy"
-                                        />
-                                    </Box>
-                                </VStack>
-                            </Center>
+                                            style={{filter: "grayscale(1)"}}
 
+                                        />
+                                    </WrapItem>
+                                </Wrap>
+                            </Center>
                         </Box>
-                        <Box minW='40vw' h='100%'>
-                            <Center>
-                                <Stack as={Box} align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
-                                    <Box>
-                                        <Heading as='h2' fontWeight={600} fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
-                                                 lineHeight={'110%'} textAlign='center'>
-                                            {t('storyTitle')}
-                                        </Heading>
-                                    </Box>
-                                    <Box>
-                                        <Center>
-                                            <VStack spacing={6} textAlign={'justify'} w={magicRatio}>
-                                                <Trans i18nKey='history' t={t}
-                                                       components={{
-                                                           text: <Text/>,
-                                                           bold: <strong/>,
-                                                           box: <Box verticalAlign='middle' fontWeight='normal' px='5'
-                                                                     lineHeight='tall' position='relative' color='white'
-                                                                     _before={{
-                                                                         content: `\"\"`,
-                                                                         position: 'absolute',
-                                                                         display: 'block',
-                                                                         left: '-1%',
-                                                                         borderLeftWidth: '0.5rem',
-                                                                         borderLeftColor: '#FF893B',
-                                                                         height: '100%'
-                                                                     }}/>
-                                                       }}>
-                                                </Trans>
-                                            </VStack>
-                                        </Center>
-                                    </Box>
-                                </Stack>
+
+                        <Box>
+                            <Center h={'100%'}>
+                                <VStack textAlign={"justify"} w={MAGIC_RATIO} padding={2}>
+                                    <Trans i18nKey='history' t={t}
+                                           components={{
+                                               text: <Text/>,
+                                               bold: <strong/>,
+                                               box: <Box verticalAlign='middle' fontWeight='normal' px='5'
+                                                         lineHeight='tall' position='relative' color='white'
+                                                         _before={{
+                                                             content: `\"\"`,
+                                                             position: 'absolute',
+                                                             display: 'block',
+                                                             left: '-1%',
+                                                             borderLeftWidth: '0.5rem',
+                                                             borderLeftColor: '#FF893B',
+                                                             height: '100%'
+                                                         }}/>
+                                           }}>
+                                    </Trans>
+                                </VStack>
+
                             </Center>
                         </Box>
                     </Stack>
-                </Panel>
+                </FullPanel>
+
             </Layout>
         </>
 

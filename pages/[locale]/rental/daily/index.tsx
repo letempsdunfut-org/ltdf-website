@@ -1,5 +1,5 @@
-import Rental from "../../../components/page/Rental";
-import {makeStaticProps,getStaticPaths} from "../../../lib/getStatic";
+import Rental from "../../../../components/page/Rental";
+import {makeStaticProps,getStaticPaths} from "../../../../lib/getStatic";
 
 
 const getStaticProps = makeStaticProps(['dailyRental', 'common']);

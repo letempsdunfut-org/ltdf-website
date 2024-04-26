@@ -1,6 +1,7 @@
 import {Box, Container} from "@chakra-ui/react";
 import React from "react";
 import Image, {StaticImageData} from "next/image";
+import {ACCENT_COLOR, PRIMARY_COLOR} from "./utils";
 
 export default function Panel({isInvert, children, imageData, imageAltName}: {
     isInvert: boolean,
@@ -36,17 +37,17 @@ export default function Panel({isInvert, children, imageData, imageAltName}: {
 
     if (isInvert) {
         return (
-            <Container minHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'}
+            <Box minHeight={'calc(95vh)'} maxW='100%' paddingTop={'1'}
                        position={"relative"}
-                       backgroundColor={'#095d78'} color={'white'}>
+                       backgroundColor={PRIMARY_COLOR} color={ACCENT_COLOR}>
                 {child}
-            </Container>
+            </Box>
         )
     } else {
         return (
-            <Container minHeight={'calc(95vh)'} maxW='100%' paddingTop={'16'} position={"relative"}>
+            <Box minHeight={'calc(95vh)'} maxW='100%' position={"relative"} paddingTop={'1'}>
                 {child}
-            </Container>
+            </Box>
 
         )
     }

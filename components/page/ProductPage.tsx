@@ -16,6 +16,9 @@ import kegPics from "../../public/images/kegator.png";
 import SplitImageTextPanel from "../shared/SplitImageTextPanel";
 import SimpleAccordion from "../shared/SimpleAccordion";
 import {Namespace, TFunction} from "i18next";
+import Head from "next/head";
+import TitlePanel from "../shared/TitlePanel";
+import Layout from "../shared/layout";
 
 export type PriceItemComponentProps = {
     t: TFunction<Namespace<string>, string>
@@ -67,7 +70,7 @@ export default function ProductPage() {
     const pageTitle = {
         bgImage: imgCouverture,
         bgImageAlt: 'common:title',
-        titleColor: 'white',
+        titleColor: '#095d78',
         titleKey: 'common:product',
         children: <Image
             src={iconTireuse}
@@ -86,96 +89,107 @@ export default function ProductPage() {
             }}
         />
     }
-    const panels: React.ReactNode[] = [
-        <SplitImageTextPanel key={1} t={t}
-                             isInvert={true}
-                             headingTextKey={'dailyRental'}
-                             isImageLeft={true}
-                             textElement={
-                                 <VStack w='100%'>
-                                     <SimpleAccordion t={t} items={[
-                                         {
-                                             titleKey: 'draftTechnicalTilte',
-                                             itemContent: <ListFromTranslationComponent t={t} icon={ArrowForwardIcon}
-                                                                                        listContentKey={'draftTechnicalList'}/>
-                                         },
-                                         {
-                                             titleKey: 'draftMaintainTitle',
-                                             itemContent: <Text>{t('draftMaintainInfo')}</Text>
-                                         },
-                                         {
-                                             titleKey: 'draftDelivryTitle',
-                                             itemContent: <Text>{t('draftDelivryInfo')}</Text>
-                                         },
-                                         {
-                                             titleKey: 'draftServiceTitle',
-                                             itemContent: <Text>{t('draftServiceInfo')}</Text>
-                                         },
-                                         {
-                                             titleKey: 'draftPriceTitle',
-                                             itemContent: <PriceItemComponent t={t} icon={ArrowForwardIcon}
-                                                                              itemContentKey={'draftPricePanel'}/>
-                                         },
-                                     ]}/>
-                                     <LinkComponent href='/rentalDaily' paddingTop={5}
-                                                    _hover={{textDecoration: 'none'}}>
-                                         <Button
-                                             backgroundColor={'white'}
-                                             color='#095d78'>{t('redirectDaily')}</Button>
-                                     </LinkComponent>
-                                 </VStack>
-                             }
-                             imageSrc={draftPics}
-                             imageAltKey={'common:title'}
-        />,
-        <SplitImageTextPanel key={2} t={t}
-                             isInvert={false}
-                             headingTextKey={'monthlyRental'}
-                             isImageLeft={false}
-                             imageSrc={kegPics}
-                             imageAltKey={'common:title'}
-                             textElement={
-                                 <VStack w='100%'>
-                                     <SimpleAccordion t={t} items={[
-                                         {
-                                             titleKey: 'draftTechnicalTilte',
-                                             itemContent: <ListFromTranslationComponent t={t} icon={ArrowForwardIcon}
-                                                                                        listContentKey={'draftTechnicalList'}/>
-                                         },
-                                         {
-                                             titleKey: 'draftMaintainTitle',
-                                             itemContent: <Text>{t('draftMaintainInfo')}</Text>
-                                         },
-                                         {
-                                             titleKey: 'draftDelivryTitle',
-                                             itemContent: <Text>{t('draftDelivryInfo')}</Text>
-                                         },
-                                         {
-                                             titleKey: 'draftServiceTitle',
-                                             itemContent: <Text>{t('draftServiceInfo')}</Text>
-                                         },
-                                         {
-                                             titleKey: 'draftPriceTitle',
-                                             itemContent: <PriceItemComponent t={t} icon={ArrowForwardIcon}
-                                                                              itemContentKey={'draftPricePanel'}/>
-                                         },
-                                     ]}/>
-                                     <LinkComponent paddingTop={5} href='/rentalDaily'
-                                                    _hover={{textDecoration: 'none'}}>
-                                         <Button
-                                             backgroundColor={'#095d78'}
-                                             color='white'>{t('redirectMonthly')}</Button>
-                                     </LinkComponent>
-                                 </VStack>
-                             }
-        />
-    ]
+
     return (
-        <SimplePage
-            t={t}
-            pageTitleKey={'pageTitle'}
-            title={pageTitle}
-            panels={panels}
-        ></SimplePage>
+        <Layout>
+            <Head>
+                <title>{t('pageTitle')}</title>
+            </Head>
+            <TitlePanel t={t}
+                        pageNameKey={'pageTitle'}
+                        pageTitleColor={pageTitle.titleColor}
+                        bgImage={pageTitle.bgImage}
+                        bgImageAlt={pageTitle.bgImageAlt}
+                        titleKey={pageTitle.titleKey}
+            >
+                {pageTitle.children}
+            </TitlePanel>
+
+
+            <SplitImageTextPanel key={1} t={t}
+                                 isInvert={true}
+                                 headingTextKey={'dailyRental'}
+                                 isImageLeft={true}
+                                 textElement={
+                                     <VStack w='100%' as={Box} paddingTop={'20px'} marginBottom={'10px'}>
+                                         <SimpleAccordion t={t} items={[
+                                             {
+                                                 titleKey: 'draftTechnicalTilte',
+                                                 itemContent: <ListFromTranslationComponent t={t}
+                                                                                            icon={ArrowForwardIcon}
+                                                                                            listContentKey={'draftTechnicalList'}/>
+                                             },
+                                             {
+                                                 titleKey: 'draftMaintainTitle',
+                                                 itemContent: <Text>{t('draftMaintainInfo')}</Text>
+                                             },
+                                             {
+                                                 titleKey: 'draftDelivryTitle',
+                                                 itemContent: <Text>{t('draftDelivryInfo')}</Text>
+                                             },
+                                             {
+                                                 titleKey: 'draftServiceTitle',
+                                                 itemContent: <Text>{t('draftServiceInfo')}</Text>
+                                             },
+                                             {
+                                                 titleKey: 'draftPriceTitle',
+                                                 itemContent: <PriceItemComponent t={t} icon={ArrowForwardIcon}
+                                                                                  itemContentKey={'draftPricePanel'}/>
+                                             },
+                                         ]}/>
+                                         <LinkComponent href='/rentalDaily' paddingTop={5}
+                                                        _hover={{textDecoration: 'none'}}>
+                                             <Button
+                                                 backgroundColor={'white'}
+                                                 color='#095d78'>{t('redirectDaily')}</Button>
+                                         </LinkComponent>
+                                     </VStack>
+                                 }
+                                 imageSrc={draftPics}
+                                 imageAltKey={'common:title'}
+            />,
+            <SplitImageTextPanel key={2} t={t}
+                                 isInvert={false}
+                                 headingTextKey={'monthlyRental'}
+                                 isImageLeft={false}
+                                 imageSrc={kegPics}
+                                 imageAltKey={'common:title'}
+                                 textElement={
+                                     <VStack w='100%'>
+                                         <SimpleAccordion t={t} items={[
+                                             {
+                                                 titleKey: 'draftTechnicalTilte',
+                                                 itemContent: <ListFromTranslationComponent t={t}
+                                                                                            icon={ArrowForwardIcon}
+                                                                                            listContentKey={'draftTechnicalList'}/>
+                                             },
+                                             {
+                                                 titleKey: 'draftMaintainTitle',
+                                                 itemContent: <Text>{t('draftMaintainInfo')}</Text>
+                                             },
+                                             {
+                                                 titleKey: 'draftDelivryTitle',
+                                                 itemContent: <Text>{t('draftDelivryInfo')}</Text>
+                                             },
+                                             {
+                                                 titleKey: 'draftServiceTitle',
+                                                 itemContent: <Text>{t('draftServiceInfo')}</Text>
+                                             },
+                                             {
+                                                 titleKey: 'draftPriceTitle',
+                                                 itemContent: <PriceItemComponent t={t} icon={ArrowForwardIcon}
+                                                                                  itemContentKey={'draftPricePanel'}/>
+                                             },
+                                         ]}/>
+                                         <LinkComponent paddingTop={5} href='/rentalDaily'
+                                                        _hover={{textDecoration: 'none'}} >
+                                             <Button
+                                                 backgroundColor={'#095d78'}
+                                                 color='white'>{t('redirectMonthly')}</Button>
+                                         </LinkComponent>
+                                     </VStack>
+                                 }
+            />
+        </Layout>
     )
 }
