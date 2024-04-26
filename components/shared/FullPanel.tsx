@@ -11,7 +11,6 @@ export type FullPanelProps = {
 }
 
 
-
 export default function FullPanel({t, isInvert, headingTextKey, children}: FullPanelProps) {
 
     const heading = (headingTextKey) ? (
@@ -24,7 +23,8 @@ export default function FullPanel({t, isInvert, headingTextKey, children}: FullP
     return (
         <Panel isInvert={isInvert}>
             <Center>
-                <Stack  h={'100%'} as={Box} align={'center'} spacing={{base: 4, md: 8}} py={{base: 5, md: 10}}>
+                <Stack h={'100%'} w={'100%'} as={Box} align={'center'} spacing={{base: 4, md: 8}}
+                       py={{base: 5, md: 10}}>
                     {heading}
                     {children}
                 </Stack>

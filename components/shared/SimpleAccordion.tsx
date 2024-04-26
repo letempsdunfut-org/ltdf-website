@@ -9,6 +9,7 @@ import {
     Heading,
 } from "@chakra-ui/react";
 import {Namespace, TFunction} from "i18next";
+import {MAGIC_RATIO} from "./utils";
 
 export type SimpleAccordionItem = {
     titleKey: string
@@ -22,19 +23,20 @@ export type SimpleAccordionProps = {
 
 export default function SimpleAccordion({t, items}: SimpleAccordionProps) {
     return (
-        <Accordion defaultIndex={[0]} w={'100%'}>
+        <Accordion defaultIndex={[0]} >
             {items.map((value, index) =>
                 <AccordionItem key={index}>
                     <Heading as='h2' fontWeight={600}
                              fontSize={{base: '4xl', sm: '3xl', md: '5xl'}}
                              lineHeight={'110%'}>
                         <AccordionButton>
-                            <Box flex='1' textAlign='left'>
+                            <AccordionIcon/>
+                            <Box flex='1' textAlign='justify'>
                                 <strong>
                                     {t(value.titleKey)}
                                 </strong>
                             </Box>
-                            <AccordionIcon/>
+
                         </AccordionButton>
                     </Heading>
                     <AccordionPanel pb={4}>

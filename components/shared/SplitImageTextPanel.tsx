@@ -29,7 +29,7 @@ export default function SplitImageTextPanel({
 
 
     const imageElement = (
-        <Center h={'100%'} w={'100%'}>
+        <Center >
                 <Image
                     src={imageSrc}
                     alt={t(imageAltKey)}

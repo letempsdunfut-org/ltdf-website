@@ -29,6 +29,8 @@ export default function SplitPanel(props: SplitPanelProp) {
                 direction={{base: 'column', md: 'row'}}
                 spacing={{base: '2', lg: '4'}}
                 {...props}
+                w={'100%'}
+                h={'100%'}
             >
                 <Box flex="1">
                     {leftElement}
