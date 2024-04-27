@@ -21,5 +21,6 @@
   "deliveryServiceOpt3": "Oui sur l'île de Montreal (Gratuit)",
   "deliveryServiceOpt4": "Oui en dehors de l'île de Montreal (frais en sus) ",
   "detail": "Autres détails",
-  "bookingInfo": "Pour des fûts de bière nous pouvons vous faire parvenir un devis de la part de nos microbrasseries partenaires, si cela vous intéresse veuillez nous le preciser dans la partie 'Autres détails' avec le plus d'informations possibles sur l'événement. "
+  "bookingInfo": "Pour des fûts de bière nous pouvons vous faire parvenir un devis de la part de nos microbrasseries partenaires, si cela vous intéresse veuillez nous le preciser dans la partie 'Autres détails' avec le plus d'informations possibles sur l'événement. ",
+  "mailSent": "Votre demandre a bien etait envoyer"
 }
