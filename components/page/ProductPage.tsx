@@ -86,24 +86,8 @@ export default function ProductPage() {
                         bgImage={pageTitle.bgImage}
                         bgImageAlt={pageTitle.bgImageAlt}
                         titleKey={pageTitle.titleKey}
-            >
-                <Image
-                    src={iconTireuse}
-                    alt={t('common:title')}
-                    loading="lazy"
-                    style={{
-                        position: 'absolute',
-                        bottom: '26px',
-                        left: 0,
-                        right: 0,
-                        backgroundColor: 'white',
-                        borderRadius: '50%',
-                        width: '75px',
-                        margin: 'auto',
-                        padding: '6px'
-                    }}
-                />
-            </TitlePanel>
+                        pageLogo={iconTireuse}
+            />
 
 
             <SplitImageTextPanel key={1} t={t}
