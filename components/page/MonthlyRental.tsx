@@ -1,13 +1,14 @@
 import {Trans, useTranslation} from "next-i18next";
 import Layout from "../shared/layout";
 import Head from "next/head";
-import {Box, Button, Center, Stack, Text, VStack} from "@chakra-ui/react";
+import {Box, Button, Center, Link, Stack, Text, VStack} from "@chakra-ui/react";
 import kegkumImg from "../../public/images/kegkumLight.png";
 import office from "../../public/images/couverture/office.jpg";
 
 import React from "react";
 import TitlePanel from "../shared/TitlePanel";
 import SplitPanel from "../shared/SplitImageTextPanel";
+import {PRIMARY_COLOR} from "../shared/utils";
 
 
 export default function MonthlyRental() {
@@ -42,54 +43,66 @@ export default function MonthlyRental() {
 
                 <SplitPanel t={t} isInvert={true} headingTextKey={'KombuOffer'}
                             textElement={
-                                <VStack w='100%' h='100%' textAlign={'justify'}>
-                                    <Box>
-                                        <Trans i18nKey='KombuOfferExplain' t={t}
-                                               components={{
-                                                   text: <Text/>,
-                                               }}>
-                                        </Trans>
-                                    </Box>
-                                    <Box>
-                                        <Trans i18nKey='KombuOfferPitch' t={t}
-                                               components={{
-                                                   text: <Text/>,
-                                               }}>
-                                        </Trans>
-                                    </Box>
-                                    <Box>
-                                        <Stack direction={['column', 'row']} alignItems={'center'}
-                                               textAlign={'justify'}>
-                                            <Box backgroundColor={'blue.50'} color={'black'} padding={'2vw'}>
-                                                <Trans i18nKey='KombuOfferContent1' t={t}
-                                                       components={{
-                                                           text: <Text/>,
-                                                           li: <li/>,
-                                                           a: <a href={'https://gutsykombucha.com/'}/>
-                                                       }}>
-                                                </Trans>
-                                            </Box>
-                                            <Box backgroundColor={'blue.50'} color={'black'} padding={'2vw'}>
+                                <Center>
+                                    <VStack w={'95%'} h='100%' textAlign={'justify'}>
+                                        <Box>
+                                            <Trans i18nKey='KombuOfferExplain' t={t}
+                                                   components={{
+                                                       text: <Text/>,
+                                                   }}>
+                                            </Trans>
+                                        </Box>
+                                        <Box>
+                                            <Trans i18nKey='KombuOfferPitch' t={t}
+                                                   components={{
+                                                       text: <Text/>,
+                                                   }}>
+                                            </Trans>
+                                        </Box>
+                                        <Box>
+                                            <Stack
+                                                direction={{base: 'column', md: 'row'}}
+                                                spacing={{base: '2', lg: '4'}}
+                                                justify={'center'}
+                                                w={'100%'}
+                                                h={'100%'}
+                                            >
+                                                <Box flex="1">
+                                                    <Box backgroundColor={'blue.50'} color={'black'} h={'100%'} padding={'2vw'}>
+                                                        <Trans i18nKey='KombuOfferContent1' t={t}
+                                                               components={{
+                                                                   text: <Text/>,
+                                                                   li: <li/>,
+                                                                   a: <Link color={PRIMARY_COLOR} target={'_blank'} href={'https://gutsykombucha.com/'}/>
+                                                               }}>
+                                                        </Trans>
+                                                    </Box>
+                                                </Box>
 
-                                                <Trans i18nKey='KombuOfferContent2' t={t} h="full"
-                                                       components={{
-                                                           text: <Text/>,
-                                                           li: <li/>,
-                                                       }}>
-                                                </Trans>
+                                                <Box flex="1">
+                                                    <Box backgroundColor={'blue.50'} color={'black'} h={'100%'} padding={'2vw'}>
 
-                                            </Box>
-                                        </Stack>
-                                    </Box>
-                                    <Box>
-                                        <Center>
-                                            <a href='mailto:contact@letempsdunfut.ca'> <Button
-                                                backgroundColor={'white'}
-                                                color='#095d78'>{t('ContactUs')}</Button>
-                                            </a>
-                                        </Center>
-                                    </Box>
-                                </VStack>
+                                                        <Trans i18nKey='KombuOfferContent2' t={t} h="full"
+                                                               components={{
+                                                                   text: <Text/>,
+                                                                   li: <li/>,
+                                                               }}>
+                                                        </Trans>
+
+                                                    </Box>
+                                                </Box>
+                                            </Stack>
+                                        </Box>
+                                        <Box>
+                                            <Center>
+                                                <a href='mailto:contact@letempsdunfut.ca'> <Button
+                                                    backgroundColor={'white'}
+                                                    color='#095d78'>{t('ContactUs')}</Button>
+                                                </a>
+                                            </Center>
+                                        </Box>
+                                    </VStack>
+                                </Center>
                             }
                             isImageLeft={true}
                             imageSrc={kegkumImg}

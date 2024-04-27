@@ -36,7 +36,7 @@ export default function TitlePanel({
                 src={pageLogo!}
                 alt={t(pageNameKey)}
                 loading="lazy"
-                style={{position: 'relative', backgroundColor: pageLogoBg!, borderRadius: '50%'}}
+                style={{position: 'relative', backgroundColor: pageLogoBg!, borderRadius: '50%', objectFit:"contain"}}
             />
         </Box>
     ) : (
