@@ -13,7 +13,6 @@ import {
 import {AddIcon, CloseIcon, HamburgerIcon} from "@chakra-ui/icons";
 import i18nextConfig from "../../next-i18next.config";
 import React from "react";
-import {useSession} from "next-auth/react";
 import {useRouter} from "next/router";
 import {TFunction} from "i18next";
 import LinkComponent from "./LinkComponent";
@@ -25,7 +24,6 @@ export default function HeaderMenu({t}: { t: TFunction<"common", "common"> }) {
     const {isOpen, onOpen, onClose} = useDisclosure();
 
     const links = usePagesLinks()
-    const {data: session} = useSession()
 
     const localemoji = (locale: String) => {
         if (locale === 'en') {
@@ -34,11 +32,6 @@ export default function HeaderMenu({t}: { t: TFunction<"common", "common"> }) {
             return "🇫🇷"
         }
     }
-    const profileImg = session && session.user ? session?.user.image! : "/images/notLoggedUser.svg"
-    const loginLogout = session && session.user ? <LinkComponent href='/auth/logout'
-                                                                 _hover={{textDecoration: 'none'}}><MenuItem>{t('logout')}</MenuItem></LinkComponent> :
-        <LinkComponent href='/auth/login'
-                       _hover={{textDecoration: 'none'}}><MenuItem>{t('login')}</MenuItem></LinkComponent>
     const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
 
     return (
@@ -127,7 +120,7 @@ export default function HeaderMenu({t}: { t: TFunction<"common", "common"> }) {
                 <Box pb={4} display={{md: 'none'}}>
                     <Stack as={'nav'} spacing={4}>
                         {links.map((link) => (
-                            <Link px={2} py={1} rounded={'md'}
+                            <Link rel="canonical" px={2} py={1} rounded={'md'}
                                   _hover={{
                                       textDecoration: 'none',
                                       bg: 'gray.200',

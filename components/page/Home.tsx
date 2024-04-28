@@ -103,12 +103,12 @@ export default function Home() {
                                                  <Box>
                                                      <Stack direction={['column', 'row']} spacing={8}
                                                             alignItems={'center'}>
-                                                         <LinkComponent href='/rentalDaily'
+                                                         <LinkComponent href='/rental/daily'
                                                                         _hover={{textDecoration: 'none'}}><Button
                                                              backgroundColor={'white'}
                                                              color='#095d78'>{t('moreinfoDaily')}</Button></LinkComponent>
 
-                                                         <LinkComponent href='/rentalMonthly'
+                                                         <LinkComponent href='/rental/monthly'
                                                                         _hover={{textDecoration: 'none'}}><Button
                                                              backgroundColor={'white'}
                                                              color='#095d78'>{t('moreinfoMonthly')}</Button></LinkComponent>

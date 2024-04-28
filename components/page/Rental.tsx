@@ -109,7 +109,7 @@ export default function Rental() {
                 </FullPanel>
 
                 <FullPanel t={t} isInvert={false} headingTextKey={'rentalEventTitle'}>
-                    <Stack direction={{base: 'column', md: 'column'}} h={'100%'}  textAlign={"justify"}>
+                    <Stack direction={{base: 'column', md: 'column'}} h={'100%'} w={MAGIC_RATIO}  textAlign={"justify"}>
                         <Box>
                             <Trans i18nKey='rentalEventText' t={t}
                                    components={{text: <Text/>, bold: <strong/>}}>

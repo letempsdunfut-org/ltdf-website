@@ -1,14 +1,11 @@
 import {Trans, useTranslation} from "next-i18next";
 import React from "react";
-import SimplePage from "../shared/SimplePage";
 import imgCouverture from "../../public/images/couverture/drafts-bw.jpg";
-import Image from "next/image";
 import iconTireuse from "../../public/images/icons/tireuse-transp.png";
 import draftPics from "../../public/images/tireurse.png";
 import {
     Box, Button, Center, ComponentWithAs,
-    List, ListIcon, ListItem, Stack, Text,
-    VStack
+    List, ListIcon, ListItem, Stack, Text
 } from "@chakra-ui/react";
 import {ArrowForwardIcon, IconProps} from "@chakra-ui/icons";
 import LinkComponent from "../shared/LinkComponent";
@@ -19,7 +16,6 @@ import {Namespace, TFunction} from "i18next";
 import Head from "next/head";
 import TitlePanel from "../shared/TitlePanel";
 import Layout from "../shared/layout";
-import SplitPanel from "../shared/SplitPanel";
 
 export type PriceItemComponentProps = {
     t: TFunction<Namespace<string>, string>
@@ -152,27 +148,27 @@ export default function ProductPage() {
                                          <Stack direction={{base: 'column', md: 'column'}} h={'100%'} w={'100%'}>
                                              <SimpleAccordion t={t} items={[
                                                  {
-                                                     titleKey: 'draftTechnicalTilte',
+                                                     titleKey: 'monthlyDraftTechnicalTilte',
                                                      itemContent: <ListFromTranslationComponent t={t}
                                                                                                 icon={ArrowForwardIcon}
-                                                                                                listContentKey={'draftTechnicalList'}/>
+                                                                                                listContentKey={'monthlyDraftTechnicalList'}/>
                                                  },
                                                  {
-                                                     titleKey: 'draftMaintainTitle',
-                                                     itemContent: <Text>{t('draftMaintainInfo')}</Text>
+                                                     titleKey: 'monthlyDraftMaintainTitle',
+                                                     itemContent: <Text>{t('monthlyDraftMaintainInfo')}</Text>
                                                  },
                                                  {
-                                                     titleKey: 'draftDelivryTitle',
-                                                     itemContent: <Text>{t('draftDelivryInfo')}</Text>
+                                                     titleKey: 'monthlyDraftDelivryTitle',
+                                                     itemContent: <Text>{t('monthlyDraftDelivryInfo')}</Text>
                                                  },
                                                  {
-                                                     titleKey: 'draftServiceTitle',
-                                                     itemContent: <Text>{t('draftServiceInfo')}</Text>
+                                                     titleKey: 'monthlyDraftServiceTitle',
+                                                     itemContent: <Text>{t('monthlyDraftServiceInfo')}</Text>
                                                  },
                                                  {
-                                                     titleKey: 'draftPriceTitle',
+                                                     titleKey: 'monthlyDraftPriceTitle',
                                                      itemContent: <PriceItemComponent t={t} icon={ArrowForwardIcon}
-                                                                                      itemContentKey={'draftPricePanel'}/>
+                                                                                      itemContentKey={'monthlyDraftPricePanel'}/>
                                                  },
                                              ]}/>
                                              <Center>

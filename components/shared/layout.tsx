@@ -1,16 +1,12 @@
 import Head from 'next/head'
-import {Box, Flex} from '@chakra-ui/react'
+import {Flex} from '@chakra-ui/react'
 import {useTranslation} from 'next-i18next'
 import React from "react";
 import HeaderMenu from "./HeaderMenu";
 import Footer from "./Footer";
 
 
-export default function Layout({
-                                   children
-                               }: {
-    children: React.ReactNode
-}) {
+export default function Layout({children}: { children: React.ReactNode }) {
 
     const {t} = useTranslation('common')
 

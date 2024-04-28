@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import {makeStaticProps, getStaticPaths} from "../../../../lib/getStatic";
 import MonthlyRental from "../../../../components/page/MonthlyRental";
 
@@ -7,11 +6,6 @@ export {getStaticPaths, getStaticProps};
 
 
 export default function RentalMonthly() {
-    return (
-        <>
-            <MonthlyRental/>
-        </>
-
-    )
+    return (<MonthlyRental/>)
 }
 
