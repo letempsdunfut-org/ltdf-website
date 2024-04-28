@@ -72,6 +72,7 @@ export default function MonthlyRental() {
                                                         <Trans i18nKey='KombuOfferContent1' t={t}
                                                                components={{
                                                                    text: <Text/>,
+                                                                   b: <strong/>,
                                                                    li: <li/>,
                                                                    a: <Link color={PRIMARY_COLOR} target={'_blank'} href={'https://gutsykombucha.com/'}/>
                                                                }}>
@@ -86,6 +87,7 @@ export default function MonthlyRental() {
                                                                components={{
                                                                    text: <Text/>,
                                                                    li: <li/>,
+                                                                   b: <strong/>,
                                                                }}>
                                                         </Trans>
 
