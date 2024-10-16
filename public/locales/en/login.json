@@ -1,7 +1,8 @@
 {
     "title": "Le temps d'un fût - Login",
     "login": "Login",
-    "google": "Continue with Google",
-    "facebook": "Continue with Facebook",
-    "instagram": "Continue with Instagram"
+    "google": "Login with Google",
+    "facebook": "Login with Facebook",
+    "apple": "Login with Apple",
+    "instagram": "Login with Instagram"
 }

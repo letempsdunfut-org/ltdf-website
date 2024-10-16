@@ -21,7 +21,7 @@ const LanguageSwitchLink = ({ children, locale, ...rest }: { children: React.Rea
     }
 
     return (
-        <Link
+        <Link rel="canonical"
             href={href}
             onClick={() => languageDetector.cache?.(locale)}
         >

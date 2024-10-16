@@ -7,8 +7,6 @@ import {appWithTranslation} from 'next-i18next'
 import {SessionProvider} from "next-auth/react"
 
 import React from 'react';
-import Head from "next/head";
-import {Meta} from "next/dist/lib/metadata/generate/meta";
 
 // If loading a variable font, you don't need to specify the font weight
 const montserrat = Montserrat({subsets: ['latin']});

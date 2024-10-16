@@ -1,11 +1,11 @@
 import React from 'react'
-import { useRouter } from 'next/router'
-import { Link, LinkProps } from '@chakra-ui/react'
+import {useRouter} from 'next/router'
+import {Link, LinkProps} from '@chakra-ui/react'
 
-const LinkComponent = ({ children, skipLocaleHandling, ...rest }:
-    { children: React.ReactNode, skipLocaleHandling?: boolean }
-    & LinkProps
-    & { locale?: string }) => {
+const LinkComponent = ({children, skipLocaleHandling, ...rest}:
+                           { children: React.ReactNode, skipLocaleHandling?: boolean }
+                           & LinkProps
+                           & { locale?: string }) => {
     const router = useRouter()
     const locale = rest.locale || router.query.locale || ''
     const clean = locale instanceof Array ? locale.at(0)! : locale
@@ -20,7 +20,7 @@ const LinkComponent = ({ children, skipLocaleHandling, ...rest }:
 
     return (
         <>
-            <Link  {...rest} href={href} >
+            <Link  {...rest} href={href} rel="canonical">
                 {children}
             </Link>
         </>
