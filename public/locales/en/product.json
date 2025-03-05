@@ -9,7 +9,7 @@
   "draftServiceTitle": "Setup Service",
   "draftServiceInfo": "Each tap rental comes with a setup and usage briefing in case you choose not to have your tap delivered.",
   "draftPriceTitle": "Pricing",
-  "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = $100 + taxes </listItem></list><box><text> * Delivery = from $20 + taxes</text><cr /><text> *More than 48 hours on quotation</text></box>",
+  "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = $150 + taxes </listItem></list><box><text> * Delivery = from $20 + taxes</text><cr /><text> *More than 48 hours on quotation</text></box>",
   "monthlyDraftTechnicalTilte": "Technical Specifications",
   "monthlyDraftTechnicalList": "<listItem><listIcon />  Professional equipment</listItem><listItem> <listIcon />  Available in one or two taps  </listItem><listItem> <listIcon /> Ability to store two kegs of different capacities simultaneously </listItem> <listItem> <listIcon/> our draft beer, guaranteed fresh every day.</listItem>",
   "monthlyDraftMaintainTitle": "Tap Maintenance",
