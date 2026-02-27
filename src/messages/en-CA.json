@@ -83,7 +83,7 @@
       "footerPhone": "+1 (438)-793-6644",
       "footerContact": "Contact Us",
       "footerFollow": "Follow Us",
-      "footerCopyright": "Copyright©2022-2024 Le temps d'un fût"
+      "footerCopyright": "Copyright©2022-2026 Le temps d'un fût"
     },
     "booking": {
       "seo": {
@@ -174,12 +174,12 @@
       "draftTechnicalList": "<listItem> <listIcon/> Continuous cooling capacity of 13 gallons/h. </listItem><listItem><listIcon />  Professional equipment</listItem><listItem> <listIcon />  Two lines </listItem><listItem> <listIcon />  Capability to refrigerate two kegs of different capacities simultaneously</listItem><listItem> <listIcon/> Compact, fits in the trunk of a small car. </listItem> <listItem> <listIcon/> Your pressure, guaranteed fresh in less than 10 minutes.</listItem>",
       "draftMaintainTitle": "Tap Maintenance",
       "draftMaintainInfo": "Hygiene being our priority, all our taps are rigorously controlled, inspected, and disinfected between each rental.",
-      "draftDelivryTitle": "Delivery",
-      "draftDelivryInfo": "Delivery is available exclusively on the Island of Montreal. However, do not hesitate to contact us to see if an exception is possible depending on your order.",
-      "draftServiceTitle": "Setup Service",
-      "draftServiceInfo": "Each tap rental comes with a setup and usage briefing in case you choose not to have your tap delivered.",
-      "draftPriceTitle": "Pricing",
-      "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = $150 + taxes </listItem></list><box><text> * Delivery = from $20 + taxes</text><cr /><text> *More than 48 hours on quotation</text></box>",
+      "draftDelivryTitle": "Pick-up Points",
+      "draftDelivryInfo": "For daily rentals, equipment pick-up and return are done through one of our partner pick-up points located in and around Montreal. You can choose your pick-up point during your booking.",
+      "draftServiceTitle": "Installation",
+      "draftServiceInfo": "Each tap rental comes with a setup and usage briefing during pick-up.",
+      "draftPriceTitle": "Price",
+      "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = $150 + taxes </listItem></list><box><text> *More than 48 hours on quotation</text></box>",
       "monthlyDraftTechnicalTilte": "Technical Specifications",
       "monthlyDraftTechnicalList": "<listItem><listIcon />  Professional equipment</listItem><listItem> <listIcon />  Available in one or two taps  </listItem><listItem> <listIcon /> Ability to store two kegs of different capacities simultaneously </listItem> <listItem> <listIcon/> our draft beer, guaranteed fresh every day.</listItem>",
       "monthlyDraftMaintainTitle": "Tap Maintenance",
@@ -273,7 +273,7 @@
     "professional": "Professionals",
     "booking": "Booking",
     "changeLang": "Languages",
-    "copyright": "Copyright©2022-2024 Le temps d'un fût",
+    "copyright": "Copyright©2022-2026 Le temps d'un fût",
     "contactUs": "Contact Us",
     "folowUs": "Follow Us",
     "rental": "Rental"

@@ -40,7 +40,7 @@
       "footerPhone": "+1 (438)-793-6644",
       "footerContact": "Nous contacter",
       "footerFollow": "Suivez-nous",
-      "footerCopyright": "Copyright©2022-2024 Le temps d'un fût"
+      "footerCopyright": "Copyright©2022-2026 Le temps d'un fût"
     },
     "booking": {
       "seo": {
@@ -131,12 +131,12 @@
       "draftTechnicalList": "<listItem> <listIcon/> Capacité de refroidissement continu de 13 gallons/h. </listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Deux lignes </listItem><listItem> <listIcon />  Possibilité de réfrigérer deux fûts de capacités différentes simultanément</listItem><listItem> <listIcon/>  Peu encombrante, elle tient dans le coffre d’une petite automobile. </listItem> <listItem> <listIcon/> Votre pression, garantie fraîche en moins de 10 minutes.</listItem>",
       "draftMaintainTitle": "Entretien des tireuses",
       "draftMaintainInfo": "L’hygiène étant notre priorité, toutes nos tireuses sont rigoureusement contrôlées, inspectées et désinfectées entre chaque location.",
-      "draftDelivryTitle": "Livraison",
-      "draftDelivryInfo": "La livraison est disponible exclusivement sur l’île de Montréal. Toutefois, n’hésitez pas à nous contacter afin de voir si une exception est possible en fonction de votre commande.",
-      "draftServiceTitle": "Mise en service",
-      "draftServiceInfo": "Chaque location de tireuse est accompagnée d’un briefing d’installation et d’utilisation dans le cas où vous ne vous feriez pas livrer votre tireuse.",
-      "draftPriceTitle": "Tarification",
-      "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = 140$ + taxes </listItem></list><box ><text > * Livraison =  à partir de 20 $ + taxes</text><cr /><text> *Plus de 48 h sur devis</text></box>",
+      "draftDelivryTitle": "Points de retrait",
+      "draftDelivryInfo": "Pour les locations journalières, la récupération et le retour de votre équipement s'effectuent via l'un de nos points de retrait partenaires situés à Montréal et aux alentours. Vous pourrez choisir votre point de retrait au moment de votre réservation.",
+      "draftServiceTitle": "Installation",
+      "draftServiceInfo": "Chaque location de tireuse s'accompagne d’un brief d’installation et d’utilisation lors du retrait.",
+      "draftPriceTitle": "Prix",
+      "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = 140$ + taxes </listItem></list><box ><text> *Plus de 48 h sur devis</text></box>",
       "monthlyDraftTechnicalTilte": "Caractéristiques techniques",
       "monthlyDraftTechnicalList": "<listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Disponible en une ou deux robinets  </listItem><listItem> <listIcon />  Possibilité de stocker deux fûts de capacités différentes simultanément  </listItem> <listItem> <listIcon/>  Votre pression, garantie fraîche tous les jours </listItem>",
       "monthlyDraftMaintainTitle": "Entretien des tireuses",
@@ -213,7 +213,7 @@
     "professional": "Professionnels",
     "booking": "Réservation",
     "changeLang": "Langues",
-    "copyright": "Copyright©2022-2024 Le temps d'un fût",
+    "copyright": "Copyright©2022-2026 Le temps d'un fût",
     "contactUs": "Nous contacter",
     "folowUs": "Suivez-nous",
     "rental": "Location"
