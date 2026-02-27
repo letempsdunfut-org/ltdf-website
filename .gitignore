@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -17,12 +18,35 @@
 
 # misc
 .DS_Store
-.env*
+*.pem
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
 # IDE
-.idea/
+.idea
+
+*storybook.log
+/function/mail-crowler/local.settings.json
+/function/mail-crowler/node_modules/
+/function/mail-crowler/dist/
+/function/mail-processor/local.settings.json
+/function/mail-processor/node_modules/
+/function/mail-processor/dist/
+/function/mail-pdf-splitter/local.settings.json
+/function/mail-pdf-splitter/node_modules/
+/function/mail-pdf-splitter/dist/
+/.npmrc
