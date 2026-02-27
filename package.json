@@ -86,6 +86,7 @@
   },
   "overrides": {
     "react": "$react",
-    "react-dom": "$react-dom"
+    "react-dom": "$react-dom",
+    "eslint": "$eslint"
   }
 }
