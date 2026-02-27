@@ -31,7 +31,7 @@ export default function HomeClient() {
                                 <Icon size="sm"><LuBeer /></Icon>
                                 Le Temps d'un Fût
                             </Badge>
-                            <Heading size={{ base: "5xl", md: "7xl" }} fontWeight="extrabold" lineHeight="tight">
+                            <Heading size={{ base: "4xl", md: "6xl", lg: "7xl" }} fontWeight="extrabold" lineHeight="tight">
                                 {t("description")}
                             </Heading>
                             <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted">
@@ -113,34 +113,34 @@ export default function HomeClient() {
             <Box py={{ base: "16", md: "24" }}>
                 <Container maxW="7xl">
                     <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: "12", md: "16" }} alignItems="center">
-                        <SimpleGrid columns={{ base: 2, md: 2 }} gap={4} height={{ base: "400px", md: "600px" }}>
-                            <Box position="relative" gridRow="span 2" rounded="2xl" overflow="hidden" boxShadow="lg">
+                        <SimpleGrid columns={{ base: 1, md: 2 }} gap={4} height={{ base: "auto", md: "600px" }}>
+                            <Box position="relative" gridRow={{ base: "auto", md: "span 2" }} minH={{ base: "300px", md: "auto" }} rounded="2xl" overflow="hidden" boxShadow="lg">
                                 <ChakraImage asChild objectFit="cover">
                                     <NextImage
                                         src="/images/team/arthur.jpg"
                                         alt="Arthur - Fondateur"
                                         fill
-                                        sizes="(max-width: 768px) 50vw, 25vw"
+                                        sizes="(max-width: 768px) 100vw, 25vw"
                                     />
                                 </ChakraImage>
                                 <Box position="absolute" bottom="0" left="0" right="0" bg="blackAlpha.600" p="2">
                                     <Text color="white" fontSize="xs" fontWeight="bold" textAlign="center">Arthur</Text>
                                 </Box>
                             </Box>
-                            <Box position="relative" rounded="2xl" overflow="hidden" boxShadow="lg">
+                            <Box position="relative" minH={{ base: "300px", md: "auto" }} rounded="2xl" overflow="hidden" boxShadow="lg">
                                 <ChakraImage asChild objectFit="cover">
                                     <NextImage
                                         src="/images/team/coco.png"
                                         alt="Coco - Fondateur"
                                         fill
-                                        sizes="(max-width: 768px) 50vw, 25vw"
+                                        sizes="(max-width: 768px) 100vw, 25vw"
                                     />
                                 </ChakraImage>
                                 <Box position="absolute" bottom="0" left="0" right="0" bg="blackAlpha.600" p="2">
                                     <Text color="white" fontSize="xs" fontWeight="bold" textAlign="center">Coco</Text>
                                 </Box>
                             </Box>
-                            <Box position="relative" rounded="2xl" overflow="hidden" boxShadow="lg">
+                            <Box position="relative" minH={{ base: "300px", md: "auto" }} rounded="2xl" overflow="hidden" boxShadow="lg">
                                 <ChakraImage asChild objectFit="cover">
                                     <NextImage
                                         src="/images/team/greg.png"

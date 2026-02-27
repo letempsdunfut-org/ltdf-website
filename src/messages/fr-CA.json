@@ -126,6 +126,7 @@
         "keywords": "caractéristiques tireuse bière, verres réutilisables location, matériel brassicole"
       },
       "pageTitle": "Le temps d'un fût - Matériel",
+      "heroSubtitle": "Explorez nos options de location de tireuses pour tous vos événements, qu'ils soient ponctuels ou réguliers.",
       "draftTechnicalTilte": "Caractéristiques techniques",
       "draftTechnicalList": "<listItem> <listIcon/> Capacité de refroidissement continu de 13 gallons/h. </listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Deux lignes </listItem><listItem> <listIcon />  Possibilité de réfrigérer deux fûts de capacités différentes simultanément</listItem><listItem> <listIcon/>  Peu encombrante, elle tient dans le coffre d’une petite automobile. </listItem> <listItem> <listIcon/> Votre pression, garantie fraîche en moins de 10 minutes.</listItem>",
       "draftMaintainTitle": "Entretien des tireuses",
@@ -174,7 +175,8 @@
       "companyTxt": "<text>Offrez à vos clients des produits de qualité, distribués de la meilleure des manières. Réduisez vos coûts et augmentez vos profits en distribuant des verres plutôt que des canettes. Vous contribuez aussi à réduire la production de déchets lors de vos événements. </text><box> <cite> En général, on considère qu'une personne boit en moyenne 2 à 3 verres de bière (ou 0,5 à 0,75 litre) pendant une soirée. Si vous prévoyez une soirée de quelques heures avec 20 à 30 personnes, vous devriez donc prévoir environ 20 à 30 litres de bière pour cette soirée. Le choix d'un keg devient ici trés interessant.</cite> </box> <text> Nous pouvons vous accompagner dans la recherche de keg à prix doux! Mariage, événement privé, corporatif, sportif, fête de la saint jean, offrez à vos convives des produits de qualité sans exploser votre budget! </text>",
       "heroSubtitle": "Un service sur-mesure pour les artisans brasseurs, professionnels de l'événementiel, et collectivités.",
       "contactCta": "Contactez-nous pour toute demande",
-      "bannerTitle": "Un partenariat de confiance"
+      "bannerTitle": "Un partenariat de confiance",
+      "partnerCta": "Devenir partenaire"
     }
   },
   "alert": {

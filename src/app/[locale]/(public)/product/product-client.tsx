@@ -27,7 +27,7 @@ export default function ProductClient() {
                 <Container maxW="7xl" textAlign="center">
                     <Heading size="5xl" fontWeight="extrabold" mb="6">{t("pageTitle")}</Heading>
                     <Text fontSize="xl" color="fg.muted" maxW="3xl" mx="auto">
-                        Explorez nos options de location de tireuses pour tous vos événements, qu'ils soient ponctuels ou réguliers.
+                        {t("heroSubtitle")}
                     </Text>
                 </Container>
             </Box>

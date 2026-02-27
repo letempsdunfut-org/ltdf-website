@@ -36,7 +36,7 @@ export default function ProfessionalClient() {
                             <a href="mailto:info@ltdf.ca">
                                 <Button size="xl" colorPalette="orange" w={{ base: "full", sm: "auto" }}>
                                     <Icon><LuPhone /></Icon>
-                                    Contactez-nous
+                                    {t("contactCta")}
                                 </Button>
                             </a>
                         </Stack>
@@ -44,7 +44,7 @@ export default function ProfessionalClient() {
                         <Box position="relative" height="500px" rounded="2xl" overflow="hidden" boxShadow="2xl">
                             <ChakraImage
                                 src="/images/couverture/party-cover.jpg"
-                                alt="Professionnel - Micro-distillerie"
+                                alt={t("microTitle")}
                                 objectFit="cover"
                                 w="100%"
                                 h="100%"
@@ -61,7 +61,7 @@ export default function ProfessionalClient() {
                         <Box order={{ base: 2, lg: 1 }} position="relative" height="400px" rounded="2xl" overflow="hidden">
                             <ChakraImage
                                 src="/images/team/greg.png"
-                                alt="Partenaires"
+                                alt={t("partnerTitle")}
                                 objectFit="cover"
                                 w="100%"
                                 h="100%"
@@ -78,7 +78,7 @@ export default function ProfessionalClient() {
                             </Text>
                             <a href="mailto:info@ltdf.ca">
                                 <Button size="lg" variant="outline" colorPalette="gray" w={{ base: "full", sm: "auto" }}>
-                                    Devenir partenaire
+                                    {t("partnerCta")}
                                 </Button>
                             </a>
                         </Stack>
