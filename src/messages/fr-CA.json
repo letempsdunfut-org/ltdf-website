@@ -1,0 +1,260 @@
+{
+  "apps": {
+    "users-management": {
+      "title": "Gestion des utilisateurs"
+    },
+    "home": {
+      "seo": {
+        "title": "Location de Tireuse à Bière & Kombucha Montréal",
+        "description": "Location de tireuses à bière professionnelles à Montréal. Fûts de kombucha et bière artisanale pour tous vos événements.",
+        "keywords": "location tireuse bière montréal, pompe à bière, kombucha en fût, service keg montréal, location équipement événement"
+      },
+      "meta": {
+        "title": "home title",
+        "description": "home title description"
+      },
+      "main-title": "this is the man title",
+      "description": "Location de tireuse à bière et/ou kombucha pour entreprises et particuliers sur l’île de Montréal.",
+      "rental": "Envie de louer nos machines ? Contactez-nous",
+      "email": "par courriel!",
+      "productsInfo": "Nos distributrices sont conçues pour le refroidissement, la distribution et le service professionnel de boissons parfaitement réfrigérées, à la maison, lors de garden-parties, de fêtes d'entreprise et de petits événements commerciaux, avec la possibilité de distribuer jusqu'à deux boissons à la fois. Parfait pour déguster un fût de kombucha ainsi qu’un fût de bière, l’alternative idéale pour un party avec et sans alcool.",
+      "locationInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui mi. Vestibulum ut consectetur nisl. Nullam auctor risus eu convallis malesuada. Sed a iaculis metus. Sed iaculis malesuada suscipit. Morbi at quam quis dui elementum suscipit quis vel diam. Pellentesque quam odio, bibendum id lacinia ut, sagittis sed tellus. Etiam at nisl at mi egestas rutrum vel ac tortor. Nulla tellus mi, placerat vel aliquet malesuada, finibus a dui. Nullam accumsan nisi justo, at tempor nisi condimentum id. Vivamus ut tellus eget ex blandit blandit. Nullam ex elit, dictum in felis quis, tincidunt fermentum ipsum. Fusce porttitor auctor tempus. Sed at nunc non nisl euismod gravida at sed elit. Vivamus faucibus porta ligula, eget venenatis velit convallis vel. In finibus, lorem ac vestibulum eleifend, nibh libero interdum augue, eu sollicitudin justo nulla id lorem.",
+      "moreinfo": "En savoir plus",
+      "moreinfoDaily": "Location Journalière",
+      "moreinfoMonthly": "Location Mensuelle",
+      "title": "Le temps d'un fût",
+      "navRentalDaily": "Location Journalière",
+      "navRentalMonthly": "Location Mensuelle",
+      "navProfessional": "Professionnels & Microbrasseries",
+      "navProduct": "Produits & Kombucha",
+      "navContact": "Contact",
+      "storyTitle": "Notre histoire",
+      "history": "<text><bold>Le Temps d’un fût</bold>, c’est l’histoire de trois amis, passionnés de la bière, amoureux des microbrasseries et de la créativité québécoise dans ce domaine.</text><box> <text as='cite' > Lors de l’organisation de différents événements, <bold>nous nous sommes rendu compte que l’accès à des modèles de tireuses à bière performantes était très difficile, et que leur mise en place était souvent laborieuse.</bold> </text> </box> <text> Conscients tous les trois des enjeux climatiques et l’importance de réduire les déchets, nous nous sommes questionnés à savoir comment notre entreprise pouvait être écoresponsable. <br /> <bold > C’est pourquoi nous avons eu l’idée d’offrir un service de distribution de bière sous forme de fût et de mettre à disposition des éco-CUP </bold> afin de réduire au maximum les déchets résultant de la distribution classique.</text> <text> La location de tireuse est très avantageuse pour plusieurs aspects.<br /> En plus d’être <bold> très économique </bold>, elle permet de faire découvrir à un plus grand nombre de personnes, <bold>les merveilles de la microbrasserie québécoise.</bold> <br /> Cela permet également de  <bold> valoriser le travail des artisans brassicoles du Québec </bold>en utilisant des tireuses de qualité professionnelle à un prix accessible à tous.</text>",
+      "productDraft": "Nos tireuses sont conçues pour le <bold>service professionnel</bold> de boissons <bold>parfaitement réfrigérées</bold>, à la maison, lors de garden-parties, de fêtes d'entreprise et de petits événements commerciaux",
+      "productGlass": "Nos gobelets réutilisables <bold>sans BPA</bold> vous permettent de <bold>baisser l’empreinte carbone </bold> de vos événements",
+      "rentalSubTitle": "Nous offrons les services suivants :",
+      "rentalDraft": "<bold>Location de tireuses </bold><cite>Nos distributrices sont conçues pour le refroidissement, la distribution et le service professionnel de boissons parfaitement réfrigérées.</cite>",
+      "rentalGlass": "<bold>Location de verres réutilisables </bold> <cite>Baisser l’empreinte carbone de votre party, fini les déchets de cannettes en aluminium</cite>",
+      "rentalLicence": "<bold>Démarches pour les permis d'événements </bold> <cite>L'équipe du temps d'un fût vous accompagne dans la distribution de boissons lors de vos événements sur les parties réglementaires et légales.</cite>",
+      "footerEmail": "contact@letempsdunfut.ca",
+      "footerPhone": "+1 (438)-793-6644",
+      "footerContact": "Nous contacter",
+      "footerFollow": "Suivez-nous",
+      "footerCopyright": "Copyright©2022-2024 Le temps d'un fût"
+    },
+    "booking": {
+      "seo": {
+        "title": "Réservez votre Location de Tireuse",
+        "description": "Remplissez notre formulaire pour réserver votre tireuse à bière ou kombucha. Réponse rapide garantie.",
+        "keywords": "réservation tireuse bière, louer pompe bière en ligne"
+      },
+      "pageTitle": "Le temps d'un fût - Location, demande de réservation",
+      "infoTitle": "Informations",
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui mi. Vestibulum ut consectetur nisl. Nullam auctor risus eu convallis malesuada. Sed a iaculis metus. Sed iaculis malesuada suscipit. Morbi at quam quis dui elementum suscipit quis vel diam. Pellentesque quam odio, bibendum id lacinia ut, sagittis sed tellus. Etiam at nisl at mi egestas rutrum vel ac tortor. Nulla tellus mi, placerat vel aliquet malesuada, finibus a dui. Nullam accumsan nisi justo, at tempor nisi condimentum id. Vivamus ut tellus eget ex blandit blandit. Nullam ex elit, dictum in felis quis, tincidunt fermentum ipsum. Fusce porttitor auctor tempus. Sed at nunc non nisl euismod gravida at sed elit. Vivamus faucibus porta ligula, eget venenatis velit convallis vel. In finibus, lorem ac vestibulum eleifend, nibh libero interdum augue, eu sollicitudin justo nulla id lorem.",
+      "bookingTitle": "Formulaire",
+      "firstname": "Prénom",
+      "lastname": "Nom",
+      "email": "Adresse courriel",
+      "emailInfo": "Nous ne partagerons jamais votre adresse courriel",
+      "startDate": "Date de début de la location",
+      "endDate": "Date de fin de la location",
+      "submit": "Envoyer ma demande",
+      "bookingWIP": "Demande de location (Journaliére)",
+      "bookingWIPText": "En attendant, contactez-nous par courriel ou appelez-nous pour profiter de nos services sur l'île de Montréal!",
+      "phone": "Téléphone",
+      "city": "Ville",
+      "postalCode": "Code postal",
+      "deliveryService": "Service de livraison",
+      "deliveryServiceOpt1": "Non pas le besoin je me déplace la chercher",
+      "deliveryServiceOpt2": "Non je retire la machine au même endroit oú j'achète les fûts (si île de Montreal) ",
+      "deliveryServiceOpt3": "Oui sur l'île de Montreal (Gratuit)",
+      "deliveryServiceOpt4": "Oui en dehors de l'île de Montreal (frais en sus) ",
+      "detail": "Autres détails",
+      "bookingInfo": "Pour des fûts de bière nous pouvons vous faire parvenir un devis de la part de nos microbrasseries partenaires, si cela vous intéresse veuillez nous le preciser dans la partie 'Autres détails' avec le plus d'informations possibles sur l'événement. ",
+      "mailSent": "Votre demandre a bien etait envoyer"
+    },
+    "rental-daily": {
+      "seo": {
+        "title": "Location de Tireuse à la Journée",
+        "description": "Louez une tireuse à bière performante pour votre soirée ou événement d'une journée à Montréal. À partir de 150$.",
+        "keywords": "location tireuse journée, location pompe bière 24h, prix location tireuse bière"
+      },
+      "pageTitle": "Le temps d'un fût - Location journalière",
+      "book": "Réserver",
+      "subTitle": "<vstack> <text> À PARTIR <bold> 150$ </bold> PAR JOURS </text> </vstack> ",
+      "badge": "Location Journalière",
+      "pricePrefix": "À partir de",
+      "priceValue": "150$",
+      "priceSuffix": "/ jour",
+      "deliveryCta": "Livraison de votre tireuse à bière et kombucha offerte pour toutes locations de 48 hr*.",
+      "deliveryDisclaimer": "La livraison est disponible exclusivement sur l’île de Montréal. N’hésitez pas à nous contacter afin de voir si une dérogation est faisable en fonction de votre commande.",
+      "retntalDraftTitle": "Location de tireuse",
+      "retntalDraftText": "<text>Nos distributrices sont conçues pour le refroidissement, la distribution et le service professionnel de boissons parfaitement réfrigérées, à la maison, lors de garden-parties, de fêtes d'entreprise et de petits événements commerciaux, avec la possibilité de distribuer jusqu'à deux boissons en même temps.</text><text> Parfait pour déguster un fût de kombucha ainsi qu’un fût de bière, l’alternative idéale pour un party avec et sans alcool.</text><text>Leur petite taille et leur système d'air intégré ouvrent de nouvelles possibilités, même dans les environnements professionnels.</text>",
+      "retntalDraftTextPros": "<text> <bold> Les avantages que vous avez à utiliser une de nos tireuses à la place d’un “kegerator” ou d’un “jockey box” sont que :</bold></text>",
+      "rentalDraftList": "<listItem> <listIcon/> Vous n’avez pas besoin de plusieurs systèmes, notre tireuse fonctionne avec de la bière, du vin, du cidre, de la kombucha, du café infusé à froid, des cocktails et des sodas. </listItem> <listItem> <listIcon/> Vous n’avez pas besoin d’attendre des heures pour profiter de votre boisson préférée à la température idéale. En moins de 10 minutes, SAVOUREZ! </listItem> <listItem> <listIcon /> Vous pouvez contrôler la température pour chaque verre d'un froid glacial de 38 °F à une température de cave de 50 °F. </listItem> <listItem> <listIcon/> Vous n’avez pas besoin de garder vos fûts constamment froids. </listItem> <listItem> <listIcon /> Vous n’avez pas besoin de beaucoup de place car elle est petite, compacte et facilement transportable.</listItem> <listItem> <listIcon/>Vous pouvez gagner en liberté car elle peut être alimentée par un petit générateur pour les événements extérieurs car la consommation de courant est très faible ! </listItem> <listItem> <listIcon as={AddIcon} color='#FF893B' />  Vous pouvez vous simplifier la vie car aucun câblage supplémentaire n'est nécessaire ! Il suffit de brancher et de verser ! </listItem> <listItem> <listIcon /> Vous pouvez réduire votre empreinte écologique car elle utilise 45 % moins d'énergie que les “kegerators” et autres refroidisseurs conventionnels.</listItem>",
+      "rentalDraftConclusion": "<bold>Pas besoin de glace</bold> ! Remplace les boîtes Jockey et les unités Kegerator ! Connectez votre fût à notre tireuse, et en quelques minutes, <bold>tirez votre boisson à la température souhaitée !</bold> Location à partir de 150$ + taxes.",
+      "rentalGlassTitle": "Location de verres réutilisables",
+      "rentalGlassText": "Baisser l’empreinte carbone de votre party c’est totalement possible et ça commence par ne pas produire de nouveaux déchets grâce à la location de gobelets réutilisables pour vos événements.",
+      "rentalEventTitle": "Démarches pour les permis d'événements",
+      "rentalEventText": "<text> L’équipe du <bold>temps d’un fût</bold> vous accompagne dans la distribution de boissons lors de vos événements sur les parties réglementaires et légales.</text> <text> Nous fournissons un recueil d’informations des licences nécessaires au Québec pour distribuer de la bière lors d’événements privés et publiques.</text><text > Ce guide pourra vous être utile dans l’organisation de vos événements si vous souhaitez louer une tireuse à bière et distribuer des boissons à vos participants.</text>"
+    },
+    "rental-monthly": {
+      "seo": {
+        "title": "Abonnement Mensuel Tireuse & Kombucha",
+        "description": "Offrez du kombucha pression à vos employés avec notre abonnement mensuel clé en main. Distributrice incluse.",
+        "keywords": "abonnement kombucha bureau, location tireuse mensuelle, kombucha fût montréal"
+      },
+      "pageName": "Le temps d'un fût - Location Mensuelle",
+      "title": "Location mensuelle (clé en main)",
+      "subTitle": "<vstack> <text> À PARTIR DE 259,99$ PAR MOIS </text> <text> <bold> DISTRIBUTRICE INCLUSE </bold> </text> </vstack>",
+      "badge": "Location Mensuelle",
+      "pricePrefix": "Forfait de base",
+      "priceValue": "259,99$",
+      "priceSuffix": "/ mois",
+      "priceNote": "Distributrice incluse!",
+      "KombuOffer": "L’offre Kombu Cha Cha Cha",
+      "KombuOfferExplain": "<text>Et si vous proposiez au quotidien des boissons sans alcool en libre-service à vos collaborateurs ou vos clients? Une alternative à la caféine, garantie vegan, naturelle et sans arôme artificiel ? Toujours fraiches et en quantité adaptée à vos besoins ? Avec comme seul désagrément mensuel, le dilemme du choix des arômes que vous souhaitez proposer ?</text>",
+      "KombuOfferPitch": "<text> Notre offre est la réponse à toutes vos interrogations.<br/> <br/> Amenez la qualité de service d'un bar dans le confort de vos locaux et offrez à vos employés, convives ou clients une expérience de qualité supérieure. <br/> Ne vous préoccupez pas de l'entretien du matériel ni de son évolution. <br/> Libérez vous des corvées de recyclage de canettes, réduisez votre empreinte carbone et proposez des produits 100% biologiques made in Quebec. <br/> <br/> Et puisque désormais vous avez un système de tireuse professionel, bénéficiez de l'accès à des offres de fûts de microbrasseries québécoises pour vos événements!</text>",
+      "KombuOfferContent1": "<b>Voici le contenu de notre offre:</b>\n <li> Distributrice professionnelle incluse</li>\n <li> Livraison et installation </li> \n  <li>Entretien mensuel</li>\n <li> 20L de <a>Gutsy kombucha</a> </li>\n <li>Livraison des fûts</li>\n <li> Gestion de la consigne sanitaire</li>\n <li>Paiement en ligne et facturation mensuelle</li>\n",
+      "KombuOfferContent2": "<b>Voici les avantages de notre offre:</b>\n <li> Changement de saveurs chaque mois</li>\n <li> Augmentez ou diminuez votre forfait selon les besoins</li>\n <li> Accès aux offres des microbrasseries québécoises</li>\n",
+      "ContactUs": "Nous contacter"
+    },
+    "product": {
+      "seo": {
+        "title": "Équipements et Verres Réutilisables",
+        "description": "Découvrez nos tireuses professionnelles et nos solutions de verres réutilisables pour réduire vos déchets.",
+        "keywords": "caractéristiques tireuse bière, verres réutilisables location, matériel brassicole"
+      },
+      "pageTitle": "Le temps d'un fût - Matériel",
+      "draftTechnicalTilte": "Caractéristiques techniques",
+      "draftTechnicalList": "<listItem> <listIcon/> Capacité de refroidissement continu de 13 gallons/h. </listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Deux lignes </listItem><listItem> <listIcon />  Possibilité de réfrigérer deux fûts de capacités différentes simultanément</listItem><listItem> <listIcon/>  Peu encombrante, elle tient dans le coffre d’une petite automobile. </listItem> <listItem> <listIcon/> Votre pression, garantie fraîche en moins de 10 minutes.</listItem>",
+      "draftMaintainTitle": "Entretien des tireuses",
+      "draftMaintainInfo": "L’hygiène étant notre priorité, toutes nos tireuses sont rigoureusement contrôlées, inspectées et désinfectées entre chaque location.",
+      "draftDelivryTitle": "Livraison",
+      "draftDelivryInfo": "La livraison est disponible exclusivement sur l’île de Montréal. Toutefois, n’hésitez pas à nous contacter afin de voir si une exception est possible en fonction de votre commande.",
+      "draftServiceTitle": "Mise en service",
+      "draftServiceInfo": "Chaque location de tireuse est accompagnée d’un briefing d’installation et d’utilisation dans le cas où vous ne vous feriez pas livrer votre tireuse.",
+      "draftPriceTitle": "Tarification",
+      "draftPricePanel": "<list> <listItem> <listIcon /> Weekend = 140$ + taxes </listItem></list><box ><text > * Livraison =  à partir de 20 $ + taxes</text><cr /><text> *Plus de 48 h sur devis</text></box>",
+      "monthlyDraftTechnicalTilte": "Caractéristiques techniques",
+      "monthlyDraftTechnicalList": "<listItem><listItem><listIcon />  Matériel professionnel</listItem><listItem> <listIcon />  Disponible en une ou deux robinets  </listItem><listItem> <listIcon />  Possibilité de stocker deux fûts de capacités différentes simultanément  </listItem> <listItem> <listIcon/>  Votre pression, garantie fraîche tous les jours </listItem>",
+      "monthlyDraftMaintainTitle": "Entretien des tireuses",
+      "monthlyDraftMaintainInfo": "L’hygiène étant notre priorité, toutes nos tireuses sont rigoureusement contrôlées, inspectées et désinfectées avant chaque location. Un contrat de maintenance pourra être mis en place pour la durée de la location",
+      "monthlyDraftDelivryTitle": "Livraison",
+      "monthlyDraftDelivryInfo": "La livraison est disponible exclusivement sur l’île de Montréal. Toutefois, n’hésitez pas à nous contacter afin de voir si une exception est possible en fonction de votre emplacement.",
+      "monthlyDraftServiceTitle": "Mise en service",
+      "monthlyDraftServiceInfo": "Chaque location est accompagnée d’un briefing de maintenance et d’utilisation.",
+      "monthlyDraftPriceTitle": "Tarification",
+      "monthlyDraftPricePanel": "<list> <listItem> <listIcon /> 150$ + taxes par mois </listItem></list><box ><text > * Livraison =  à partir de 20 $ + taxes</text></box>",
+      "glassTechnicalTilte": "Caractéristiques techniques",
+      "glassTechnicalList": "<listItem><listIcon /> Verres réutilisables de 40 cl (12 oz)</listItem><listItem><listIcon />Sans BPA</listItem>",
+      "glassCoverTilte": "Personnalisation et achat",
+      "glassCoverInfo": "Nous proposons également la vente et la personnalisation de gobelets réutilisables pour vos événements. Nous contacter pour toutes questions",
+      "glassHygenTilte": "Hygiène",
+      "glassHygenInfo": "Le lavage et contrôle des verres est effectué par nos soins et ne sera jamais à votre charge.La garantie de toujours avoir dans vos événements des verres propres et réutilisables.",
+      "glassPriceTilte": "Tarification",
+      "glassPricePanel": "<list> <listItem><listIcon />Location de verres à l'unité = À partir de 1 $ + taxes </listItem><listItem><listIcon />Location par pack de 300 = À partir 120$ + taxes </listItem></list><box><text> * 1,5 $ (+ taxes) / verre manquant</text><cr /> <text > * 5 jours maximum ( +80 $ la semaine supplémentaire de location)</text></box>",
+      "dailyRental": "Location journalière",
+      "redirectDaily": "Voir la location journalière",
+      "monthlyRental": "Location mensuelle",
+      "redirectMonthly": "Voir la location mensuelle"
+    },
+    "professional": {
+      "seo": {
+        "title": "Services pour Professionnels et Microbrasseries",
+        "description": "Solutions sur mesure pour microbrasseries et organisateurs d'événements. Location de matériel et partenariats.",
+        "keywords": "partenariat microbrasserie, location tireuse événementiel, distribution keg montréal"
+      },
+      "pageTitle": "Le temps d'un fût - Professionnels",
+      "microTitle": "Présent pour les microbrasseries d’ici",
+      "microTxt": "Besoin d’une tireuse pour une courte période de temps, en dépannage ou pour un événement à l’extérieur de votre microbrasserie ? Nous nous ferons un plaisir de vous aider et de vous proposer le meilleur tarif pour tous vos besoins! Contactez-nous dès maintenant pour toute problématique",
+      "partnerTitle": "Et si nous devenions partenaires ?",
+      "partnerTxt": "Le temps d’un fut cherche à élargir son réseau et nous serions fiers de compter votre microbrasserie dans notre réseau. Nos partenariats sont gagnant-gagnant, vous accédez à un service de location de tireuse à proposer à votre clientèle, sans avoir à gérer le parc matériel et sa distribution. Mieux, vous pouvez aussi aller plus loin et nous confier directement la distribution de vos kegs. Pour toute demande de renseignement, contactez-nous",
+      "companyTitle": "Professionnels de l’événementiel et les collectivités",
+      "companyTxt": "<text>Offrez à vos clients des produits de qualité, distribués de la meilleure des manières. Réduisez vos coûts et augmentez vos profits en distribuant des verres plutôt que des canettes. Vous contribuez aussi à réduire la production de déchets lors de vos événements. </text><box> <cite> En général, on considère qu'une personne boit en moyenne 2 à 3 verres de bière (ou 0,5 à 0,75 litre) pendant une soirée. Si vous prévoyez une soirée de quelques heures avec 20 à 30 personnes, vous devriez donc prévoir environ 20 à 30 litres de bière pour cette soirée. Le choix d'un keg devient ici trés interessant.</cite> </box> <text> Nous pouvons vous accompagner dans la recherche de keg à prix doux! Mariage, événement privé, corporatif, sportif, fête de la saint jean, offrez à vos convives des produits de qualité sans exploser votre budget! </text>",
+      "heroSubtitle": "Un service sur-mesure pour les artisans brasseurs, professionnels de l'événementiel, et collectivités.",
+      "contactCta": "Contactez-nous pour toute demande",
+      "bannerTitle": "Un partenariat de confiance"
+    }
+  },
+  "alert": {
+    "error": "Une erreur est survenue."
+  },
+  "common": {
+    "seo": {
+      "siteName": "Le temps d'un fût",
+      "titleTemplate": "%s | Le temps d'un fût",
+      "description": "Location de tireuses à bière et kombucha à Montréal. Service professionnel pour événements, mariages et entreprises."
+    },
+    "add": "Ajouter",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "details": "Détails",
+    "go-back": "Retour",
+    "go-back-to": "Retour à {name}",
+    "loading-three-dots": "Chargement...",
+    "update": "Mettre à jour",
+    "validate": "Valider",
+    "title": "Le temps d'un fût",
+    "description": "Location de tireuse à bière et/ou kombucha pour entreprises et particuliers sur l’île de Montréal.",
+    "logoSite": "'Le temps d'un fût logo",
+    "logoProfile": "Logo de profil",
+    "facebookLogoLabel": "Aller sur le Facebook de Le temps d'un fût",
+    "facebookLogoAlt": "Logo de Facebook",
+    "instagramLogoLabel": "Aller sur le Instagram de Le temps d'un fût",
+    "instagramLogoAlt": "Logo d'Instagram",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "product": "Notre matériel",
+    "rentalDaily": "Location journalière",
+    "rentalMonthly": "Location mensuelle",
+    "professional": "Professionnels",
+    "booking": "Réservation",
+    "changeLang": "Langues",
+    "copyright": "Copyright©2022-2024 Le temps d'un fût",
+    "contactUs": "Nous contacter",
+    "folowUs": "Suivez-nous",
+    "rental": "Location"
+  },
+  "errors": {
+    "api": {
+      "generic": "Une erreur est survenue lors du traitement de la réponse"
+    }
+  },
+  "locale-switcher": {
+    "label": "Changer de langue",
+    "locale": "{locale, select, fr_CA {Français} en_CA {Anglais} other {Inconnu}}"
+  },
+  "login": {
+    "title": "Le temps d'un fût - Connexion",
+    "copyright": "© 2025 %NameOfTheCompany%. Tous droits réservés",
+    "form-title": "Connectez-vous à votre compte",
+    "form-sign-in": "Se connecter avec",
+    "login": "Connexion",
+    "google": "Connexion avec Google",
+    "facebook": "Connexion avec Facebook",
+    "apple": "Connexion avec Apple",
+    "instagram": "Connexion avec Instagram"
+  },
+  "logout": {
+    "0": "D",
+    "1": "é",
+    "2": "c",
+    "3": "o",
+    "4": "n",
+    "5": "n",
+    "6": "e",
+    "7": "x",
+    "8": "i",
+    "9": "o",
+    "10": "n",
+    "title": "Le temps d'un fût - Déconnexion",
+    "logout": "Déconnexion",
+    "confirmation": "Êtes-vous sûrs de vouloir vous déconnecter ?"
+  },
+  "shared": {},
+  "user": {
+    "greeting": "Bienvenue {name} !",
+    "role": "{role, select, ADMIN {Administrateur} other {Utilisateur}}"
+  }
+}
