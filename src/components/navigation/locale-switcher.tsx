@@ -9,7 +9,7 @@ export const LocaleSwitcher = () => {
     const locale = useLocale()
     const router = useRouter()
     const pathname = usePathname()
-    const [isPending, startTransition] = useTransition()
+    const [, startTransition] = useTransition()
 
     const handleLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newLocale = e.target.value

@@ -5,14 +5,13 @@ import {
     Button,
     Container,
     Heading,
-    Icon,
     Image as ChakraImage,
     SimpleGrid,
     Stack,
     Text,
     Accordion,
 } from "@chakra-ui/react";
-import { LuBeer, LuCalendar, LuCheck } from "react-icons/lu";
+import { LuBeer, LuCalendar } from "react-icons/lu";
 import { useTranslations } from "next-intl";
 import { Link, Routes } from "@/i18n/routing";
 import NextImage from "next/image";

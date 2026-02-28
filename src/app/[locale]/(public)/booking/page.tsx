@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 import BookingClient from "./booking-client";
 
 type Props = {
@@ -20,5 +21,9 @@ export default async function Page(props: Props) {
     const { locale } = await props.params;
     setRequestLocale(locale);
 
-    return <BookingClient />;
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BookingClient />
+        </Suspense>
+    );
 }
