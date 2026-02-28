@@ -1,0 +1,647 @@
+
+# TanStack Table
+
+> TanStack Table is a **headless UI** library for building tables and datagrids.  It exposes logic and state‑management for common table operations (sorting, filtering, pagination, row selection, etc.) while giving you complete control over the markup and stylinghttps://tanstack.com/table/latest#:~:text=Designed%20for%20zero%20design.  The core is framework‑agnostic and can be used directly in Vanilla JS/TS or through framework‑specific adapters for React, Vue, Solid, Svelte, Qwik, Angular and Lithttps://tanstack.com/table/latest/docs/overview.md#:~:text=Overview.  Because it’s headless, the library does not ship any UI components—only the logic and hooks—so you can integrate it seamlessly into your own design systemhttps://tanstack.com/table/latest/docs/introduction#:~:text=TanStack%20Table%20is%20a%20Headless,Vue%2C%20Solid%2C%20Qwik%2C%20and%20Svelte.
+
+## Introduction
+
+TanStack Table is a **Headless UI** library for building powerful tables & datagrids for TS/JS, React, Vue, Solid, Qwik, and Svelte.
+
+### What is "headless" UI?
+
+**Headless UI** is a term for libraries and utilities that provide the logic, state, processing and API for UI elements and interactions, but **do not provide markup, styles, or pre‑built implementations**.  Headless UI has a few main goals:
+
+The hardest parts of building complex UIs usually revolve around state, events, side‑effects, data computation/management.  By removing these concerns from the markup, styles and implementation details, our logic and components can be more modular and reusable.
+
+Building UI is a very branded and custom experience, even if that means choosing a design system or adhering to a design spec.  To support this custom experience, component‑based UI libraries need to support a massive (and seemingly endless) API surface around markup and style customization.  Headless UI libraries decouple your logic from your UI.
+
+When you use a headless UI library, the complex task of **data‑processing, state‑management, and business logic** are handled for you, leaving you to worry about higher‑cardinality decisions that differ across implementations and use cases.
+
+> Want to dive deeper? [Read more about Headless UI](https://www.merrickchristensen.com/articles/headless-user-interface-components/).
+
+### Component‑based libraries vs Headless libraries
+
+In the ecosystem of table/datagrid libraries, there are two main categories:
+
+- Component‑based table libraries
+- Headless table libraries
+
+#### Which kind of table library should I use?
+
+Each approach has subtle tradeoffs.  Understanding these subtleties will help make the right decision for your application and team.
+
+#### Component‑based Table Libraries
+
+Component‑based table libraries will typically supply you with a feature‑rich drop‑in solution and ready‑to‑use components/markup complete with styles/theming.  [AG Grid](https://ag-grid.com/react-data-grid/?utm_source=reacttable&utm_campaign=githubreacttable) is a great example of this type of table library.
+
+**Pros:**
+
+- Ship with ready‑to‑use markup/styles
+- Little setup required
+- Turn‑key experience
+
+**Cons:**
+
+- Less control over markup
+- Custom styles are typically theme‑based
+- Larger bundle sizes
+- Highly coupled to framework adapters and platforms
+
+**If you want a ready‑to‑use table and design/bundle size are not hard requirements**, then you should consider using a component‑based table library.
+
+There are a lot of component‑based table libraries out there, but we believe [AG Grid](https://ag-grid.com/react-data-grid/?utm_source=reacttable&utm_campaign=githubreacttable) is the gold standard and is by far our favourite grid‑sibling (don't tell the others).
+
+#### Headless Table Libraries
+
+Headless table libraries will typically supply you with functions, state, utilities and event listeners to build your own table markup or attach to existing table markups.
+
+**Pros:**
+
+- Full control over markup and styles
+- Supports all styling patterns (CSS, CSS‑in‑JS, UI libraries, etc.)
+- Smaller bundle sizes
+- Portable.  Run anywhere JS runs!
+
+**Cons:**
+
+- More setup required
+- No markup, styles or themes provided
+
+**If you want a lighter‑weight table or full control over the design**, then you should consider using a headless table library.
+
+There are very few headless table libraries out there and obviously, **TanStack Table** is our favourite!
+
+## Overview
+
+TanStack Table's core is **framework agnostic**, which means its API is the same regardless of the framework you're using.  Adapters are provided to make working with the table core easier depending on your framework.  See the Adapters menu for available adapters.
+
+### Typescript
+
+While TanStack Table is written in [TypeScript](https://www.typescriptlang.org/), using TypeScript in your application is optional (but recommended as it comes with outstanding benefits to both you and your codebase).
+
+### Headless
+
+As it was mentioned extensively in the [Intro](../introduction.md) section, TanStack Table is **headless**.  This means that it doesn't render any DOM elements, and instead relies on you—the UI/UX developer—to provide the table's markup and styles.  This is a great way to build a table that can be used in any UI framework, including React, Vue, Solid, Svelte, Qwik, and even JS‑to‑native platforms like React Native!
+
+### Core Objects and Types
+
+The table core uses the following abstractions, commonly exposed by adapters:
+
+- **Column Defs** – Objects used to configure a column and its data model, display templates, and more.
+- **Table** – The core table object containing both state and API.
+- **Table Data** – The core data array you provide the table.
+- **Columns** – Each column mirrors its respective column def and also provides column‑specific APIs.
+- **Rows** – Each row mirrors its respective row data and provides row‑specific APIs.
+- **Header Groups** – Computed slices of nested header levels, each containing a group of headers.
+- **Headers** – Each header is either directly associated with or derived from its column def and provides header‑specific APIs.
+- **Cells** – Each cell mirrors its respective row‑column intersection and provides cell‑specific APIs.
+
+There are even more structures that pertain to specific features like filtering, sorting, grouping, etc., which you can find in the [features](../guide/features.md) section.
+
+## Installation
+
+Before we dig in to the API, let's get you set up!
+
+Install your table adapter as a dependency using your favourite npm package manager.
+
+_Only install **one** of the following packages:_
+
+### React Table
+
+```bash
+npm install @tanstack/react-table
+```
+
+The `@tanstack/react-table` package works with **React 16.8**, **React 17**, **React 18**, and **React 19**.
+
+> **Note:** Even though the React adapter works with React 19, it may not work with the new React Compiler that's coming out alongside React 19.  This may be fixed in future TanStack Table updates.
+
+### Vue Table
+
+```bash
+npm install @tanstack/vue-table
+```
+
+The `@tanstack/vue-table` package works with **Vue 3**.
+
+### Solid Table
+
+```bash
+npm install @tanstack/solid-table
+```
+
+The `@tanstack/solid-table` package works with **Solid JS 1**.
+
+### Svelte Table
+
+```bash
+npm install @tanstack/svelte-table
+```
+
+The `@tanstack/svelte-table` package works with **Svelte 3** and **Svelte 4**.
+
+> **Note:** There is not a built‑in Svelte 5 adapter yet, but you can still use TanStack Table with Svelte 5 by installing the `@tanstack/table-core` package and using a custom adapter from the community.  See this [PR](https://github.com/TanStack/table/pull/5403) for inspiration.
+
+### Qwik Table
+
+```bash
+npm install @tanstack/qwik-table
+```
+
+The `@tanstack/qwik-table` package works with **Qwik 1**.
+
+> **Note:** There will be a "breaking change" release in the near future to support **Qwik 2**.  This will be released as a minor version bump but will be documented.  Qwik 2 itself will have no breaking changes, but its name on the npm registry will change, and require different peer dependencies.
+
+> **Note:** The current Qwik adapter only works with CSR.  More improvements may not be available until a future table version.
+
+### Angular Table
+
+```bash
+npm install @tanstack/angular-table
+```
+
+The `@tanstack/angular-table` package works with **Angular 17**.  The Angular adapter uses a new Angular Signal implementation.
+
+### Lit Table
+
+```bash
+npm install @tanstack/lit-table
+```
+
+The `@tanstack/lit-table` package works with **Lit 3**.
+
+### Table Core (no framework)
+
+```bash
+npm install @tanstack/table-core
+```
+
+Don't see your favourite framework (or favourite version of your framework) listed?  You can always just use the `@tanstack/table-core` package and build your own adapter in your own codebase.  Usually, only a thin wrapper is needed to manage state and rendering for your specific framework.  Browse the [source code](https://github.com/TanStack/table/tree/main/packages) of all of the other adapters to see how they work.
+
+## Vanilla TS/JS
+
+The `@tanstack/table-core` library contains the core logic for TanStack Table.  If you are using a non‑standard framework or don't have access to a framework, you can use the core library directly via TypeScript or JavaScript.
+
+### `createTable`
+
+Takes an `options` object and returns a table.
+
+```tsx
+import { createTable } from '@tanstack/table-core'
+
+const table = createTable(options)
+```
+
+## FAQ
+
+### How do I stop infinite rendering loops?
+
+If you are using React, there is a very common pitfall that can cause infinite rendering.  If you fail to give your `columns`, `data`, or `state` a stable reference, React will enter an infinite loop of re‑rendering upon any change to the table state.
+
+Why does this happen?  Is this a bug in TanStack Table? **No**, it is not.  *This is fundamentally how React works*, and properly managing your columns, data, and state will prevent this from happening.
+
+TanStack Table is designed to trigger a re‑render whenever either the `data` or `columns` that are passed into the table change, or whenever any of the table's state changes.
+
+> Failing to give `columns` or `data` stable references can cause an infinite loop of re‑renders.
+
+#### Pitfall 1: Creating new columns or data on every render
+
+```js
+export default function MyComponent() {
+  // BAD: This will cause an infinite loop of re‑renders because `columns`
+  // is redefined as a new array on every render!
+  const columns = [
+    // ...
+  ];
+
+  // BAD: This will cause an infinite loop of re‑renders because `data` is
+  // redefined as a new array on every render!
+  const data = [
+    // ...
+  ];
+
+  // ❌ Columns and data are defined in the same scope as `useReactTable`
+  // without a stable reference, will cause infinite loop!
+  const table = useReactTable({
+    columns,
+    data,
+  });
+
+  return <table>...</table>;
+}
+```
+
+#### Solution 1: Stable references with `useMemo` or `useState`
+
+In React, you can give a "stable" reference to variables by defining them outside/above the component, or by using `useMemo` or `useState`, or by using a 3rd‑party state management library (like Redux or React Query).
+
+```js
+// ✅ OK: Define columns outside of the component
+const columns = [
+  // ...
+];
+
+// ✅ OK: Define data outside of the component
+const data = [
+  // ...
+];
+
+// Usually it's more practical to define columns and data inside the
+// component, so use `useMemo` or `useState` to give them stable references
+export default function MyComponent() {
+  // ✅ GOOD: This will not cause an infinite loop of re‑renders because
+  // `columns` is a stable reference
+  const columns = useMemo(() => [
+    // ...
+  ], []);
+
+  // ✅ GOOD: This will not cause an infinite loop of re‑renders because
+  // `data` is a stable reference
+  const [data, setData] = useState(() => [
+    // ...
+  ]);
+
+  // Columns and data are defined in a stable reference, will not cause
+  // infinite loop!
+  const table = useReactTable({
+    columns,
+    data,
+  });
+
+  return <table>...</table>;
+}
+```
+
+#### Pitfall 2: Mutating columns or data in place
+
+Even if you give your initial `columns` and `data` stable references, you can still run into infinite loops if you **mutate** them in place.  This is a common pitfall that you may not notice that you are doing at first.  Something as simple as an inline `data.filter()` can cause an infinite loop if you are not careful.
+
+```js
+export default function MyComponent() {
+  // ✅ GOOD
+  const columns = useMemo(() => [
+    // ...
+  ], []);
+
+  // ✅ GOOD (React Query provides stable references to data automatically)
+  const { data, isLoading } = useQuery({
+    // ...
+  });
+
+  const table = useReactTable({
+    columns,
+    // ❌ BAD: This will cause an infinite loop of re‑renders because `data`
+    // is mutated in place (destroys stable reference)
+    data: data?.filter(d => d.isActive) ?? [],
+  });
+
+  return <table>...</table>;
+}
+```
+
+#### Solution 2: Memoize your data transformations
+
+To prevent infinite loops, you should always memoize your data transformations.  This can be done with `useMemo` or similar.
+
+```js
+export default function MyComponent() {
+  // ✅ GOOD
+  const columns = useMemo(() => [
+    // ...
+  ], []);
+
+  // ✅ GOOD
+  const { data, isLoading } = useQuery({
+    // ...
+  });
+
+  // ✅ GOOD: This will not cause an infinite loop of re‑renders because
+  // `filteredData` is memoized
+  const filteredData = useMemo(() => data?.filter(d => d.isActive) ?? [], [data]);
+
+  const table = useReactTable({
+    columns,
+    data: filteredData, // stable reference!
+  });
+
+  return <table>...</table>;
+}
+```
+
+#### React Forget
+
+When React Forget is released, these problems might be a thing of the past.  Or just use Solid JS... 😄
+
+### How do I stop my table state from automatically resetting when my data changes?
+
+Most plugins use state that *should* normally reset when the data sources change, but sometimes you need to suppress that from happening if you are filtering your data externally, or immutably editing your data while looking at it, or simply doing anything external with your data that you don't want to trigger a piece of table state to reset automatically.
+
+For those situations, each plugin provides a way to disable the state from automatically resetting internally when data or other dependencies for a piece of state change.  By setting any of them to `false`, you can stop the automatic resets from being triggered.
+
+Here is a React‑based example of stopping basically every piece of state from changing as they normally do while we edit the `data` source for a table:
+
+```js
+const [data, setData] = React.useState([])
+const skipPageResetRef = React.useRef()
+
+const updateData = newData => {
+  // When data gets updated with this function, set a flag
+  // to disable all of the auto resetting
+  skipPageResetRef.current = true
+
+  setData(newData)
+}
+
+React.useEffect(() => {
+  // After the table has updated, always remove the flag
+  skipPageResetRef.current = false
+})
+
+useReactTable({
+  ...
+  autoResetPageIndex: !skipPageResetRef.current,
+  autoResetExpanded: !skipPageResetRef.current,
+})
+```
+
+Now, when we update our data, the above table states will not automatically reset!
+
+## React integration
+
+### React Table adapter
+
+The `@tanstack/react-table` adapter is a wrapper around the core table logic.  Most of its job is related to managing state the "react" way, providing types and the rendering implementation of cell/header/footer templates.
+
+#### `useReactTable`
+
+Takes an `options` object and returns a table.
+
+```tsx
+import { useReactTable } from '@tanstack/react-table'
+
+function App() {
+  const table = useReactTable(options)
+
+  // ...render your table
+}
+```
+
+### Table State (React) Guide
+
+#### Examples
+
+Want to skip to the implementation?  Check out these examples:
+
+- [kitchen sink](../../examples/kitchen-sink)
+- [fully controlled](../../examples/fully-controlled)
+
+#### Table State (React) Guide
+
+TanStack Table has a simple underlying internal state management system to store and manage the state of the table.  It also lets you selectively pull out any state that you need to manage in your own state management.  This guide will walk you through the different ways in which you can interact with and manage the state of the table.
+
+##### Accessing Table State
+
+You do not need to set up anything special in order for the table state to work.  If you pass nothing into either `state`, `initialState`, or any of the `on[State]Change` table options, the table will manage its own state internally.  You can access any part of this internal state by using the `table.getState()` table instance API.
+
+```jsx
+const table = useReactTable({
+  columns,
+  data,
+  //...
+})
+
+console.log(table.getState()) // access the entire internal state
+console.log(table.getState().rowSelection) // access just the row selection state
+```
+
+##### Custom Initial State
+
+If all you need to do for certain states is customize their initial default values, you still do not need to manage any of the state yourself.  You can simply set values in the `initialState` option of the table instance.
+
+```jsx
+const table = useReactTable({
+  columns,
+  data,
+  initialState: {
+    columnOrder: ['age', 'firstName', 'lastName'], // customize the initial column order
+    columnVisibility: {
+      id: false // hide the id column by default
+    },
+    expanded: true, // expand all rows by default
+    sorting: [
+      {
+        id: 'age',
+        desc: true // sort by age in descending order by default
+      }
+    ]
+  },
+  //...
+})
+```
+
+> **Note:** Only specify each particular state in either `initialState` or `state`, but not both.  If you pass in a particular state value to both `initialState` and `state`, the initialized state in `state` will overwrite any corresponding value in `initialState`.
+
+##### Controlled State
+
+If you need easy access to the table state in other areas of your application, TanStack Table makes it easy to control and manage any or all of the table state in your own state management system.  You can do this by passing in your own state and state management functions to the `state` and `on[State]Change` table options.
+
+###### Individual Controlled State
+
+You can control just the state that you need easy access to.  You do **not** have to control all of the table state if you do not need to.  It is recommended to only control the state that you need on a case‑by‑case basis.
+
+In order to control a particular state, you need to both pass in the corresponding `state` value and the `on[State]Change` function to the table instance.
+
+Let's take filtering, sorting, and pagination as an example in a "manual" server‑side data fetching scenario.  You can store the filtering, sorting, and pagination state in your own state management, but leave out any other state like column order, column visibility, etc., if your API does not care about those values.
+
+```jsx
+const [columnFilters, setColumnFilters] = React.useState([]) // no default filters
+const [sorting, setSorting] = React.useState([
+  {
+    id: 'age',
+    desc: true, // sort by age in descending order by default
+  }
+])
+const [pagination, setPagination] = React.useState({ pageIndex: 0, pageSize: 15 })
+
+// Use our controlled state values to fetch data
+const tableQuery = useQuery({
+  queryKey: ['users', columnFilters, sorting, pagination],
+  queryFn: () => fetchUsers(columnFilters, sorting, pagination),
+  //...
+})
+
+const table = useReactTable({
+  columns,
+  data: tableQuery.data,
+  //...
+  state: {
+    columnFilters, // pass controlled state back to the table (overrides internal state)
+    sorting,
+    pagination
+  },
+  onColumnFiltersChange: setColumnFilters, // hoist columnFilters state into our own state management
+  onSortingChange: setSorting,
+  onPaginationChange: setPagination,
+})
+//...
+```
+
+###### Fully Controlled State
+
+Alternatively, you can control the **entire** table state with the `onStateChange` table option.  It will hoist out the entire table state into your own state management system.  Be careful with this approach, as you might find that raising some frequently changing state values up a React tree, like `columnSizingInfo` state`, might cause bad performance issues.
+
+A couple of more tricks may be needed to make this work.  If you use the `onStateChange` table option, the initial values of the `state` must be populated with all of the relevant state values for all of the features that you want to use.  You can either manually type out all of the initial state values, or use the `table.setOptions` API in a special way as shown below.
+
+```jsx
+// create a table instance with default state values
+const table = useReactTable({
+  columns,
+  data,
+  //... Note: `state` values are NOT passed in yet
+})
+
+const [state, setState] = React.useState({
+  ...table.initialState, // populate the initial state with all of the default state values from the table instance
+  pagination: {
+    pageIndex: 0,
+    pageSize: 15 // optionally customize the initial pagination state.
+  }
+})
+
+// Use the table.setOptions API to merge our fully controlled state onto the table instance
+table.setOptions(prev => ({
+  ...prev, // preserve any other options that we have set up above
+  state, // our fully controlled state overrides the internal state
+  onStateChange: setState // any state changes will be pushed up to our own state management
+}))
+```
+
+##### On State Change Callbacks
+
+So far, we have seen the `on[State]Change` and `onStateChange` table options work to "hoist" the table state changes into our own state management.  However, there are a few things about using these options that you should be aware of.
+
+1. **State Change Callbacks MUST have their corresponding state value in the `state` option.**
+   Specifying an `on[State]Change` callback tells the table instance that this will be a controlled state.  If you do not specify the corresponding `state` value, that state will be "frozen" with its initial value.
+
+```jsx
+const [sorting, setSorting] = React.useState([])
+//...
+const table = useReactTable({
+  columns,
+  data,
+  //...
+  state: {
+    sorting, // required because we are using `onSortingChange`
+  },
+  onSortingChange: setSorting, // makes the `state.sorting` controlled
+})
+```
+
+2. **Updaters can either be raw values or callback functions.**
+   The `on[State]Change` and `onStateChange` callbacks work exactly like the `setState` functions in React.  The updater values can either be a new state value or a callback function that takes the previous state value and returns the new state value.  If you want to add in some extra logic in any of the `on[State]Change` callbacks, you can do so, but you need to check whether or not the new incoming updater value is a function or value.
+
+```jsx
+const [sorting, setSorting] = React.useState([])
+const [pagination, setPagination] = React.useState({ pageIndex: 0, pageSize: 10 })
+
+const table = useReactTable({
+  columns,
+  data,
+  //...
+  state: {
+    pagination,
+    sorting,
+  },
+  // syntax 1
+  onPaginationChange: (updater) => {
+    setPagination(old => {
+      const newPaginationValue = updater instanceof Function ? updater(old) : updater
+      // do something with the new pagination value
+      // ...
+      return newPaginationValue
+    })
+  },
+  // syntax 2
+  onSortingChange: (updater) => {
+    const newSortingValue = updater instanceof Function ? updater(sorting) : updater
+    // do something with the new sorting value
+    // ...
+    setSorting(updater) // normal state update
+  }
+})
+```
+
+##### State Types
+
+All complex states in TanStack Table have their own TypeScript types that you can import and use.  This can be handy for ensuring that you are using the correct data structures and properties for the state values that you are controlling.
+
+```tsx
+import { useReactTable, type SortingState } from '@tanstack/react-table'
+//...
+const [sorting, setSorting] = React.useState<SortingState[]>([
+  {
+    id: 'age', // you should get autocomplete for the `id` and `desc` properties
+    desc: true,
+  }
+])
+
+## API core summary
+
+The table core provides low‑level objects and APIs for every part of a table.  These are the main types you will interact with:
+
+- **`Table`** – created via `useReactTable` (or `createSolidTable`, `useVueTable`, etc.) and holds all state and API methods.  The options you pass when creating a table include the data array, column definitions, and optional initial or controlled statehttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/table.md#:~:text=.  You can also provide callbacks like `onStateChange` to listen to state updateshttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/table.md#:~:text=.  Table objects expose methods such as `getRowModel()` to get processed rows, `getState()` to access table state, and functions for updating or resetting state.
+- **`ColumnDef`** – plain objects used to configure each column.  A column definition can include an `id`, an accessor key or function (`accessorKey` or `accessorFn`) to read values from your data, optional nested `columns` for grouped headers, and render functions for the header, cell and footerhttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/column-def.md#:~:text=Column%20definitions%20are%20plain%20objects,with%20the%20following%20options.  You can also attach arbitrary metadata via the `meta` property to access extra information anywhere a column is availablehttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/column-def.md#:~:text=.
+- **`Column`** – created internally from a column definition and provides APIs like `getSize()`, `toggleVisibility()`, and `getHeaderContext()`; columns mirror the structure of their definitions but are tied to the table instance.
+- **`Row`** – represents a single data item.  Rows expose properties like `id` and arrays of `cells`, as well as methods such as `getIsSelected()` when using row‑selection features.
+- **`Cell`** – represents the intersection of a row and a column.  Cells have an `id`, a `row` reference, a `column` reference and functions to get or render their value.  Use `cell.getContext()` to obtain the rendering context when calling your framework’s `flexRender` helperhttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/cell.md#:~:text=All%20cell%20objects%20have%20the,following%20properties.
+- **`Header`** and **`HeaderGroup`** – derived from column definitions and used for rendering header rows.  Header objects can provide context for rendering grouped headers, sorting indicators, etc.
+
+These core objects are extended with additional properties and methods when you enable features like sorting, filtering, grouping, pagination and more.  For example, when you import the `@tanstack/react-table` package, it augments `Table`, `Column` and `Row` with state and helper functions specific to React.
+
+## Features overview
+
+TanStack Table includes a wide array of **optional features** that you can mix and match.  Each feature defines its own state shape and API.  Here is a summary of the most commonly used features (see the *guide* directory for detailed docs):
+
+- **Column ordering** – allows columns to be reordered by dragging or programmatic API.  The table keeps a `columnOrder` state (an array of column ids) and exposes methods like `setColumnOrder()` to rearrange columns.
+- **Column pinning** – lets you pin columns to the left or right so they remain visible during horizontal scrolling.  When enabled, columns expose `getIsPinned()`, `pin()` and `unpin()`, and the table exposes `leftPinnedColumns` and `rightPinnedColumns` collections.
+- **Column sizing/resizing** – provides resizable columns with default or user‑defined sizes.  The table stores a `columnSizing` state with widths for each column and offers methods like `setColumnSizing()` and `resetColumnSizing()`.
+- **Column visibility** – controls whether a column is visible.  Each column has `getIsVisible()` and `toggleVisibility()`, and the table exposes a `columnVisibility` state with boolean flags for each column.
+- **Expanding** – enables expandable rows (parent/child relationships).  Rows gain `getIsExpanded()` and `toggleExpanded()` methods, and the table stores an `expanded` state keyed by row ids.
+- **Filtering** – supports both **column filtering** and **global filtering**.  Column filters are applied to individual columns, while a global filter applies to all data.  You can choose client‑side filtering (using `getFilteredRowModel`) or server‑side filtering by setting `manualFiltering: true` and controlling the `data` prop yourselfhttps://raw.githubusercontent.com/TanStack/table/main/docs/guide/column-filtering.md#:~:text=Filtering%20comes%20in%202%20flavors%3A,Column%20Filtering%20and%20Global%20Filtering.  Filter state is an array of objects `{ id, value }`https://raw.githubusercontent.com/TanStack/table/main/docs/guide/column-filtering.md#:~:text=Whether%20or%20not%20you%20use,retrieving%20the%20column%20filter%20state, and you can access or control it via `table.getState().columnFilters` or via `state.columnFilters` / `onColumnFiltersChange` when controlling the statehttps://raw.githubusercontent.com/TanStack/table/main/docs/guide/column-filtering.md#:~:text=.
+- **Grouping** – groups rows by one or more columns.  When grouping is active, columns have `getIsGrouped()` and `toggleGrouping()`, rows have `getIsGrouped()`, and the table stores a `grouping` array of column ids.
+- **Sorting** – sorts rows by one or more columns.  Sorting state is an array of objects `{ id, desc }`.  You can access or control this state via `table.getState().sorting` or via `state.sorting` / `onSortingChange`.  Columns gain `getIsSorted()` and `toggleSorting()` helpers.
+- **Pagination** – divides rows into pages.  The table exposes `getPageCount()`, `getPageOptions()`, `getPaginationRowModel()`, etc., and manages `pagination` state (page index and page size).  You can control pagination by passing `manualPagination: true` and managing `data` and `state.pagination` yourself.
+- **Row pinning** – similar to column pinning, but for rows.  Rows can be pinned to the start or end of the table.
+- **Row selection** – adds selection checkboxes or logic.  Each row has `getIsSelected()`, `toggleSelected()`, and the table holds a `rowSelection` state keyed by row ids.
+- **Virtualization** – supports rendering only the visible portion of the table for massive data sets.  Integrates with virtualization libraries like `react-virtual` to render hundreds of thousands of rows smoothly.
+
+All of these features are **opt‑in**.  You enable them by importing their corresponding functions (`getSortedRowModel`, `getFilteredRowModel`, etc.) and passing them into the table options.  Each feature’s guide (found in `docs/guide`) explains how to use it, including when to use client‑side vs server‑side strategieshttps://raw.githubusercontent.com/TanStack/table/main/docs/guide/column-filtering.md#:~:text=%23%23%23%20Client.
+
+## React Table state guide (summary)
+
+In React, TanStack Table's internal state is stored on the `table` object.  You can either let the table manage this state automatically or **control** all or part of it in your own component.  Common patterns include:
+
+- **Uncontrolled state (default)** – you pass only your data and columns into `useReactTable` and let the table manage its internal state (sorting, filtering, pagination, etc.).  The table exposes getters like `table.getState().sorting` if you need to read the current state.
+- **Controlled state** – you provide partial state via the `state` option and update it through `onStateChange` or more specific callbacks (e.g., `onSortingChange`).  In controlled mode, the table will call `onStateChange(updater)` whenever it needs to update the state; you are responsible for applying the updater and feeding the new state back to the tablehttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/table.md#:~:text=.
+- **Individual controlled features** – rather than controlling the entire table state, you can control only certain features.  For instance, to control sorting, pass `state: { sorting }` and `onSortingChange: setSorting`.  The table will merge your controlled part with its own internal state for other features.
+- **Initial state** – you can set an `initialState` object to define the starting state of features like visibility, column order, sorting, etc.  The table will use this when resetting statehttps://raw.githubusercontent.com/TanStack/table/main/docs/api/core/table.md#:~:text=.
+
+React examples often memoize data and columns to avoid infinite rendering loops and performance issues.  Use `useMemo` and stable references for `data`, `columns` and derived values, as illustrated in the FAQ section above.
+
+## Other framework adapters
+
+TanStack Table provides adapters for many frameworks.  Each adapter wraps the core table logic and implements state management and templating appropriate for its framework:
+
+- **Vue** – install `@tanstack/vue-table` and use `useVueTable` with options similar to React.  Vue’s reactivity handles state updates automatically.
+- **Solid** – install `@tanstack/solid-table` and use `createSolidTable` to create a table instance.  Solid’s signals manage state.
+- **Svelte** – install `@tanstack/svelte-table`.  The Svelte adapter works with Svelte 3 and Svelte 4; Svelte 5 is supported via the core package.  Use `useSvelteTable` to create a table and manage state via Svelte stores.
+- **Qwik** – install `@tanstack/qwik-table`.  Note that Qwik 2 will require a new adapter name.  Use `useQwikTable` to create the table.  Qwik’s resumability model means table state is serialized and resumed on the client.
+- **Angular** – install `@tanstack/angular-table` for Angular 17.  The adapter uses Angular Signals to manage state.
+- **Lit** – install `@tanstack/lit-table` for Lit 3.  The adapter exposes custom elements you can use in templates.
+- **Vanilla** – if you are not using a supported framework, you can always use the `@tanstack/table-core` package directly, then build your own adapter.  The vanilla API is similar to the core API exposed in this document, and you interact with the table by calling methods and reading state from the table instance.
+
+## Enterprise: AG Grid
+
+TanStack Table is a headless solution with a focus on flexibility, but the maintainers acknowledge that some projects need a more polished, batteries‑included data grid.  The docs highlight **AG Grid** as a companion option for enterprise needs.  AG Grid offers a comprehensive feature set, high performance for very large datasets, extensive customization options and enterprise‑oriented capabilities like server‑side row models, master/detail grids, rich editing and a highly optimized virtualization enginehttps://raw.githubusercontent.com/TanStack/table/main/docs/enterprise/ag-grid.md#:~:text=Here%20are%20some%20good%20reasons,Grid%20for%20your%20next%20project.  It is actively maintained with a strong community and may be a better choice when you need a full‑fledged grid with dedicated supporthttps://raw.githubusercontent.com/TanStack/table/main/docs/enterprise/ag-grid.md#:~:text=frameworks%20and%20libraries%2C%20making%20it,scale%20projects.  The TanStack Table documentation encourages you to evaluate both solutions and choose the one that fits your requirements.
+
+
